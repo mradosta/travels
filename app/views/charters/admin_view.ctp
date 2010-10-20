@@ -12,7 +12,8 @@
 			$data['Charter']['id']
 		),
 		array(
-			'title' => __('Delete charter', true)
+			'title' => __('Delete charter', true),
+			'class' => 'cancel'
 		),
 		__('Are your sure to delete the Charter?', true)
 	);

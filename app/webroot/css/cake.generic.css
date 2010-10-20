@@ -45,7 +45,7 @@ body {
 	background: #003d4c;
 	color: #fff;
 	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
-	font-size:90%;
+	font-size:75%;
 	margin: 0;
 }
 a {
@@ -71,7 +71,7 @@ h1 {
 }
 h2 {
 	background:#fff;
-	color: #e32;
+	color: #333;
 	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;
 	font-size: 190%;
 }
@@ -91,14 +91,14 @@ ul, li {
 /** Layout **/
 #main-container {
 	text-align: left;
-	width:960px;
+	width:950px;
 	margin:0 auto;
 }
 
 #header{
 	background: url('../img/lozada.jpg') no-repeat center;
-	height: 20px;
-	padding-top: 180px;
+	height: 40px;
+	padding-top: 160px;
 }
 .button {
 	float:right;
@@ -106,20 +106,26 @@ ul, li {
 }
 #header h1 {
 	line-height:20px;
-	background: #003d4c;
+	background: #CCC;
 	color: #fff;
 	padding: 0px 30px;
+	padding-left: 5px;
+	height: 35px;
+	margin-top: 5px;
+	padding-top:7px;
 }
 #header h1 a {
-	color: #fff;
-	background: #003d4c;
+	color: #333333;
+	background: #EEE;
 	font-weight: normal;
+	padding:5px;
 	text-decoration: none;
+	border:1px solid white;
 }
 #header h1 a:hover {
-	color: #fff;
-	background: #003d4c;
-	text-decoration: underline;
+	color: #000;
+	background: #CDCDCD;
+	text-decoration: none;
 }
 #content{
 	background: #fff;
@@ -220,6 +226,7 @@ div.paging {
 	color: #ccc;
 	margin-top: 1em;
 	clear:both;
+	
 }
 div.paging span.disabled {
 	color: #ddd;
@@ -371,7 +378,7 @@ form .submit input[type=submit]:hover, .cancel:hover{
 .cancel{
 	display: block;
 	float: left;
-	padding:3px;
+	padding:6px !important;
 	margin-left: 10px;
 	
 }
@@ -379,6 +386,7 @@ form .submit input[type=submit]:hover, .cancel:hover{
 	text-transform: capitalize;
 	text-decoration: none !important;
 	font-weight: normal !important;
+	color: #333 !important;
 }
 
 /** Notices and Errors **/

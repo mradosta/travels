@@ -12,7 +12,8 @@
 			$data['Passenger']['id']
 		),
 		array(
-			'title' => __('Delete passenger', true)
+			'title' => __('Delete passenger', true),
+			'class' => 'cancel'
 		),
 		__('Are your sure to delete the Passenger?', true)
 	);
