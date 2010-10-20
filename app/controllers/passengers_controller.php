@@ -21,9 +21,11 @@ class PassengersController extends AppController {
 		$this->set('states', array('authorized' => 'authorized', 'unauthorized' => 'unauthorized'));
 
 		if (!empty($this->data)) {
-			
-			if ($this->checkAvailability($this->data)) {
-				
+
+			$r = $this->checkAvailability($this->data);
+			if ($r === true) {
+
+				/*
 				$this->redirect(
 					array(
 						'admin'			=> false,
@@ -33,14 +35,11 @@ class PassengersController extends AppController {
 						'amount'		=> $this->data['Passenger']['amount']
 					)
 				);
+				*/
+				$this->set('charter_data', $this->data['Passenger']);
+				$this->render('add_passengers');
 			} else {
-				$this->Session->setFlash(
-					__(
-						'The passenger could not be saved, because no availables charters.',
-						true
-					),
-					'flash_error'
-				);
+				$this->Session->setFlash($r, 'flash_error');
 			}
 
 		} else {
@@ -62,15 +61,21 @@ class PassengersController extends AppController {
 			$charterType = $data['Passenger']['type'];
 			$amount = $data['Passenger']['amount'];
 
+			// CHeck charter departure date
+			$this->Passenger->Charter->recursive = -1;
+			$charter = $this->Passenger->Charter->findById($charterId);
+			if (date('Y-m-d') > $charter['Charter']['date']) {
+				return __('Passengers could not be saved, because the selected charter has gone.', true);
+			}
+
+
 			if ($this->Passenger->checkAvailability($charterId, $charterType, $amount)) {
 				return true;
 			} else {
-				return false;
+				return __('Passengers could not be saved, because no availables charters.', true);
 			}
 		} else {
-
-			return false;
-			
+			return __('Passengers could not be saved, because you must enter the number of passengers.', true);
 		}
 	}
 

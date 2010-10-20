@@ -1,9 +1,6 @@
 #/app/config
-engine/app/tmp
 app/tmp
-engine/plugins
 plugins
-engine/vendors
 vendors
 docs
 
@@ -18,97 +15,14 @@ Thumbs.db
 #cake
 
 # Prevent sensitive data from ending up in your repo
-engine/app/config/database.php
 app/config/database.php
-engine/app/config/core.php
 app/config/core.php
 
 # Quanta
-kaikaia.session
-kaikaia.webprj
-engine/templates
+lozada.session
+lozada.webprj
 templates
-engine/toolbars
 toolbars
 
 # Netbeans
-engine/nbproject
 nbproject
-
-# Testing Schemas
-app/config/schema/calendars.php
-app/config/schema/entity.php
-app/config/schema/felonies.php
-app/config/schema/felonies_types.php
-app/config/schema/final_reports.php
-app/config/schema/individual_plans.php
-app/config/schema/interviews.php
-app/config/schema/matters.php
-app/config/schema/measures.php
-app/config/schema/mothers.php
-app/config/schema/grand_mothers.php
-app/config/schema/offices.php
-app/config/schema/subjects.php
-app/config/schema/users.php
-app/config/schema/victims.php
-app/config/schema/zones.php
-app/config/schema/father.php
-app/config/schema/grand_mother_father.php
-
-
-# Testing Models
-app/models/felony.php
-app/models/final_report.php
-app/models/individual_plan.php
-app/models/interview.php
-app/models/measure.php
-app/models/mother.php
-app/models/grand_mother.php
-app/models/grand_mother_father.php
-app/models/victim.php
-app/models/subject.php
-app/models/matter.php
-app/models/father.php
-app/models/felonies_type.php
-
-# Testing Controllers
-app/controllers/felonies_controller.php
-app/controllers/felonies_types_controller.php
-app/controllers/final_reports_controller.php
-app/controllers/individual_plans_controller.php
-app/controllers/interviews_controller.php
-app/controllers/measures_controller.php
-app/controllers/mothers_controller.php
-app/controllers/grand_mothers_controller.php
-app/controllers/victims_controller.php
-
-# Testing Views
-app/views/felonies
-app/views/final_reports
-app/views/individual_plans
-app/views/interviews
-app/views/measures
-app/views/mothers
-app/views/fathers
-app/views/felonies_types
-app/views/grand_mother_fathers
-app/views/grand_mothers
-app/views/victims
-app/views/subjects/view.ctp
-app/views/subjects/view_resume.ctp
-app/views/matters/index.ctp
-app/views/calendars/add-original.ctp
-app/views/matters/matter_both.ctp
-app/views/matters/matter_edit_edit.ctp
-app/views/matters/matter_insert.ctp
-app/views/matters/view.ctp
-app/views/matters/view_resume.ctp
-app/views/subjects/add_full_subject_insert.ctp
-app/views/subjects/add_subject_insert.ctp
-app/views/subjects/con_registry_insert.ctp
-app/views/subjects/pregnant_both.ctp
-app/views/subjects/pregnant_insert.ctp
-app/views/subjects/subject_form_both.ctp
-
-# Upload files
-app/webroot/files/uploads/*

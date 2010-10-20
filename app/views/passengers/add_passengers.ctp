@@ -2,22 +2,25 @@
 	
 $out[] = $this->MyForm->create('Passenger', array('class' => 'ajax_formx'));
 $passangers = null;
-//d($passengersIds);
 
-$content[] = $this->MyForm->input('Extra.amount', array('type' => 'hidden', 'value' => $amount));
+$content[] = $this->MyForm->input('Extra.amount',
+	array(
+		'type' 	=> 'hidden',
+		'value' => $charter_data['amount']
+	)
+);
 
-for ($i = 0; $i < $amount; $i++) {
+for ($i = 0; $i < $charter_data['amount']; $i++) {
 	$content[] = $this->MyHtml->tag('h3', __('Passenger', true) . ' ' . ($i + 1));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.first_name', array('type' => 'text'));
-	$content[] = $this->MyForm->input('Passenger.' . $i . '.charter_id', array('type' => 'hidden', 'value' => $charterId));
+	$content[] = $this->MyForm->input('Passenger.' . $i . '.charter_id', array('type' => 'hidden', 'value' => $charter_data['charter_id']));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.user_id', array('type' => 'hidden', 'value' => User::get('/User/id')));
-	$content[] = $this->MyForm->input('Passenger.' . $i . '.type', array('type' => 'hidden', 'value' => $charterType));
+	$content[] = $this->MyForm->input('Passenger.' . $i . '.type', array('type' => 'hidden', 'value' => $charter_data['type']));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.first_last_name', array('type' => 'text'));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.birthday', array('type' => 'text', 'class' => 'datepicker'));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.dni', array('type' => 'text'));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.email', array('type' => 'text'));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.phone', array('type' => 'text'));
-	//$content[] = $this->MyForm->input('Passenger.' . $i . '.state', array('type' => 'radio', 'default' => 'unauthorized'));
 	$passangers[] = $this->MyHtml->tag('div', $content, array('class' => 'passanger'));
 	$content = null;
 }

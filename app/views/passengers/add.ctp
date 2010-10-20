@@ -6,7 +6,7 @@ $content[] = $this->MyForm->input(
 	'charter_id'
 );
 $content[] = $this->MyForm->input('type');
-$content[] = $this->MyForm->input('amount', array('label' => 'Passengers'));
+$content[] = $this->MyForm->input('amount', array('label' => 'Passengers', 'default' => '2'));
 
 //$out[] = $this->MyHtml->link('Add 3 passengers', array('controller' => false), array('id' => 'add_passenger'));
 
