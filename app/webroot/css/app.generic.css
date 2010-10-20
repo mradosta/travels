@@ -1,0 +1,934 @@
+div {
+	width:auto;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.half {
+    width:50%;
+}
+
+.left {
+	width:50%;
+	float:left;
+}
+
+.right {
+	width:50%;
+	float:right;
+}
+
+.hidden {
+	display:none;
+}
+
+.bg_orange {
+	background-color:#f6ba77 !important;
+        color:#fff !important;
+}
+
+.bg_red {
+	background-color:#dd5f5d !important;
+        color:#fff !important;
+}
+
+.bg_green {
+	background-color:#99b554 !important;
+        color:#fff !important;
+}
+
+.warning {
+	color: #f00;
+	text-transform:uppercase;
+	font-weight:bold;
+	text-align:center;
+	display:block;
+	margin:10px 0;
+}
+
+#datepicker td.full span, #datepicker td.full a {
+	border-color:#DD5F5D;
+        background:#f8b6b5;
+
+}
+
+#datepicker td.with_dates a, #datepicker td.with_dates span {
+	border-color:#5886B3;
+        background:#d1dff2;
+}
+
+
+/************************************************************************************************************
+*																											*
+*													HEADER													*
+*																											*
+/***********************************************************************************************************/
+#header {
+	height:109px;
+	width: 992px;
+	background-repeat: repeat-x;
+	margin:3px;
+	-moz-border-radius:14px;
+	-webkit-border-radius:14px;
+}
+
+#logo {
+	float:left;
+	margin-left:14px;
+	margin-top:8px;
+}
+
+#info {
+	width:307px;
+	height:109px;
+	float:right;
+	-moz-border-radius:0px 14px 14px 0px;
+	-webkit-border-radius:0px 14px 14px 0px;
+}
+
+#login_date {
+	width:307px;
+	height:26px;
+	-moz-border-radius:0px 14px 0px 0px;
+	-webkit-border-radius:0px 14px 0px 0px;
+	font-weight:bold;
+	line-height:26px;
+	font-size:12px;
+}
+
+#login_date .left {
+	float:left;
+	margin-left:8px;
+}
+
+#login_date .right {
+	float:right;
+	margin-right:19px;
+	width:auto;
+}
+
+#login_info {
+	width:288px;
+	height:47px;
+	color:#fff;
+	text-align:right;
+	padding-right:19px;
+}
+
+#login_info .top {
+	font-weight:bold;
+	height:23px;
+	line-height:23px;
+}
+
+#login_info .bottom {
+	font-style: italic;
+	height:23px;
+	line-height:23px;
+	font-size:11px;
+}
+
+#login_actions .left {
+	float:left;
+	margin-left:8px;
+	margin-top:7px;
+}
+
+#login_actions .right {
+	float:right;
+	margin-right:19px;
+	margin-top:7px;
+	width:auto;
+}
+
+#login_actions .exit {
+	width:83px;
+	line-height:20px;
+	height:24px;
+}
+
+#login_actions {
+	width:307px;
+	height:36px;
+	-moz-border-radius:0px 0px 14px 0px;
+	-webkit-border-radius:0px 0px 14px 0px;
+}
+
+#language {
+	height:21px;
+	width:90px;
+}
+
+/************************************************************************************************************
+*																											*
+*													STRUCTURE												*
+*																											*
+/***********************************************************************************************************/
+#content_ext{
+	height:516px;
+	weight:992px;
+	margin:3px;
+	padding-top:7px;
+	-moz-border-radius:14px;
+	-webkit-border-radius:14px;
+}
+
+#content {
+	height:494px;
+	width:955px;
+	margin:0px auto;
+	-moz-border-radius:14px 14px 0px 0px;
+	-webkit-border-radius:14px 14px 0px 0px;
+}
+/************************************************************************************************************
+*																											*
+*													ACTIONS BAR													*
+*																											*
+/***********************************************************************************************************/
+
+#actions_bar a {
+    color:#fff;
+    text-decoration: none;
+}
+/************************************************************************************************************
+*																											*
+*													MENU													*
+*																											*
+/***********************************************************************************************************/
+#tabs {
+	height:21px;
+	-moz-border-radius:8px 8px 0px 0px;
+	-webkit-border-radius:8px 8px 0px 0px;
+}
+
+#tabs ul {
+	list-style:none;
+}
+#tabs li {
+	display:block;
+	float:left;
+	width:137px;
+	height:21px;
+	line-height:21px;
+	font-size:11px;
+	font-weight:bold;
+	text-transform: uppercase;
+	text-align:center;
+	cursor:pointer;
+	margin-right:3px;
+	-moz-border-radius:14px 14px 0px 0px;
+	-webkit-border-radius:14px 14px 0px 0px;
+}
+#tabs li a {
+	text-decoration:none;
+}
+
+/************************************************************************************************************
+*																											*
+*													CONTENT													*
+*																											*
+/***********************************************************************************************************/
+
+h1.title {
+	height:20px;
+	width:802px;
+	line-height:20px;
+	text-transform:uppercase;
+	font-size:12px;
+	font-weight:bold;
+	margin:12px 0px 0px 12px;
+	padding-left:7px;
+	float:left;
+}
+
+#actions  {
+	float:right;
+	position:relative;
+	margin-top:9px;
+	margin-right:8px;
+	margin-bottom:16px;
+	z-index:1000;
+}
+
+#actions  ul {
+	display:none;
+	float:right;	
+}
+
+#actions  ul li {
+	width:150px;
+	height:25px;
+	list-style:none;
+}
+
+#actions  ul li a {
+	padding:5px;
+	text-decoration:none;
+}
+
+/************************************************************************************************************
+*																											*
+*													FILTERS													*
+*																											*
+/***********************************************************************************************************/
+
+#filters {
+	height:89px;
+	width:933px;
+	clear:both;
+	margin:0 auto;
+}
+
+#filters .block {
+	float:left;
+	height:89px;
+}
+
+#filters .block .top {
+	height:26px;
+	margin-top:13px;
+	margin-bottom:8px;
+}
+
+#filters .block .top img {
+	margin-top:3px;
+}
+
+#filters .block .bottom {}
+
+#filters .action {
+	float:right;
+	width:280px;
+}
+
+#filters .button{
+	width:113px;
+	margin-left:4px;
+}
+
+#filters div.input {
+	width:300px;
+	margin-left: 15px;
+	float:left;
+}
+
+.ui-dialog #filters div.input {
+    width:auto;
+}
+
+#filters select, #filters input {
+	width:200px;
+	margin:15px 0 0 4px;
+}
+
+/************************************************************************************************************
+*																											*
+*													GRID													*
+*																											*
+/***********************************************************************************************************/
+
+#grid {
+	width:941px;
+	height:271px;
+	margin:15px auto;
+	overflow-y:auto;
+	clear:both;
+}
+
+#grid table {
+	width:100%;
+	border-spacing:0px;
+	position:relative;
+}
+
+#grid thead {
+	height:25px;
+	width:941px;
+}
+
+#grid thead tr{
+	height:25px;
+
+	font-size:11px;
+	font-weight:bold;
+}
+
+#grid thead tr th:last-child {
+	border-right: 0px;
+}
+
+#grid tbody tr {
+	height:30px;
+	font-weight:bold;
+	font-size:12px;
+	text-align:center;
+}
+
+#grid tbody tr:nth-child(2n+1) {
+	height:32px;
+}
+
+#grid tbody tr td:last-child {
+	border-right:0px;
+}
+
+/************************************************************************************************************
+*																											*
+*													FOOTER													*
+*																											*
+/***********************************************************************************************************/
+
+#paginator #results {
+	float:left;
+	margin-left:12px;
+	font-size:11px;
+}
+
+#paginator #results .current {
+	font-weight:bold;
+}
+
+#paginator #results .total {
+	font-weight:bold;
+}
+
+#paginator #nav {
+	float:right;
+	margin-right:12px;
+}
+
+#paginator #nav span:first-child {
+	margin-right:10px;
+}
+
+#paginator #nav a {
+	text-decoration:none;
+	font-size:11px;
+	font-weight:bold;
+}
+
+#paginator #nav a:hover {
+	text-decoration:underline;
+}
+
+#paginator #nav .current {
+	width:12px;
+	text-align:center;
+	display:inline-block;
+}
+
+
+
+
+/** MENU */
+#menu {
+	width: 100%;
+}
+
+.button + .label {
+    margin-top:60px;
+}
+
+.label {
+	float: left;
+	width: 200px;
+	border: 1px solid blue;
+	text-align: center;
+}
+
+
+
+.options {
+	background: blue;
+	z-index: 10;
+}
+
+.options div {
+	width: 100%;
+}
+
+
+div.index {
+	float:left;
+}
+
+/** CALENDAR */
+div.ui-datepicker {
+	float: left;
+}
+
+div.calendars {
+	float: left;
+}
+div.calendars table {
+	width: 550px;
+}
+
+
+div#php_calendar {
+	float:left;
+	width: 240px;
+}
+
+div#php_calendar h1 {
+	width: 240px;
+	text-align: center;
+}
+
+/************************************************************************************************************
+*																											*
+*													MODALS													*
+*																											*
+/***********************************************************************************************************/
+
+.ui-dialog #filters {
+	width:auto;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    background:url("app.user.images/separator.png") repeat-x scroll center bottom #FFFFFF;
+}
+
+
+.ui-dialog .ui-widget-header {
+	border:0;
+	font-weight:bold;
+	height: 35px;
+}
+
+.ui-dialog .ui-dialog-title {
+	padding-top:4px;
+	font-size:15px;
+	font-weight:bold;
+}
+
+.ui-dialog .ui-widget-header .ui-icon-closethick {
+	width:30px;
+	height:30px;
+	margin-left:-7px;
+	margin-top:-7px;
+}
+
+.ui-dialog  #container {
+	width:520px;
+	height:460px;
+	margin:0 auto;
+	font-family:Arial;
+	font-size:12px;
+	1margin-top:30px;
+	margin-top:10px;
+	padding:20px;
+	overflow-y:scroll;
+}
+
+.ui-dialog  #actions {
+	margin-right:20px;
+}
+
+.ui-dialog #actions + form {
+	clear:both;
+}
+
+.ui-dialog #actions a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.ui-dialog .ui-dialog-content {
+	overflow:hidden;
+}
+
+.ui-dialog .ui-dialog-content div.input {
+	width:400px;
+	margin:0 0 20px 60px;
+}
+
+.ui-dialog .ui-dialog-content label {
+	width:100px;
+	margin:0 10px 3px 0;
+	text-align:right;
+	height:25px;
+}
+
+.ui-dialog .ui-dialog-content input, .ui-dialog .ui-dialog-content select {
+	margin:3px 0 0 0;
+	border-style:solid;
+	border-width:2px 1px 1px 2px;
+	font-size:12px;
+	font-weight:bold;
+	height:27px;
+	padding-left:10px;
+	width:269px;
+        margin-bottom:5px;
+}
+
+.ui-dialog .ui-dialog-content .aux_card input {
+    width:246px;
+}
+
+.ui-dialog .ui-dialog-content .aux_card a {
+    width:22px;
+    text-align:right;
+    display: inline-block;
+}
+
+.ui-dialog .ui-dialog-content textarea {
+    width:269px;
+    border-style:solid;
+    border-width:2px 1px 1px 2px;
+    margin:3px 0 0 0;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.ui-dialog .ui-dialog-content .button + .label {
+    margin-top:8px;
+    clear:both;
+}
+
+.ui-dialog fieldset .title {
+    height:26px;
+    line-height:26px;
+    border-bottom:1px solid #4d759f;
+    font-size:12px;
+    font-weight: bold;
+    color:#6c6c6c;
+    padding-left:30px;
+    margin:0 0 10px 0;
+}
+
+.ui-datepicker-trigger {
+    vertical-align: middle;
+    margin-left:5px;
+}
+
+.ui-dialog .textarea label {
+    vertical-align: top;
+    margin-top:5px;
+}
+
+.ui-dialog .modal_width_actions {
+    clear:both;
+}
+
+.ui-dialog .radio legend, .ui-dialog .checkbox legend {
+    border-bottom: 1px solid;
+    font-weight:bold;
+    height:25px;
+    line-height:25px;
+    padding-left:5px;
+    text-align:left;
+    vertical-align:middle;
+    width:100%;
+}
+
+.ui-dialog .radio {
+    border:3px solid;
+    padding:0 5px 5px 0;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+.ui-dialog .radio fieldset {
+    text-align:right;
+}
+
+.ui-dialog .radio fieldset, .ui-dialog .checkboxgroup fieldset {
+    border:0 none;
+}
+
+.ui-dialog .checkboxgroup input, .ui-dialog .radio input {
+    float:right;
+    margin-right:250px;
+    text-align:left;
+    vertical-align:middle;
+    width:auto;
+}
+
+.ui-dialog .checkboxgroup label, .ui-dialog .radio fieldset label {
+    height:auto;
+    line-height:25px;
+    margin-right:13px;
+    margin-top:5px;
+    max-width:150px;
+}
+
+.ui-dialog .radio fieldset label, .ui-dialog .checkgroup fieldset label {
+    float:right;
+}
+
+.ui-dialog .ui-dialog-content label {
+    width:auto;
+}
+
+
+/************************************************************************************************************
+*																											*
+*											MODALS FOOTER													*
+*																											*
+/***********************************************************************************************************/
+
+.ui-dialog .ui-dialog-content #footer {
+	width:560px;
+	height:59px;
+}
+
+.ui-dialog .ui-dialog-content #footer .action {
+    float:right;
+    margin-top:15px;
+    margin-right:20px;
+    cursor:pointer;
+    width:105px;
+    height:34px;
+    text-align:left;
+    line-height:34px;
+    padding-left:10px;
+    font-weight:bold;
+	border:0;
+}
+
+.ui-dialog .navigation {
+    width:100%;
+    clear:both;
+    text-align:right;
+}
+
+.ui-dialog .navigation a, .ui-dialog .navigation span {
+    text-decoration:none;
+    color:#fff;
+    height:25px;
+    display:inline-block;
+    font-size:11px;
+    font-weight:bold;
+    line-height:22px;
+}
+
+.ui-dialog .navigation span {
+    color: #bbb;
+}
+
+.ui-dialog .navigation .next {
+    margin-right:27px;     
+    text-align:left;
+    padding-left:9px;
+    width:41px;
+}
+
+.ui-dialog .navigation .prev {
+    margin-right:10px;
+    text-align:left;
+    padding-left:19px;
+    width:31px;
+}
+
+/****************************************
+*				FILE UPLOADER			*
+****************************************/
+.file {
+	width:450px;
+	text-align:right;
+	height:50px;
+	margin:0px auto 20px auto;
+}
+
+.file-uploader {
+	display:inline-block;
+	margin-left:3px;
+	width:46px;
+	text-align:left;
+	vertical-align:middle;
+	height:35px;
+}
+
+.file:after {
+	clear:both;
+}
+
+.file .input input[type="text"] {
+	width:246px;
+}
+
+.qq-uploader {
+	width:30px;
+	display:inline-block;
+}
+
+.qq-upload-button {
+	width:30px;
+	display:inline-block;
+	height:25px;
+	text-align:center;
+	vertical-align:middle;
+	cursor:pointer;
+	margin-top:3px;
+}
+.qq-upload-button-hover {cursor:pointer;}
+
+
+.qq-upload-button input {
+	width:30px !important;
+	cursor:pointer;
+}
+
+.qq-upload-button > img {
+	margin-top:5px;
+}
+
+.qq-upload-cancel {
+	width:16px;
+	height:25px;
+	display:inline-block;
+	vertical-align:middle;
+	margin-top:3px;
+}
+.qq-upload-cancel > img {
+	margin-top:5px;
+}
+
+.before {
+	display:block;
+	width:450px;
+	text-align:left;
+}
+.after_container {
+	width:450px;
+	text-align:right;
+}
+.after{
+	display:block;
+	width:266px;
+	margin-left:185px;
+	text-align:left;
+}
+
+.explanation {
+	font-size: 11px;
+}
+
+#QuerySearchForm  div.input , .ui-dialog .ui-dialog-content fieldset div.input {
+	margin-left:0px;
+}
+
+#QuerySearchForm  fieldset .title {
+	background:none;
+	padding-left:10px;
+}
+
+.no_title  table {
+	font-weight:normal;
+	clear:both;
+}
+
+.preview table {
+	background-image: url("img/preview.jpg");
+        background-position: 50px -30px;
+}
+
+.no_title tr:first-child {
+	border-top:1px solid;
+}
+
+.preview tr td{
+	background:none !important;
+}
+
+.ui-dialog .input .datepicker {
+    width:244px;
+}
+.ui-dialog select[multiple] {
+    max-height: 100px;
+    height: auto;
+}
+
+.ui-dialog .checkboxgroup fieldset {
+    border:0 none;
+}
+
+.ui-dialog .checkboxgroup fieldset .title {
+    background:none repeat scroll 0 0 transparent;
+    margin-bottom:0;
+    padding-left:10px;
+}
+
+.ui-dialog .checkboxgroup .content {
+    width:100% !important;
+}
+
+.ui-dialog .checkboxgroup .checkbox {
+    border-left:1px solid;
+    border-right:1px solid;
+    clear:both;
+    height:27px;
+    text-align:left;
+    width:100%;
+}
+
+
+.ui-dialog .checkboxgroup .checkbox:last-child {
+    border-bottom:1px solid;
+}
+
+.ui-dialog .checkboxgroup .checkbox input {
+    float:left;
+    margin:0;
+    text-align:center;
+    width:67px;
+}
+
+.ui-dialog .checkboxgroup .checkbox label {
+    background:none repeat scroll 0 0 transparent;
+    border-width:0px 0px 0px 1px;
+    color:#7D7D7D;
+    font-size:12px;
+    font-weight:bold;
+    height:100%;
+    margin-bottom:0;
+    margin-top:0;
+    text-transform:none;
+}
+
+.ui-dialog .ui-dialog-content #footer #save {
+    background:url('app.user.images/save.png');
+}
+
+.ui-dialog .ui-dialog-content #footer #next {
+    background:url('app.user.images/save.png');
+}
+
+.ui-dialog .ui-dialog-content #footer #prev {
+    background:url('app.user.images/btn_prev.png');
+}
+
+.ui-dialog .ui-dialog-content #footer #cancel {
+    background-image:url('app.user.images/cancel.png');
+}
+
+.ui-dialog .treeview ul {
+	padding-left:10px;
+        list-style-type: none;
+}
+
+.ui-dialog .treeview > ul > li{
+    font-weight: bold;
+    font-size:14px;
+}
+
+.ui-dialog .treeview > ul > li > ul > li{
+    margin-bottom:15px;
+}
+
+.ui-dialog .treeview > ul > li ul {
+    font-weight:normal;
+    font-size:12px;
+}
+
+table:not(.datepicker) img {
+    padding: 0 5px;
+    max-height: 13px;
+}
+
+.aux_card img {
+    max-height:13px;
+}
