@@ -12,7 +12,8 @@
 			$data['Ocupation']['id']
 		),
 		array(
-			'title' => __('Delete ocupation', true)
+			'title' => __('Delete ocupation', true),
+			'class' => 'cancel'
 		),
 		__('Are your sure to delete the Ocupation?', true)
 	);

@@ -12,7 +12,8 @@
 			$data['Destination']['id']
 		),
 		array(
-			'title' => __('Delete destination', true)
+			'title' => __('Delete destination', true),
+			'class' => 'cancel'
 		),
 		__('Are your sure to delete the Destination?', true)
 	);

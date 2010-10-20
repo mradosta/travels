@@ -12,7 +12,7 @@ $links[] = $this->MyHtml->link(
 		'controller'	=> 'destinations',
 		'action'		=> 'add',
 	),
-	array('class' => '', 'title' => __('Add destination', true))
+	array('class' => 'cancel', 'title' => __('Add destination', true))
 );
 echo $this->element('actions', array('links' => $links));
 
