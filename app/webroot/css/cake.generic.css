@@ -378,7 +378,7 @@ form .submit input[type=submit]:hover, .cancel:hover{
 .cancel{
 	display: block;
 	float: left;
-	padding:3px;
+	padding:6px !important;
 	margin-left: 10px;
 	
 }
@@ -386,6 +386,7 @@ form .submit input[type=submit]:hover, .cancel:hover{
 	text-transform: capitalize;
 	text-decoration: none !important;
 	font-weight: normal !important;
+	color: #333 !important;
 }
 
 /** Notices and Errors **/
