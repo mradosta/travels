@@ -2,7 +2,20 @@
 class UsersController extends AppController {
 
 	var $paginate = array('order' => array('User.username'));
-	
+
+    /**
+     *  The AuthComponent provides the needed functionality
+     *  for login, so you can leave this function blank.
+     */
+    function login() {
+		//Security::setHash('md5');
+    }
+
+
+    function logout() {
+        $this->redirect($this->Auth->logout());
+    }
+
 
 /**
  * return json array of available replacement for a user id.
@@ -355,64 +368,6 @@ class UsersController extends AppController {
 	}
 
 
-	function login() {
-
-		if (!empty($this->data)) {
-
-			if ($user = $this->User->validate($this->data)) {
-				$user['User']['last_login'] = $this->User->updateLastLogin($user['User']['id']);
-				$this->Session->write('User', $user);
-
-				if ($user['User']['type'] == 'admin') {
-					$prefixRoute = 'admin';
-					$redirect = array(
-						'admin'			=> true,
-						'controller'	=> 'charters',
-					);
-				} else {
-					$prefixRoute = 'user';
-					$redirect = array(
-						'user'			=> true,
-						'controller'	=> 'charters',
-					);
-				}
-
-				/** If first time the users logins, must show code table */
-				if (empty($user['User']['last_login'])) {
-					$this->redirect(
-						array(
-							$prefixRoute 	=> true,
-							'controller'	=> 'users',
-							'action'		=> 'show_code_table',
-						)
-					);
-				} else {
-					$this->redirect($redirect);
-				}
-
-			} else {
-				$this->Session->setFlash(
-					__('The email/password/coordinates are not correct. Please, try again.', true),
-					'flash_success'
-				);
-				$this->redirect(array(
-					'controller'	=> 'users',
-					'action'		=> 'login',
-				));
-			}
-		} else {
-			$this->set('coordinates', $this->User->get_random_coordinates());
-		}
-
-		$this->layout = 'login';
-	}
-
-	
-    function logout() {
-		$this->Session->delete('User');
-		$this->redirect('login');
-	}
-
 
 	function admin_index() {
 
@@ -420,32 +375,6 @@ class UsersController extends AppController {
 
 	}
 
-
-
-/**
- * Updates users code table.
- *
- * @return void.
- */
-	function admin_generate_codes($id) {
-
-		$save['id'] = $id;
-		$save['codes'] = serialize($this->User->generate_codes());
-
-		if ($this->User->save(array('User' => $save))) {
-			$this->Session->setFlash(
-				__('User code table have been updated', true),
-				'flash_success'
-			);
-		} else {
-			$this->Session->setFlash(
-				__('There was a problem updating user code table', true),
-				'flash_error'
-			);
-		}
-
-		$this->redirect(array('action' => 'index'));
-	}
 
 
 
@@ -484,61 +413,6 @@ class UsersController extends AppController {
 		}
 	}
 
-	function admin_get_user_type($officeId = null) {
-
-		$office = $this->User->Office->findById($officeId);
-		$users = getConf(
-			'/App/Offices/Office[type=' . strtolower($office['Office']['type']) . ']/Users/User/.'
-		);
-		$types = null;
-		
-		if (!isset($users[1])) {
-			$users = array($users);
-		}
-		
-		foreach ($users as $user) {
-			$types[] = $user['type'];
-		}
-		$this->set('data', json_encode($types));
-		$this->render('/elements/only_text', 'ajax');
-	}
-
-	function admin_get_user_allowed_lists($userId = null, $mode = 'json') {
-		$user = $this->User->findById($userId);
-		$lists = null;
-		$lists = unserialize($user['User']['lists']);
-		if ($mode == 'json') {
-			$this->set('data', json_encode($lists));
-			$this->render('/elements/only_text', 'ajax');
-		} else {
-			return $lists;
-		}
-	}
-
-	function get_lists() {
-		$offices = getConf('/App/Offices/Office/.');
-		$reports = null;
-		foreach ($offices as $office) {
-			foreach ($office['Reports']['Report'] as $report) {
-
-				$reports[$report['name']] = $report['label'];
-			}
-		}
-		$this->set('reports', $reports);
-	}
-
-	function get_stats() {
-		$offices = getConf('/App/Offices/Office/.');
-		$reports = null;
-		foreach ($offices as $office) {
-			foreach ($office['Reports']['Report'] as $report) {
-				if ($report['type'] == 'stat') {
-					$reports[$report['name']] = $report['label'];
-				}
-			}
-		}
-		$this->set('reports', $reports);
-	}
 
 /**
  * Read
