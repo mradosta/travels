@@ -29,17 +29,6 @@
 		)
 	);
 	$links[] = $this->MyHtml->link(
-		__('Generate Code Table', true),
-		array(
-			'controller' 	=> 'users', 
-			'action' 		=> 'generate_codes',
-			$data['User']['id']
-		),
-		array(
-			'title' => __('Updates user code table', true)
-		)
-	);
-	$links[] = $this->MyHtml->link(
 		__('Delete', true),
 		array(
 			'controller' 	=> 'users', 
@@ -70,54 +59,8 @@
 	$out[] = $this->MyHtml->tag('span', __('Reset code', true), array('class' => 'label'));
 	$out[] = $this->MyHtml->tag('span', ' ', array('class' => 'data'));
 
-
 	$out[] = $this->MyHtml->tag('span', __('Web app access', true), array('class' => 'label'));
 	$out[] = $this->MyHtml->tag('span', ' ', array('class' => 'data'));
-
-	$out[] = $this->MyHtml->tag('span', __('Office', true), array('class' => 'label'));
-	$out[] = $this->MyHtml->tag('span', $data['Office']['name'], array('class' => 'data'));
-
-	$out[] = $this->MyHtml->tag('span', __('State', true), array('class' => 'label'));
-	$out[] = $this->MyHtml->tag(
-		'span',
-		$data['User']['state'],
-		array('class' => 'data')
-	);
-
-	$out[] = $this->MyHtml->tag('span', __('Supervisor', true), array('class' => 'label'));
-	$out[] = $this->MyHtml->tag(
-		'span',
-		(($data['User']['supervisor'] == 1) ? __('Yes', true) : __('No', true)),
-		array('class' => 'data')
-	);
-
-	$out[] = $this->MyHtml->tag(
-		'span',
-		__('Explotation data app access', true),
-		array('class' => 'label')
-	);
-	$out[] = $this->MyHtml->tag(
-		'span',
-		(($data['User']['exploitation'] == 1) ? __('Yes', true) : __('No', true)),
-		array('class' => 'data')
-	);
-
-	$out[] = $this->MyHtml->tag('span', __('Node', true), array('class' => 'label'));
-	$out[] = $this->MyHtml->tag('span', $data['Zone']['name'], array('class' => 'data'));
-
-	$out[] = $this->MyHtml->tag('span', __('Lists', true), array('class' => 'label'));
-	$out[] = $this->MyHtml->tag('span',
-		$this->MyForm->input(
-			'lists',
-			array(
-				'multiple'	=> 'checkbox',
-				'options'	=> $reports,
-				'div'       => array('class' => 'lists'),
-				'label'		=> false
-			)
-		),
-		array('class' => 'data')
-	);
 
 	/*$out[] = $this->MyHtml->tag('span', __('Stats', true), array('class' => 'label'));
 	$out[] = $this->MyHtml->tag('span',

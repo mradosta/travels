@@ -10,13 +10,11 @@ class UsersController extends AppController {
 			if ($user = $this->User->validate($this->data)) {
 
 				if ($user['User']['type'] == 'admin') {
-					$prefixRoute = 'admin';
 					$redirect = array(
 						'admin'			=> true,
 						'controller'	=> 'charters',
 					);
 				} else {
-					$prefixRoute = '';
 					$redirect = array(
 						'controller'	=> 'passengers',
 					);
@@ -27,8 +25,8 @@ class UsersController extends AppController {
 				$this->redirect($redirect);
 			} else {
 				$this->Session->setFlash(
-					__('The email/password are not correct. Please, try again.', true),
-					'flash_success'
+					__('The username/password are not correct. Please, try again.', true),
+					'flash_error'
 				);
 				$this->redirect(array(
 					'controller'	=> 'users',
@@ -36,8 +34,6 @@ class UsersController extends AppController {
 				));
 			}
 		}
-
-		//$this->layout = 'login';
 	}
 
 
@@ -52,7 +48,9 @@ class UsersController extends AppController {
 /**
 	TODO: Validar longitud del password y caracteres obligatorios.
 */
-	private function __change_password($id = null) {
+	private function change_password() {
+
+		$id = User::get('/User/id');
 
 		if (!empty($this->data)) {
 
@@ -105,7 +103,7 @@ class UsersController extends AppController {
 					}
 				} else {
 					$this->Session->setFlash(
-						__('The new password and the retype fields must be equals.', true),
+						__('The new password and the retyped are not equals.', true),
 						'flash_error'
 					);
 					
@@ -116,24 +114,13 @@ class UsersController extends AppController {
 		} else {
 			$this->set('id', $id);
 		}
-		$this->render('__change_password');
-	}
-
-	function admin_change_password($id = null) {
-		$this->__change_password($id);
-	}
-
-	function change_password() {
-		$this->__change_password(User::get('/User/id'));
 	}
 
 
 
 
 	function admin_index() {
-
 		$this->set('data', $this->paginate());
-
 	}
 
 
@@ -166,7 +153,6 @@ class UsersController extends AppController {
 		} else {
 			if (!empty($id)) {
 				$this->set('id', $id);
-				//$this->set('attributes', getConf('/App/Cards/Card[name=users]/Attributes/Attribute/.'));
 				$user = $this->User->read(null, $id);
 				$this->data = $user;
 			}

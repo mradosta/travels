@@ -52,7 +52,6 @@
 		$data['Charter']['description']
 	);
 
-
 	$charter[] = $this->MyHtml->tag('dt',
 		__('Weekly capacity', true)
 	);
@@ -63,7 +62,7 @@
 
 
 	$charter[] = $this->MyHtml->tag('dt',
-		__('Fortnightly capacity ', true)
+		__('Fortnightly capacity', true)
 	);
 
 	$charter[] = $this->MyHtml->tag('dd',
@@ -72,7 +71,7 @@
 
 
 	$charter[] = $this->MyHtml->tag('dt',
-		__('Reserved', true)
+		__('Reserved capacity', true)
 	);
 
 	$charter[] = $this->MyHtml->tag('dd',
@@ -81,7 +80,7 @@
 
 
 	$charter[] = $this->MyHtml->tag('dt',
-		__('Total', true)
+		__('Total capacity', true)
 	);
 
 	$charter[] = $this->MyHtml->tag('dd',
@@ -114,6 +113,7 @@
 	$header[] = __('First Last Name', true);
 	$header[] = __('Type', true);
 	$header[] = __('State', true);
+	$header[] = __('Agency', true);
 
 
 	$head = $this->MyHtml->tag('thead', $this->MyHtml->tableHeaders($header));
@@ -165,6 +165,7 @@
 		$td[] = $this->MyHtml->tag('td', $record['first_last_name']);
 		$td[] = $this->MyHtml->tag('td', $record['type']);
 		$td[] = $this->MyHtml->tag('td', $state);
+		$td[] = $this->MyHtml->tag('td', '');
 
 		$body[] = $this->MyHtml->tag('tr', $td);
 

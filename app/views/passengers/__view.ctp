@@ -72,11 +72,11 @@
 
 
 	$charter[] = $this->MyHtml->tag('dt',
-		__('First Last Name', true)
+		__('Last Name', true)
 	);
 
 	$charter[] = $this->MyHtml->tag('dd',
-		$data['Passenger']['first_last_name']
+		$data['Passenger']['last_name']
 	);
 
 

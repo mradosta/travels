@@ -37,7 +37,10 @@ $(document).ready(function($) {
 		dateFormat: 'yy-mm-dd',
 		showOn: 'button',
 		buttonImage: 'images/calendar.gif',
-		buttonImageOnly: true
+		buttonImageOnly: true,
+		changeMonth: true,
+		changeYear: true
+
 	});
 
 

@@ -10,7 +10,7 @@
 
 		echo $this->Html->css('cake.generic');
 		echo $this->Html->css('smoothness/jquery-ui-1.8.1.custom');
-		
+
 		$jsFiles[] = 'jquery/jquery-1.4.3.min';
 		$jsFiles[] = 'jquery/jquery-ui-1.8.1.custom';
 		$jsFiles[] = 'default';
@@ -27,7 +27,7 @@
 				<?php echo $this->MyHtml->link(__('Destinations', true), array('controller' => 'destinations', 'action' => 'index')); ?>
 				<?php echo $this->MyHtml->link(__('Passengers', true), array('controller' => 'passengers', 'action' => 'index')); ?>
 				<?php echo $this->MyHtml->link(__('Users', true), array('controller' => 'users', 'action' => 'index')); ?>
-				<?php echo $this->MyHtml->link(__('Logout', true), array('admin' => false, 'controller' => 'users', 'action' => 'logout')); ?>
+				<?php echo $this->MyHtml->link(__('Logout', true), array('admin' => false, 'controller' => 'users', 'action' => 'logout', 'admin' => false)); ?>
 			</h1>
 		</div>
 		<div id="content">
@@ -43,12 +43,6 @@
 
 		</div>
 		<div id="footer">
-			<?php //echo $this->Html->link(
-//					$this->Html->image('cake.power.gif', array('alt'=> __('CakePHP: the rapid development php framework', true), 'border' => '0')),
-//					'http://www.cakephp.org/',
-//					array('target' => '_blank', 'escape' => false)
-//				);
-			?>
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>

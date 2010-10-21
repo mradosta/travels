@@ -4,9 +4,6 @@ class User extends AppModel {
 
 	protected function _initialitation() {
 
-		//$this->options = array(0 => __('No', true), 1 => __('Yes', true));
-
-
         $this->validate = array(
 			'username' => array(
 				'notempty' => array(
@@ -61,24 +58,6 @@ class User extends AppModel {
 
 
 
-/**
-* Callback.
-*
-*		1) When a new user is created, generates random codes.
-*
-* @return array. i pos and j pos.
-*/
-    function xbeforeSave($options = array()) {
-
-            if (empty($this->id)) {
-				$this->data[$this->name]['password'] = md5($this->data[$this->name]['password']);
-				$this->data[$this->name]['codes'] = serialize($this->generate_codes());
-				$this->data[$this->name]['last_login'] = null;
-            }
-
-            return parent::beforeSave($options);
-    }
-
 
 /**
 * Validates a users.
@@ -87,20 +66,14 @@ class User extends AppModel {
 */
     function validate($data) {
 
-			/** TODO: Remove hardcoded */
             $user = $this->find('first',
 				array(
 					'conditions'	=> array(
-						//'User.email'	=> 'mradosta@pragmatia.com'
 						'User.username'	=> $data['User']['username'],
 						'User.password'	=> md5($data['User']['password']),
-						//'User.state'	=> 'active'
 					),
 				)
             );
-			//$user['User']['environment'] = getConf('/App/environment');
-			//$user['User']['show_closed_matters'] = getConf('/App/show_closed_matters');
-			//return $user;
 
             if (!empty($user)) {
 				return $user;

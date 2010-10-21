@@ -15,7 +15,11 @@ class PassengersController extends AppController {
 
 		$this->set(
 			'types',
-			array('weekly' => 'weekly', 'fortnightly' => 'fortnightly', 'reserved' => 'reserved')
+			array(
+				'weekly' => __('weekly', true),
+				'fortnightly' => __('fortnightly', true),
+				'reserved' => __('reserved', true)
+			)
 		);
 
 		$this->set('states', array('authorized' => 'authorized', 'unauthorized' => 'unauthorized'));
@@ -206,9 +210,14 @@ class PassengersController extends AppController {
 
 	function admin_index($id = null) {
 		$users = $this->Passenger->User->find('list',
-			array('fields' => array('User.id', 'User.full_name'))
+			array('fields' => array('User.id', 'User.full_name'), 'conditions' => array('User.type !=' => 'admin'))
 		);
 		$this->set('users', $users);
+
+		$charters = $this->Passenger->Charter->find('list',
+			array('fields' => array('Charter.id', 'Charter.date', 'Charter.description'))
+		);
+		$this->set('charters', $charters);
 
 		$this->set('id', $id);
 
@@ -223,6 +232,7 @@ class PassengersController extends AppController {
 		if (!empty($userId)) {
 			$this->paginate['conditions']['Passenger.user_id'] = $userId;
 		}
+		$this->paginate['order'] = array('Charter.date' => 'asc');
 		$this->set('data', $this->paginate());
 		if (!empty($userId) && !$admin) {
 			$this->render('index');

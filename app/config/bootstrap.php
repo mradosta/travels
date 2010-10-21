@@ -53,7 +53,7 @@
 /** Define access constants */
 //define('EMAIL', 'cecilia.giordano@triadtours.com');
 define('EMAIL', 'ngiovagnoli@pragmatia.com.ar');
-define('BASE_URL', 'http://localhost/lozada/');
+define('BASE_URL', 'http://10.0.0.6/lozada/');
 
 
 

@@ -20,8 +20,8 @@ echo $this->element('actions', array('links' => $links));
 /** The grid */
 $header	= null;
 $header[] = __('Action', true);
-$header[] = __('Date', true);
-$header[] = __('Description', true);
+$header[] = __('Date / Time', true);
+$header[] = __('Destination', true);
 $header[] = __('Weekly capacity', true);
 $header[] = __('Fortnightly capacity', true);
 $header[] = __('Reserved capacity', true);
@@ -31,6 +31,7 @@ $head = $this->MyHtml->tag('thead', $this->MyHtml->tableHeaders($header));
 
 $body = array();
 foreach ($data as $record) {
+
 	$td = null;
 	$actions = null;
 	$actions[] = $this->MyHtml->image(
@@ -60,7 +61,7 @@ foreach ($data as $record) {
 
 	$td[] = $this->MyHtml->tag('td', $actions);
 	$td[] = $this->MyHtml->tag('td', date('d-m-Y', strtotime($record['Charter']['date'])) . ' ' . $record['Charter']['time']);
-	$td[] = $this->MyHtml->tag('td', $record['Charter']['description']);
+	$td[] = $this->MyHtml->tag('td', $record['Destination']['name']);
 	$td[] = $this->MyHtml->tag('td', $record['Charter']['weekly']);
 	$td[] = $this->MyHtml->tag('td', $record['Charter']['fortnightly']);
 	$td[] = $this->MyHtml->tag('td', $record['Charter']['reserved']);

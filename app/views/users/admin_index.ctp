@@ -7,7 +7,7 @@
 	/** Actions */
 	$links =  null;
 	$links[] = $this->MyHtml->link(
-		__('Add', true),
+		__('Add user', true),
 		array(
 			'controller' 	=> 'users', 
 			'action' 		=> 'add'
@@ -61,6 +61,6 @@
 
 
 	/** Pagination counter and navigation */
-	$out[] = $this->MyPaginator->getNavigator();
+	$out[] = $this->MyPaginator->getNavigator(false);
 
 	echo $this->MyHtml->tag('div', $out);

@@ -15,7 +15,7 @@ class Passenger extends AppModel {
 					'last' => true, // Stop validation after this rule
 				),
 			),
-			'first_last_name' => array(
+			'last_name' => array(
 				'notempty' => array(
 					'rule' => array('notempty'),
 					'message' => __("Last Name can't be empty", true),
@@ -40,13 +40,6 @@ class Passenger extends AppModel {
 				'notempty' => array(
 					'rule' => array('notempty'),
 					'message' => __("Dni can't be empty", true),
-					'last' => true, // Stop validation after this rule
-				),
-			),
-			'amount' => array(
-				'notempty' => array(
-					'rule' => array('notempty'),
-					'message' => __("Passengers can't be empty", true),
 					'last' => true, // Stop validation after this rule
 				),
 			)

@@ -24,15 +24,34 @@
 		<div id="header">
 			<h1>
 				<?php
-				//d($this->Session->read('User'));
-				$user = $this->Session->read('User');
 
+				$user = $this->Session->read('User');
 				if (!empty($user)) {
+
+					if ($user['User']['type'] == 'admin') {
+
+						echo $this->MyHtml->link(
+							__('Charters', true),
+							array('controller' => 'charters', 'action' => 'index')
+						);
+
+						echo $this->MyHtml->link(
+							__('Destinations', true),
+							array('controller' => 'destinations', 'action' => 'index')
+						);
+
+						echo $this->MyHtml->link(
+							__('Users', true),
+							array('controller' => 'users', 'action' => 'index')
+						);
+
+					}
+
 					echo $this->MyHtml->link(__('Passengers', true), array('controller' => 'passengers', 'action' => 'index'));
 
 					echo $this->MyHtml->link(__('Change password', true), array('controller' => 'users', 'action' => 'change_password'));
 
-					echo $this->MyHtml->link(__('Logout', true), array('controller' => 'users', 'action' => 'logout')); 
+					echo $this->MyHtml->link(__('Logout', true), array('controller' => 'users', 'action' => 'logout', 'admin' => false));
 				}
 				?>
 			</h1>
@@ -51,12 +70,6 @@
 
 		</div>
 		<div id="footer">
-			<?php //echo $this->Html->link(
-//					$this->Html->image('cake.power.gif', array('alt'=> __('CakePHP: the rapid development php framework', true), 'border' => '0')),
-//					'http://www.cakephp.org/',
-//					array('target' => '_blank', 'escape' => false)
-//				);
-			?>
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>

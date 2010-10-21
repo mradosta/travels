@@ -8,24 +8,37 @@ $out[] = $this->MyHtml->tag('h2',
 $out[] = $this->MyForm->input(
 	'user_id',
 	array(
-		'label' 	=> __('Agency:', true),
+		'label' 	=> __('Charter', true),
+		'type' 		=> 'select',
+		'options' 	=> $charters,
+		'default' 	=> $id,
+		'empty' 	=> true,
+		'div' => array('class' => 'filter')
+	)
+);
+$out[] = $this->MyForm->input(
+	'user_id',
+	array(
+		'label' 	=> __('Agency', true),
 		'type' 		=> 'select',
 		'options' 	=> $users,
 		'default' 	=> $id,
+		'empty' 	=> true,
 		'div' => array('class' => 'filter')
 	)
 );
 
 
+
 /** The grid */
 $header	= null;
 $header[] = __('Actions', true);
-$header[] = __('Charter Description', true);
+$header[] = __('Charter', true);
 $header[] = __('First Name', true);
 $header[] = __('Last Name', true);
 $header[] = __('Type', true);
 $header[] = __('State', true);
-$header[] = __('User', true);
+$header[] = __('Agency', true);
 
 
 $head = $this->MyHtml->tag('thead', $this->MyHtml->tableHeaders($header));
@@ -38,7 +51,7 @@ foreach ($data as $record) {
 		'view.png',
 		array(
 			'class' => 'open_modal',
-			'title' => __('View', true) . ' ' . $record['Passenger']['first_name'] . ' ' . $record['Passenger']['first_last_name'],
+			'title' => __('View', true) . ' ' . $record['Passenger']['first_name'] . ' ' . $record['Passenger']['last_name'],
 			'url' => array(
 				'controller' 	=> 'passengers',
 				'action' 		=> 'view',
@@ -50,7 +63,7 @@ foreach ($data as $record) {
 		'edit.png',
 		array(
 			'class' => 'open_modal',
-			'title' => __('Edit', true) . ' ' . $record['Passenger']['first_name'] . ' ' . $record['Passenger']['first_last_name'],
+			'title' => __('Edit', true) . ' ' . $record['Passenger']['first_name'] . ' ' . $record['Passenger']['last_name'],
 			'url' => array(
 				'controller' 	=> 'passengers',
 				'action' 		=> 'edit',
@@ -61,20 +74,21 @@ foreach ($data as $record) {
 
 	$invertCurrentState = (($record['Passenger']['state'] == 'authorized') ? 'unauthorized' : 'authorized');
 	$state = $this->MyHtml->link(
-		$invertCurrentState,
+		$this->MyHtml->image($invertCurrentState . '.png'),
 		array(
 			'controller'	=> 'passengers',
 			'action'		=> 'update_state',
 			$invertCurrentState,
 			$record['Passenger']['id']
-		)
+		),
+		array('escape' => false, 'title' => __('Change state', true))
 	);
 
 	$td[] = $this->MyHtml->tag('td', $actions);
 	$td[] = $this->MyHtml->tag('td', $record['Charter']['description'] . ' ' . date('d-m-Y', strtotime($record['Charter']['date'])));
 	$td[] = $this->MyHtml->tag('td', $record['Passenger']['first_name']);
-	$td[] = $this->MyHtml->tag('td', $record['Passenger']['first_last_name']);
-	$td[] = $this->MyHtml->tag('td', $record['Passenger']['type']);
+	$td[] = $this->MyHtml->tag('td', $record['Passenger']['last_name']);
+	$td[] = $this->MyHtml->tag('td', __($record['Passenger']['type'], true));
 	$td[] = $this->MyHtml->tag('td', $state);
 	$td[] = $this->MyHtml->tag('td', $record['User']['full_name']);
 	
@@ -96,14 +110,13 @@ $out[] = $this->MyHtml->tag('div',
 $out[] = $this->MyPaginator->getNavigator(false);
 
 echo implode("\n", $out);
-echo $this->Js->writeBuffer();
+
 ?>
 <script type="text/javascript">
 	
 	$(document).ready(function($) {
 		$("#user_id").change(function() {
-
-			location.href = '<?php echo BASE_URL;?>admin/passengers/index/' + $(this).val();
+			location.href = '<?php echo Router::url(array('controller' => 'passengers')); ?>/index/' + $(this).val();
 		});
 	}); //$(document).ready
 </script>

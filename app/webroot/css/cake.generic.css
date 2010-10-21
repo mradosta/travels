@@ -132,17 +132,27 @@ ul, li {
 }
 #header h1 a {
 	color: #333333;
-	background: #EEE;
 	font-weight: normal;
 	padding:5px;
 	text-decoration: none;
 	border:1px solid white;
 	margin-right:5px;
+	background:#e6e49f;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f1f1d4), to(#e6e49f));
+	background-image: -moz-linear-gradient(top, #f1f1d4, #e6e49f);
+	border:1px solid #aaac62;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	border-radius:8px;
+	text-decoration:none;
+	text-shadow: #fff 0px 1px 0px;
+	
 }
 #header h1 a:hover {
 	color: #000;
-	background: #CDCDCD;
 	text-decoration: none;
+	background: #f0f09a;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f7f7e1), to(#eeeca9));
 }
 #content{
 	background: #fff;
@@ -265,6 +275,7 @@ dl .altrow {
 	background: #f4f4f4;
 }
 dt {
+	display:block;
 	font-weight: bold;
 	padding-left: 4px;
 	vertical-align: top;
@@ -273,6 +284,7 @@ dd {
 	margin-left: 12em;
 	margin-top: -2em;
 	vertical-align: top;
+	padding-left:15px;
 }
 
 /** Forms **/
@@ -474,7 +486,7 @@ div.actions ul li a:hover {
 	text-decoration: underline;
 }
 
-input[type=text] {
+input[type=text], input[type=password] {
 	height: 10px;
 }
 
@@ -609,4 +621,11 @@ div.code-coverage-results span.result-ok {
 }
 div.code-coverage-results span.result-good {
 	color: #0a0;
+}
+
+div#paginator span.disabled {
+	width:70px;
+	float:left;
+	display:block;
+	1border:1px solid red;
 }
