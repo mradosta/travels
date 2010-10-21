@@ -339,6 +339,9 @@ option {
 	font-size: 120%;
 	padding: 0 3px;
 }
+optgroup option {
+	padding-left:20px;
+}
 input[type=checkbox] {
 	clear: left;
 	float: left;
