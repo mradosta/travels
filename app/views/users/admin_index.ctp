@@ -13,7 +13,7 @@
 			'action' 		=> 'add'
 		), 
 		array(
-			'class' => 'open_modal',
+			'class' => 'cancel',
 			'title' => __('Add new user', true)
 		)
 	);

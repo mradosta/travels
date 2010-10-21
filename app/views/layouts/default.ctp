@@ -25,6 +25,7 @@
 			<h1>
 				<?php echo $this->MyHtml->link(__('Passengers', true), array('controller' => 'passengers', 'action' => 'index')); ?>
 				<?php echo $this->MyHtml->link(__('Change password', true), array('controller' => 'users', 'action' => 'change_password')); ?>
+				<?php echo $this->MyHtml->link(__('Logout', true), array('controller' => 'users', 'action' => 'logout')); ?>
 			</h1>
 		</div>
 		<div id="content">

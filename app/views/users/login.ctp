@@ -1,6 +1,5 @@
 <div class="users form">
 <?php
-	echo $this->Session->flash('auth');
 	echo $this->Form->create('User', array('action' => 'login'));
 ?>
 	<fieldset>
