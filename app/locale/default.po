@@ -173,7 +173,7 @@ msgstr ""
 #: /controllers/users_controller.php:486
 #: /views/passengers/admin_index.ctp:17
 msgid "User"
-msgstr ""
+msgstr "Usuario"
 
 #: /controllers/users_controller.php:491
 msgid "User was not"
@@ -233,7 +233,7 @@ msgstr ""
 
 #: /models/passenger.php:35
 msgid "Invalid email"
-msgstr ""
+msgstr "Email inválido"
 
 #: /models/passenger.php:42
 msgid "Dni can't be empty"
@@ -261,7 +261,7 @@ msgstr ""
 
 #: /models/user.php:53
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Las claves no coinciden"
 
 #: /models/user.php:302
 msgid "User not set."
@@ -519,7 +519,7 @@ msgstr "Charter"
 
 #: /views/passengers/__view.ctp:61
 msgid "Birthday"
-msgstr "Fecha de Nacimiento"
+msgstr "Nacimiento"
 
 #: /views/passengers/__view.ctp:70
 msgid "DNI"
@@ -537,11 +537,11 @@ msgstr "Telefono"
 
 #: /views/passengers/add_passengers.ctp:14
 msgid "Passenger"
-msgstr ""
+msgstr "Pasajero"
 
 #: /views/passengers/index.ctp:10
 msgid "Add Passenger"
-msgstr ""
+msgstr "Agregar Pasajero"
 
 #: /views/passengers/index.ctp:15
 msgid "Add passenger"

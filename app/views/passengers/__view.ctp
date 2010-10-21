@@ -54,7 +54,7 @@
 	);
 
 	$charter[] = $this->MyHtml->tag('dd',
-		$data['Passenger']['first_last_name']
+		$data['Passenger']['last_name']
 	);
 
 

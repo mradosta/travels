@@ -11,7 +11,7 @@ $header	= null;
 $header[] = __('Actions', true);
 $header[] = __('Charter Description', true);
 $header[] = __('First Name', true);
-$header[] = __('First Last Name', true);
+$header[] = __('Last Name', true);
 $header[] = __('Type', true);
 $header[] = __('State', true);
 $header[] = __('User', true);
@@ -27,7 +27,7 @@ foreach ($data as $record) {
 		'view.png',
 		array(
 			'class' => 'open_modal',
-			'title' => __('View', true) . ' ' . $record['Passenger']['first_name'] . ' ' . $record['Passenger']['first_last_name'],
+			'title' => __('View', true) . ' ' . $record['Passenger']['first_name'] . ' ' . $record['Passenger']['last_name'],
 			'url' => array(
 				'controller' 	=> 'passengers',
 				'action' 		=> 'view',
@@ -39,7 +39,7 @@ foreach ($data as $record) {
 		'edit.png',
 		array(
 			'class' => 'open_modal',
-			'title' => __('Edit', true) . ' ' . $record['Passenger']['first_name'] . ' ' . $record['Passenger']['first_last_name'],
+			'title' => __('Edit', true) . ' ' . $record['Passenger']['first_name'] . ' ' . $record['Passenger']['last_name'],
 			'url' => array(
 				'controller' 	=> 'passengers',
 				'action' 		=> 'edit',

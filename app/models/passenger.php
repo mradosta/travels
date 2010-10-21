@@ -15,10 +15,10 @@ class Passenger extends AppModel {
 					'last' => true, // Stop validation after this rule
 				),
 			),
-			'first_last_name' => array(
+			'last_name' => array(
 				'notempty' => array(
 					'rule' => array('notempty'),
-					'message' => __("First Last Name can't be empty", true),
+					'message' => __("Last Name can't be empty", true),
 					'last' => true, // Stop validation after this rule
 				),
 			),

@@ -4,7 +4,7 @@ $out[] = $this->MyForm->create('Passenger', array('class' => 'ajax_formx'));
 
 $content[] = $this->MyForm->input('id', array('type' => 'hidden', 'value' => $id));
 $content[] = $this->MyForm->input('first_name', array('type' => 'text'));
-$content[] = $this->MyForm->input('first_last_name', array('type' => 'text'));
+$content[] = $this->MyForm->input('last_name', array('type' => 'text'));
 $content[] = $this->MyForm->input('birthday', array('type' => 'text', 'class' => 'datepicker'));
 $content[] = $this->MyForm->input('dni', array('type' => 'text'));
 $content[] = $this->MyForm->input('email', array('type' => 'text'));
