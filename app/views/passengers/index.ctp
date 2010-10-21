@@ -26,6 +26,7 @@ $header[] = __('Charter Description', true);
 $header[] = __('First Name', true);
 $header[] = __('Last Name', true);
 $header[] = __('Type', true);
+$header[] = __('State', true);
 
 
 
@@ -39,7 +40,7 @@ foreach ($data as $record) {
 		'view.png',
 		array(
 			'class' => 'open_modal',
-			'title' => __('View', true) . ' ' . $record['Passenger']['first_name'] . ' ' . $record['Passenger']['last_name'],
+			'title' => __('View', true) . ' ' . $record['Passenger']['first_name'] . ' ' . $record['Passenger']['first_last_name'],
 			'url' => array(
 				'controller' 	=> 'passengers',
 				'action' 		=> 'view',
@@ -51,7 +52,7 @@ foreach ($data as $record) {
 		'edit.png',
 		array(
 			'class' => 'open_modal',
-			'title' => __('Edit', true) . ' ' . $record['Passenger']['first_name'] . ' ' . $record['Passenger']['last_name'],
+			'title' => __('Edit', true) . ' ' . $record['Passenger']['first_name'] . ' ' . $record['Passenger']['first_last_name'],
 			'url' => array(
 				'controller' 	=> 'passengers',
 				'action' 		=> 'edit',
@@ -63,8 +64,9 @@ foreach ($data as $record) {
 	$td[] = $this->MyHtml->tag('td', $actions);
 	$td[] = $this->MyHtml->tag('td', $record['Charter']['description'] . ' ' . date('d-m-Y', strtotime($record['Charter']['date'])));
 	$td[] = $this->MyHtml->tag('td', $record['Passenger']['first_name']);
-	$td[] = $this->MyHtml->tag('td', $record['Passenger']['last_name']);
+	$td[] = $this->MyHtml->tag('td', $record['Passenger']['first_last_name']);
 	$td[] = $this->MyHtml->tag('td', $record['Passenger']['type']);
+	$td[] = $this->MyHtml->tag('td', $record['Passenger']['state']);
 	
 	
 	$body[] = $this->MyHtml->tag('tr', $td);

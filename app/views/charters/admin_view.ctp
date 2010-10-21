@@ -79,6 +79,16 @@
 		 $data['Charter']['reserved']
 	);
 
+
+	$charter[] = $this->MyHtml->tag('dt',
+		__('Total', true)
+	);
+
+	$charter[] = $this->MyHtml->tag('dd',
+		 $total_capacity
+	);
+
+
 	$charter[] = $this->MyHtml->tag('dt',
 		__('Occupied', true)
 	);

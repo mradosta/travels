@@ -62,6 +62,7 @@ class ChartersController extends AppController {
 		$percent = ($occupied * 100) / $total;
 		$this->set('percent', ceil($percent));
 		$this->set('occupied', $occupied);
+		$this->set('total_capacity', $total);
 	}
 
 
