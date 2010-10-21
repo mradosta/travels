@@ -22,6 +22,28 @@
 		array('links' => $links)
 	);
 
+
+	if (User::get('/User/type') == 'admin') {
+		$links =  null;
+		$invertCurrentState = (($data['Passenger']['state'] == 'authorized') ? 'unauthorized' : 'authorized');
+		$links[] = $this->MyHtml->link(
+			$invertCurrentState,
+			array(
+				'controller'	=> 'passengers',
+				'action'		=> 'update_state',
+				$invertCurrentState,
+				$data['Passenger']['id'],
+				'passengers',
+				$data['Passenger']['id']
+			),
+			array('class' => 'cancel')
+		);
+
+		$out[] = $this->element('actions',
+			array('links' => $links)
+		);
+	}
+
 	
 	$charter[] = $this->MyHtml->tag('dt',
 		__('Charter', true)
@@ -54,7 +76,7 @@
 	);
 
 	$charter[] = $this->MyHtml->tag('dd',
-		$data['Passenger']['last_name']
+		$data['Passenger']['first_last_name']
 	);
 
 

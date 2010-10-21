@@ -32,7 +32,12 @@
 		</div>
 		<div id="content">
 
-			<?php echo $this->Session->flash(); ?>
+			<?php
+				$message = explode('|', $this->Session->flash());
+				if (!empty($message[0])) {
+					echo $this->MyHtml->tag('div', $message[1], array('class' => 'message ' . $message[0]));
+				}
+			?>
 
 			<?php echo $content_for_layout; ?>
 

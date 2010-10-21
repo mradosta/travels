@@ -49,7 +49,7 @@ class User extends AppModel {
     }
 
     function isSamePassword($values) {
-        if ($values['re-password'] == $this->data['User']['password']) {
+        if (md5($values['re-password']) == $this->data['User']['password']) {
             return true;
         } else {
             return false;

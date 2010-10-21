@@ -152,7 +152,9 @@ class UsersController extends AppController {
 		if (!empty($this->data)) {
 			
 			$this->User->create();
-			//$this->data['User']['password'] = md5($this->data['User']['password']);
+			if (empty($this->data['User']['id'])) {
+				$this->data['User']['password'] = md5($this->data['User']['password']);
+			}
 			if ($this->User->save($this->data)) {
 				return $this->Session->setFlash(__('The user has been saved.', true), 'flash_success');
 			} else {

@@ -1,6 +1,6 @@
 <?php 
 	
-$out[] = $this->MyForm->create('Passenger', array('class' => 'ajax_formx'));
+$out[] = $this->MyForm->create('Passenger', array('class' => 'ajax_formx', 'action' => 'add_passengers'));
 $passangers = null;
 
 $content[] = $this->MyForm->input('Extra.amount',

@@ -2,7 +2,18 @@
 
 $out[] = $this->MyHtml->tag('h2',
 	__('Passengers', true),
-	array('id' => 'tasks_title')
+	array('id' => 'tasks_title', 'class' => 'passengers')
+);
+
+$out[] = $this->MyForm->input(
+	'user_id',
+	array(
+		'label' 	=> __('Agency:', true),
+		'type' 		=> 'select',
+		'options' 	=> $users,
+		'default' 	=> $id,
+		'div' => array('class' => 'filter')
+	)
 );
 
 
@@ -86,3 +97,16 @@ $out[] = $this->MyPaginator->getNavigator(false);
 
 echo implode("\n", $out);
 echo $this->Js->writeBuffer();
+?>
+<script type="text/javascript">
+	
+	$(document).ready(function($) {
+		$("#user_id").change(function() {
+
+			location.href = '<?php echo BASE_URL;?>admin/passengers/index/' + $(this).val();
+		});
+	}); //$(document).ready
+</script>
+
+
+

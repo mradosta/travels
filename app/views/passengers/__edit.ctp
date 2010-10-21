@@ -9,10 +9,6 @@ $content[] = $this->MyForm->input('birthday', array('type' => 'text', 'class' =>
 $content[] = $this->MyForm->input('dni', array('type' => 'text'));
 $content[] = $this->MyForm->input('email', array('type' => 'text'));
 $content[] = $this->MyForm->input('phone', array('type' => 'text'));
-if (User::get('/User/type') == 'admin') {
-	$content[] = $this->MyForm->input('state', array('type' => 'radio', 'default' => 'unauthorized'));
-}
-
 
 //$out[] = $this->MyHtml->link('Add 3 passengers', array('controller' => false), array('id' => 'add_passenger'));
 

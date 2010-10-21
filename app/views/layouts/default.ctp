@@ -23,14 +23,29 @@
 	<div id="main-container">
 		<div id="header">
 			<h1>
-				<?php echo $this->MyHtml->link(__('Passengers', true), array('controller' => 'passengers', 'action' => 'index')); ?>
-				<?php echo $this->MyHtml->link(__('Change password', true), array('controller' => 'users', 'action' => 'change_password')); ?>
-				<?php echo $this->MyHtml->link(__('Logout', true), array('controller' => 'users', 'action' => 'logout')); ?>
+				<?php
+				//d($this->Session->read('User'));
+				$user = $this->Session->read('User');
+
+				if (!empty($user)) {
+					echo $this->MyHtml->link(__('Passengers', true), array('controller' => 'passengers', 'action' => 'index'));
+
+					echo $this->MyHtml->link(__('Change password', true), array('controller' => 'users', 'action' => 'change_password'));
+
+					echo $this->MyHtml->link(__('Logout', true), array('controller' => 'users', 'action' => 'logout')); 
+				}
+				?>
 			</h1>
 		</div>
 		<div id="content">
 
-			<?php echo $this->Session->flash(); ?>
+			<?php
+				
+				$message = explode('|', $this->Session->flash());
+				if (!empty($message[0])) {
+					echo $this->MyHtml->tag('div', $message[1], array('class' => 'message ' . $message[0]));
+				}
+			?>
 
 			<?php echo $content_for_layout; ?>
 

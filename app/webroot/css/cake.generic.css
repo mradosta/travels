@@ -16,9 +16,25 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
+.passengers{
+	display:inline;
+	float:left;
+	width:570px;
+}
+
+.filter > label {
+	width:60px;
+	padding-top:5px;
+}
+
 * {
 	margin:0;
 	padding:0;
+}
+
+.users {
+	margin:0 auto;
+	width:550px;
 }
 
 .aircraft {
@@ -121,6 +137,7 @@ ul, li {
 	padding:5px;
 	text-decoration: none;
 	border:1px solid white;
+	margin-right:5px;
 }
 #header h1 a:hover {
 	color: #000;
@@ -396,17 +413,17 @@ form .submit input[type=submit]:hover, .cancel:hover{
 div.message {
 	clear: both;
 	color: #fff;
-	font-size: 140%;
+	font-size: 100%;
 	font-weight: bold;
 	margin: 0 0 1em 0;
 	background: #c73e14;
 	padding: 5px;
 }
-div.error-message {
-	background: red;
+div.error-message, .ERROR {
+	background: red !important;
 }
-div.ok-message {
-	background: green;
+div.ok-message, .SUCCESS {
+	background: green !important;
 }
 p.error {
 	background-color: #e32;

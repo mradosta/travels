@@ -53,6 +53,26 @@ class PassengersController extends AppController {
 
 	}
 
+	function __sendEmail($idPassenger, $toAgency = false) {
+
+		$passenger = $this->Passenger->findById($idPassenger);
+		$this->set('passenger', $passenger);
+		if ($toAgency) {
+			
+			$this->Email->to = $passenger['User']['email'];
+			$this->Email->subject = __('Passenger', true) . ' ' . $passenger['Passenger']['state'];
+			$this->Email->template = 'email/state';
+
+		} else {
+			$this->Email->to = EMAIL;
+			$this->Email->subject = __('Passenger added', true);
+			$this->Email->template = 'email/added';
+		}
+
+		$result = $this->Email->send();
+	}
+
+
 	function checkAvailability($data) {
 		
 		if (!empty($data['Passenger']['amount'])) {
@@ -87,9 +107,15 @@ class PassengersController extends AppController {
 			)
 		);
 		$this->Passenger->save($passenger);
+		$this->__sendEmail($this->Passenger->id, true);
 
 		if ($controller == 'passengers') {
-			$redirect = array('controller' => 'passengers', 'action' => 'index');
+			if (!empty($view_id)) {
+				$redirect = array('controller' => 'passengers', 'action' => 'view', $view_id);
+			} else {
+	
+				$redirect = array('controller' => 'passengers', 'action' => 'index');
+			}
 		} else {
 			$redirect = array('controller' => $controller, 'action' => 'view', $view_id);
 		}
@@ -134,8 +160,16 @@ class PassengersController extends AppController {
 	function add_passengers() {
 
 		if (!empty($this->data)) {
+			
+			if ($this->Passenger->saveAll($this->data['Passenger'], array('validate' => 'only'))) {
 
-			if ($this->Passenger->saveAll($this->data['Passenger'], array('validate' => 'first'))) {
+				foreach ($this->data['Passenger'] as $passenger) {
+
+					$this->Passenger->create();
+					if ($this->Passenger->save($passenger)) {
+						$this->__sendEmail($this->Passenger->id);
+					}
+				}
 
 				$this->Session->setFlash(
 					__('The passengers has been saved.', true), 'flash_success'
@@ -150,7 +184,13 @@ class PassengersController extends AppController {
 					),
 					'flash_error'
 				);
-
+				$this->set('charter_data',
+					array(
+						'amount' 		=> $this->data['Extra']['amount'],
+						'type'			=> $this->data['Passenger'][0]['type'],
+						'charter_id'	=> $this->data['Passenger'][0]['charter_id']
+					)
+				);
 				$this->set('amount', $this->data['Extra']['amount']);
 				$this->set('charterId', $this->data['Passenger'][0]['charter_id']);
 				$this->set('charterType', $this->data['Passenger'][0]['type']);
@@ -164,20 +204,27 @@ class PassengersController extends AppController {
 	}
 
 
-	function admin_index() {
-		$this->__index();
+	function admin_index($id = null) {
+		$users = $this->Passenger->User->find('list',
+			array('fields' => array('User.id', 'User.full_name'))
+		);
+		$this->set('users', $users);
+
+		$this->set('id', $id);
+
+		$this->__index($id, true);
 	}
 
 	function index() {
 		$this->__index(User::get('/User/id'));
 	}
 
-	private function __index($userId = null) {
+	private function __index($userId = null, $admin = false) {
 		if (!empty($userId)) {
 			$this->paginate['conditions']['Passenger.user_id'] = $userId;
 		}
 		$this->set('data', $this->paginate());
-		if (!empty($userId)) {
+		if (!empty($userId) && !$admin) {
 			$this->render('index');
 		} else {
 			$this->render('admin_index');

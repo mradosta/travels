@@ -51,9 +51,10 @@
 
 
 /** Define access constants */
-define('RESUME', 1);
-define('READ', 2);
-define('WRITE', 4);
+//define('EMAIL', 'cecilia.giordano@triadtours.com');
+define('EMAIL', 'ngiovagnoli@pragmatia.com.ar');
+define('BASE_URL', 'http://localhost/lozada/');
+
 
 
 /**
