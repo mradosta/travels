@@ -48,8 +48,9 @@
 	$charter[] = $this->MyHtml->tag('dt',
 		__('Charter', true)
 	);
+
 	$charter[] = $this->MyHtml->tag('dd',
-		$data['Charter']['description'] . ' ' . date('d-m-Y', strtotime($data['Charter']['date']))
+		$data['Charter']['Destination']['name'] . ' ' . $data['Charter']['formated_date']
 	);
 
 
@@ -85,9 +86,8 @@
 	);
 
 	$charter[] = $this->MyHtml->tag('dd',
-		$data['Passenger']['birthday']
+		$data['Passenger']['formated_birthday']
 	);
-
 
 	$charter[] = $this->MyHtml->tag('dt',
 		__('DNI', true)
@@ -97,8 +97,6 @@
 		$data['Passenger']['dni']
 	);
 
-
-
 	$charter[] = $this->MyHtml->tag('dt',
 		__('Email', true)
 	);
@@ -107,7 +105,6 @@
 		$this->MyHtml->tag('span', $data['Passenger']['email'], array('class' => 'data'))
 	);
 
-
 	$charter[] = $this->MyHtml->tag('dt',
 		__('Phone', true)
 	);
@@ -115,7 +112,6 @@
 	$charter[] = $this->MyHtml->tag('dd',
 		$data['Passenger']['phone']
 	);
-
 
 	$charter[] = $this->MyHtml->tag('dt',
 		__('State', true)

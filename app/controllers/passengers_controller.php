@@ -249,6 +249,7 @@ class PassengersController extends AppController {
 	}
 	private function __view($id) {
 
+		$this->Passenger->contain(array('Charter.Destination'));
 		$this->set('data', $this->Passenger->read(null, $id));
 		$this->render('__view');
 	}
