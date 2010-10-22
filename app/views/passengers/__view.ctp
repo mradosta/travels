@@ -44,84 +44,27 @@
 		);
 	}
 
+	$fields[__('Charter', true)] = $data['Charter']['Destination']['name'] . ' ' . $data['Charter']['formated_date'];
+
+	$fields[__('Type', true)] = $data['Passenger']['type'];
+
+	$fields[__('First Name', true)] = $data['Passenger']['first_name'];
+
+	$fields[__('Last Name', true)] = $data['Passenger']['last_name'];
+
+	$fields[__('Birthday', true)] = $data['Passenger']['formated_birthday'];
+
+	$fields[__('DNI', true)] = $data['Passenger']['dni'];
+
+	$fields[__('Email', true)] = $data['Passenger']['email'];
+
+	$fields[__('Phone', true)] = $data['Passenger']['phone'];
+
+	$fields[__('Phone', true)] = $data['Passenger']['state'];
+
+
+	$passenger = $this->element('view', array('data' => $fields));
 	
-	$charter[] = $this->MyHtml->tag('dt',
-		__('Charter', true)
-	);
-
-	$charter[] = $this->MyHtml->tag('dd',
-		$data['Charter']['Destination']['name'] . ' ' . $data['Charter']['formated_date']
-	);
-
-
-	$charter[] = $this->MyHtml->tag('dt',
-		__('Type', true)
-	);
-	$charter[] = $this->MyHtml->tag('dd',
-		$data['Passenger']['type']
-	);
-
-
-
-	$charter[] = $this->MyHtml->tag('dt',
-		__('First Name', true)
-	);
-
-	$charter[] = $this->MyHtml->tag('dd',
-		$data['Passenger']['first_name']
-	);
-
-
-	$charter[] = $this->MyHtml->tag('dt',
-		__('Last Name', true)
-	);
-
-	$charter[] = $this->MyHtml->tag('dd',
-		$data['Passenger']['last_name']
-	);
-
-
-	$charter[] = $this->MyHtml->tag('dt',
-		__('Birthday', true)
-	);
-
-	$charter[] = $this->MyHtml->tag('dd',
-		$data['Passenger']['formated_birthday']
-	);
-
-	$charter[] = $this->MyHtml->tag('dt',
-		__('DNI', true)
-	);
-
-	$charter[] = $this->MyHtml->tag('dd',
-		$data['Passenger']['dni']
-	);
-
-	$charter[] = $this->MyHtml->tag('dt',
-		__('Email', true)
-	);
-
-	$charter[] = $this->MyHtml->tag('dd',
-		$this->MyHtml->tag('span', $data['Passenger']['email'], array('class' => 'data'))
-	);
-
-	$charter[] = $this->MyHtml->tag('dt',
-		__('Phone', true)
-	);
-
-	$charter[] = $this->MyHtml->tag('dd',
-		$data['Passenger']['phone']
-	);
-
-	$charter[] = $this->MyHtml->tag('dt',
-		__('State', true)
-	);
-
-	$charter[] = $this->MyHtml->tag('dd',
-		$data['Passenger']['state']
-	);
-
-	$charterData = $this->MyHtml->tag('dl', $charter);
-	$out[] = $this->MyHtml->tag('div', $charterData, array('class' => 'view'));
+	$out[] = $this->MyHtml->tag('div', $passenger, array('class' => ''));
 
 	echo $this->MyHtml->tag('div', $out);

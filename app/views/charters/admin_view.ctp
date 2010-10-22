@@ -25,85 +25,23 @@
 
 
 
-
+	$fields[__('Destination', true)] = $data['Destination']['name'];
 	
-	$charter[] = $this->MyHtml->tag('dt',
-		__('Destination', true)
-	);
-	$charter[] = $this->MyHtml->tag('dd',
-		$data['Destination']['name']
-	);
+	$fields[__('Date', true)] = $data['Charter']['formated_date'] . ' ' . $data['Charter']['time'];
 
+	$fields[__('Description', true)] = $data['Charter']['description'];
+	
+	$fields[__('Weekly capacity', true)] = $data['Charter']['weekly'];
 
-	$charter[] = $this->MyHtml->tag('dt',
-		__('Date', true)
-	);
+	$fields[__('Fortnightly capacity', true)] = $data['Charter']['fortnightly'];
 
-	$charter[] = $this->MyHtml->tag('dd',
-		date('d-m-Y', strtotime($data['Charter']['date'])) . ' ' . $data['Charter']['time']
-	);
+	$fields[__('Reserved capacity', true)] = $data['Charter']['reserved'];
 
+	$fields[__('Total capacity', true)] = $total_capacity;
 
-	$charter[] = $this->MyHtml->tag('dt',
-		__('Description', true)
-	);
+	$fields[__('Ocupied', true)] = $percent . '% (' . $occupied . ')';
 
-	$charter[] = $this->MyHtml->tag('dd',
-		$data['Charter']['description']
-	);
-
-	$charter[] = $this->MyHtml->tag('dt',
-		__('Weekly capacity', true)
-	);
-
-	$charter[] = $this->MyHtml->tag('dd',
-		$data['Charter']['weekly']
-	);
-
-
-	$charter[] = $this->MyHtml->tag('dt',
-		__('Fortnightly capacity', true)
-	);
-
-	$charter[] = $this->MyHtml->tag('dd',
-		$data['Charter']['fortnightly']
-	);
-
-
-	$charter[] = $this->MyHtml->tag('dt',
-		__('Reserved capacity', true)
-	);
-
-
-	$xx[__('Reserved capacity', true)] = $data['Charter']['reserved'];
-	$xx[__('Reserved capacity', true)] = $data['Charter']['reserved'];
-	$xx[__('Reserved capacity', true)] = $data['Charter']['reserved'];
-	$xx[__('Reserved capacity', true)] = $data['Charter']['reserved'];
-	$xx[__('Reserved capacity', true)] = $data['Charter']['reserved'];
-
-
-
-	$charter[] = $this->MyHtml->tag('dd',
-		 $data['Charter']['reserved']
-	);
-
-	$charter[] = $this->MyHtml->tag('dt',
-		__('Total capacity', true)
-	);
-
-	$charter[] = $this->MyHtml->tag('dd',
-		 $total_capacity
-	);
-
-	$charter[] = $this->MyHtml->tag('dt',
-		__('Occupied', true)
-	);
-
-	$charter[] = $this->MyHtml->tag('dd',
-		 $percent . '% (' . $occupied . ')'
-	);
-
-	$out[] = $this->MyHtml->tag('div', $this->MyHtml->tag('dl', $charter), array('class' => 'view'));
+	echo $this->element('view', array('data' => $fields));
 
 	$out[] = $this->MyHtml->tag('div',
 		$this->MyHtml->tag('div', '&nbsp;', array('class' => 'aircraft-background', 'style' => 'width:' . $percent . '%;'))

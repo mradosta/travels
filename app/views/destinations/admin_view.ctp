@@ -22,14 +22,9 @@
 		array('links' => $links)
 	);
 
-	
-	$charter[] = $this->MyHtml->tag('dt',
-		__('Destination', true)
-	);
-	$charter[] = $this->MyHtml->tag('dd',
-		$data['Destination']['name']
-	);
 
-	$out[] = $this->MyHtml->tag('dl', $charter);
+	$fields[__('Destination', true)] = $data['Destination']['name'];
 
-	echo $this->MyHtml->tag('div', $out, array('class' => 'view'));
+	echo $this->element('view', array('data' => $fields));
+
+	echo $this->MyHtml->tag('div', $out, array('class' => ''));
