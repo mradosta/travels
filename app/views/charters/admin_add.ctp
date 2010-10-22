@@ -11,7 +11,7 @@ $content[] = $this->MyForm->input('time', array('type' => 'text'));
 $content[] = $this->MyForm->input('description', array('type' => 'text'));
 $content[] = $this->MyForm->input('weekly', array('type' => 'text'));
 $content[] = $this->MyForm->input('fortnightly', array('type' => 'text'));
-$content[] = $this->MyForm->input('reserved', array('type' => 'text'));
+$content[] = $this->MyForm->input('reserved', array('type' => 'text', 'label' => __('Reserved', true)));
 
 $out[] = $this->MyHtml->tag('div', $content, array('id' => 'container'));
 
