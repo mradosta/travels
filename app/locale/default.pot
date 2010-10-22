@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2010-10-21 23:52+0000\n"
+"POT-Creation-Date: 2010-10-22 13:40+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -95,11 +95,11 @@ msgstr ""
 msgid "The passengers could not be saved. Please, check errors and try again."
 msgstr ""
 
-#: /controllers/passengers_controller.php:261
+#: /controllers/passengers_controller.php:262
 msgid "Passenger deleted"
 msgstr ""
 
-#: /controllers/passengers_controller.php:265
+#: /controllers/passengers_controller.php:266
 msgid "Passenger was not deleted"
 msgstr ""
 
@@ -151,27 +151,27 @@ msgstr ""
 msgid "User was not"
 msgstr ""
 
-#: /models/charter.php:29
+#: /models/charter.php:32
 msgid "Date can't be empty"
 msgstr ""
 
-#: /models/charter.php:36
+#: /models/charter.php:39
 msgid "Time can't be empty"
 msgstr ""
 
-#: /models/charter.php:43
+#: /models/charter.php:46
 msgid "Description can't be empty"
 msgstr ""
 
-#: /models/charter.php:50
+#: /models/charter.php:53
 msgid "Weekly capacity can't be empty"
 msgstr ""
 
-#: /models/charter.php:57
+#: /models/charter.php:60
 msgid "Fortnightly capacity can't be empty"
 msgstr ""
 
-#: /models/charter.php:64
+#: /models/charter.php:67
 msgid "Reserved capacity can't be empty"
 msgstr ""
 
@@ -191,23 +191,23 @@ msgstr ""
 msgid "Message can't be empty"
 msgstr ""
 
-#: /models/passenger.php:14
+#: /models/passenger.php:17
 msgid "First Name can't be empty"
 msgstr ""
 
-#: /models/passenger.php:21
+#: /models/passenger.php:24
 msgid "Last Name can't be empty"
 msgstr ""
 
-#: /models/passenger.php:28
+#: /models/passenger.php:31
 msgid "Birthday can't be empty"
 msgstr ""
 
-#: /models/passenger.php:35
+#: /models/passenger.php:38
 msgid "Invalid email"
 msgstr ""
 
-#: /models/passenger.php:42
+#: /models/passenger.php:45
 msgid "Dni can't be empty"
 msgstr ""
 
@@ -235,9 +235,13 @@ msgstr ""
 msgid "User not set."
 msgstr ""
 
+#: /views/charters/admin_add.ctp:14
+msgid "Reserved"
+msgstr ""
+
 #: /views/charters/admin_index.ctp:4
 #: /views/layouts/admin.ctp:26
-#: /views/layouts/default.ctp:34
+#: /views/layouts/default.ctp:43
 msgid "Charters"
 msgstr ""
 
@@ -342,18 +346,21 @@ msgid "Actions"
 msgstr ""
 
 #: /views/charters/admin_view.ctp:112
-#: /views/passengers/__view.ctp:66
+#: /views/passengers/__view.ctp:67
 #: /views/passengers/admin_index.ctp:37
 #: /views/passengers/index.ctp:26
 msgid "First Name"
 msgstr ""
 
 #: /views/charters/admin_view.ctp:113
-msgid "First Last Name"
+#: /views/passengers/__view.ctp:76
+#: /views/passengers/admin_index.ctp:38
+#: /views/passengers/index.ctp:27
+msgid "Last Name"
 msgstr ""
 
 #: /views/charters/admin_view.ctp:114
-#: /views/passengers/__view.ctp:57
+#: /views/passengers/__view.ctp:58
 #: /views/passengers/admin_index.ctp:39
 #: /views/passengers/index.ctp:28
 #: /views/users/admin_add.ctp:58
@@ -362,7 +369,7 @@ msgid "Type"
 msgstr ""
 
 #: /views/charters/admin_view.ctp:115
-#: /views/passengers/__view.ctp:121
+#: /views/passengers/__view.ctp:117
 #: /views/passengers/admin_index.ctp:40
 #: /views/passengers/index.ctp:29
 msgid "State"
@@ -375,7 +382,7 @@ msgstr ""
 
 #: /views/destinations/admin_index.ctp:4
 #: /views/layouts/admin.ctp:27
-#: /views/layouts/default.ctp:39
+#: /views/layouts/default.ctp:48
 msgid "Destinations"
 msgstr ""
 
@@ -440,24 +447,24 @@ msgid "next"
 msgstr ""
 
 #: /views/layouts/admin.ctp:28
-#: /views/layouts/default.ctp:50
+#: /views/layouts/default.ctp:59
 #: /views/passengers/admin_index.ctp:4
 #: /views/passengers/index.ctp:4
 msgid "Passengers"
 msgstr ""
 
 #: /views/layouts/admin.ctp:29
-#: /views/layouts/default.ctp:44
+#: /views/layouts/default.ctp:53
 #: /views/users/admin_index.ctp:4
 msgid "Users"
 msgstr ""
 
 #: /views/layouts/admin.ctp:30
-#: /views/layouts/default.ctp:54
+#: /views/layouts/default.ctp:63
 msgid "Logout"
 msgstr ""
 
-#: /views/layouts/default.ctp:52
+#: /views/layouts/default.ctp:61
 #: /views/users/admin_add.ctp:26;33
 msgid "Change password"
 msgstr ""
@@ -480,7 +487,6 @@ msgid "Add ocupation"
 msgstr ""
 
 #: /views/ocupations/admin_index.ctp:23
-#: /views/passengers/admin_index.ctp:36
 #: /views/passengers/index.ctp:25
 msgid "Charter Description"
 msgstr ""
@@ -514,17 +520,11 @@ msgid "Are your sure to delete the Passenger?"
 msgstr ""
 
 #: /views/passengers/__view.ctp:49
-#: /views/passengers/admin_index.ctp:11
+#: /views/passengers/admin_index.ctp:11;36
 msgid "Charter"
 msgstr ""
 
-#: /views/passengers/__view.ctp:75
-#: /views/passengers/admin_index.ctp:38
-#: /views/passengers/index.ctp:27
-msgid "Last Name"
-msgstr ""
-
-#: /views/passengers/__view.ctp:84
+#: /views/passengers/__view.ctp:85
 msgid "Birthday"
 msgstr ""
 
@@ -532,13 +532,13 @@ msgstr ""
 msgid "DNI"
 msgstr ""
 
-#: /views/passengers/__view.ctp:103
+#: /views/passengers/__view.ctp:101
 #: /views/users/admin_add.ctp:51
 #: /views/users/admin_view.ctp:53
 msgid "Email"
 msgstr ""
 
-#: /views/passengers/__view.ctp:112
+#: /views/passengers/__view.ctp:109
 msgid "Phone"
 msgstr ""
 

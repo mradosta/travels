@@ -17,6 +17,15 @@
 		echo $this->Html->script($jsFiles);
 
 		echo $scripts_for_layout;
+
+		$info = json_encode(
+			array(
+				'base_url'				=> Router::url('/'),
+				'current_controller' 	=> $this->params['controller'],
+				'current_action' 		=> $this->params['action']
+			)
+		);
+
 	?>
 </head>
 <body>
@@ -73,5 +82,10 @@
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
+
+	<script type="text/javascript">
+		var info = '<?php echo $info; ?>';
+	</script>
+
 </body>
 </html>
