@@ -23,6 +23,7 @@ echo $this->element('actions', array('links' => $links));
 	/** The grid */
 	/** TODO: do translations */
 	$header = null;
+	$header[] = __('Actions', true);
 	$header[] = __('User Name', true);
 	$header[] = __('Full Name', true);
 	$header[] = __('Type', true);
@@ -31,22 +32,24 @@ echo $this->element('actions', array('links' => $links));
 	$body = null;
 	foreach ($data as $record) {
 
-		$viewLink = $this->MyHtml->link(
-			'##LABEL##',
-			array(
-				'controller' 	=> 'users',
-				'action' 		=> 'add',
-				$record['User']['id']
-			),
+		$actions = $this->MyHtml->image(
+			'view.png',
 			array(
 				'class' => 'open_modal',
-				'title' => __('View', true) . ' ##LABEL##'
+				'title' => __('View', true) . ' ' . $record['User']['full_name'],
+				'url' => array(
+					'controller' 	=> 'users',
+					'action' 		=> 'add',
+					$record['User']['id']
+				)
 			)
 		);
 
+
 		$body[] = array(
-			str_replace('##LABEL##', $record['User']['username'], $viewLink),
-			str_replace('##LABEL##', $record['User']['full_name'], $viewLink),
+			$actions,
+			$record['User']['username'],
+			$record['User']['full_name'],
 			$record['User']['type'],
 			
 		);

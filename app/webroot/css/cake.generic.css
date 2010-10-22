@@ -26,7 +26,7 @@
 	float:right !important;
 }
 
-.select > label {
+#filters .select > label {
 	width:70px;
 }
 
@@ -439,7 +439,7 @@ form .submit input[type=submit]:hover, .cancel:hover{
 	display: block;
 	float: left;
 	padding:6px !important;
-	margin-left: 10px;
+	margin-right: 10px;
 	
 }
 .cancel a {
