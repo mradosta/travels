@@ -4,6 +4,9 @@ class Charter extends AppModel {
 	
 	var $belongsTo = array('Destination');
 	var $hasMany = array('Passenger');
+	var $virtualFields = array(
+		'formated_date' => 'DATE_FORMAT(date, "%d/%m/%Y")'
+	);
 
 	function afterFind($results) {
 
@@ -69,6 +72,5 @@ class Charter extends AppModel {
 		);
 
     }
-
 
 }

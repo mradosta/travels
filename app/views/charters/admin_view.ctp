@@ -110,7 +110,7 @@
 	$header	= null;
 	$header[] = __('Actions', true);
 	$header[] = __('First Name', true);
-	$header[] = __('First Last Name', true);
+	$header[] = __('Last Name', true);
 	$header[] = __('Type', true);
 	$header[] = __('State', true);
 	$header[] = __('Agency', true);
@@ -126,7 +126,7 @@
 			'view.png',
 			array(
 				'class' => 'open_modal',
-				'title' => __('View', true) . ' ' . $record['first_name'] . ' ' . $record['first_last_name'],
+				'title' => __('View', true) . ' ' . $record['first_name'] . ' ' . $record['last_name'],
 				'url' => array(
 					'controller' 	=> 'passengers',
 					'action' 		=> 'view',
@@ -138,7 +138,7 @@
 			'edit.png',
 			array(
 				'class' => 'open_modal',
-				'title' => __('Edit', true) . ' ' . $record['first_name'] . ' ' . $record['first_last_name'],
+				'title' => __('Edit', true) . ' ' . $record['first_name'] . ' ' . $record['last_name'],
 				'url' => array(
 					'controller' 	=> 'passengers',
 					'action' 		=> 'edit',
@@ -162,7 +162,7 @@
 
 		$td[] = $this->MyHtml->tag('td', $actions);
 		$td[] = $this->MyHtml->tag('td', $record['first_name']);
-		$td[] = $this->MyHtml->tag('td', $record['first_last_name']);
+		$td[] = $this->MyHtml->tag('td', $record['last_name']);
 		$td[] = $this->MyHtml->tag('td', $record['type']);
 		$td[] = $this->MyHtml->tag('td', $state);
 		$td[] = $this->MyHtml->tag('td', '');

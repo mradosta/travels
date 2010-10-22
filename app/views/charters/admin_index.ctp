@@ -60,7 +60,7 @@ foreach ($data as $record) {
 	);
 
 	$td[] = $this->MyHtml->tag('td', $actions);
-	$td[] = $this->MyHtml->tag('td', date('d-m-Y', strtotime($record['Charter']['date'])) . ' ' . $record['Charter']['time']);
+	$td[] = $this->MyHtml->tag('td', $record['Charter']['formated_date'] . ' ' . $record['Charter']['time']);
 	$td[] = $this->MyHtml->tag('td', $record['Destination']['name']);
 	$td[] = $this->MyHtml->tag('td', $record['Charter']['weekly']);
 	$td[] = $this->MyHtml->tag('td', $record['Charter']['fortnightly']);
