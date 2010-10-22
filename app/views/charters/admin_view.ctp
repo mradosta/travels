@@ -39,7 +39,7 @@
 
 	$fields[__('Total capacity', true)] = $total_capacity;
 
-	$fields[__('Ocupied', true)] = $percent . '% (' . $occupied . ')';
+	$fields[__('Occupied', true)] = $percent . '% (' . $occupied . ')';
 
 	echo $this->element('view', array('data' => $fields));
 

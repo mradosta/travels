@@ -52,7 +52,7 @@ class ChartersController extends AppController {
 		$data = $this->Charter->findById($id);
 		
 		$total = $data['Charter']['weekly'] + $data['Charter']['fortnightly'] + $data['Charter']['reserved'];
-		$occupied = sizeof($data['Passenger']);
+		$occupied = sizeof($data['Passenger']) + $data['Charter']['reserved'];
 		$percent = ($occupied * 100) / $total;
 		$this->set('percent', ceil($percent));
 		$this->set('occupied', $occupied);

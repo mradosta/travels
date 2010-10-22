@@ -30,7 +30,7 @@
 			'view.png',
 			array(
 				'class' => 'open_modal',
-				'title' => __('View', true) . ' ' . $record['Passenger']['first_name'] . ' ' . $record['Passenger']['last_name'],
+				'title' => __('View', true) . ' ' . $record['Passenger']['full_name'],
 				'url' => array(
 					'controller' 	=> 'passengers',
 					'action' 		=> 'view',
@@ -42,7 +42,7 @@
 			'edit.png',
 			array(
 				'class' => 'open_modal',
-				'title' => __('Edit', true) . ' ' . $record['Passenger']['first_name'] . ' ' . $record['Passenger']['last_name'],
+				'title' => __('Edit', true) . ' ' . $record['Passenger']['full_name'],
 				'url' => array(
 					'controller' 	=> 'passengers',
 					'action' 		=> 'edit',
@@ -51,7 +51,7 @@
 			)
 		);
 
-		$invertCurrentState = (($record['Passenger']['state'] == 'authorized') ? 'unauthorized' : 'authorized');
+		$invertCurrentState = (($record['Passenger']['state'] == 'authorized') ? 'authorized' : 'unauthorized');
 		
 		if (!empty($paginate)) {
 			$link = array(

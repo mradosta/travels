@@ -25,7 +25,7 @@
 
 	if (User::get('/User/type') == 'admin') {
 		$links =  null;
-		$invertCurrentState = (($data['Passenger']['state'] == 'authorized') ? 'unauthorized' : 'authorized');
+		$invertCurrentState = (($data['Passenger']['state'] == 'authorized') ? 'unauthorize' : 'authorize');
 		$links[] = $this->MyHtml->link(
 			$invertCurrentState,
 			array(
@@ -46,7 +46,7 @@
 
 	$fields[__('Charter', true)] = $data['Charter']['Destination']['name'] . ' ' . $data['Charter']['formated_date'];
 
-	$fields[__('Type', true)] = $data['Passenger']['type'];
+	$fields[__('Type', true)] = __($data['Passenger']['type'], true);
 
 	$fields[__('First Name', true)] = $data['Passenger']['first_name'];
 
@@ -60,7 +60,7 @@
 
 	$fields[__('Phone', true)] = $data['Passenger']['phone'];
 
-	$fields[__('Phone', true)] = $data['Passenger']['state'];
+	$fields[__('State', true)] = __($data['Passenger']['state'], true);
 
 
 	$passenger = $this->element('view', array('data' => $fields));

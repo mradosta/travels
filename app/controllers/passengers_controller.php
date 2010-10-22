@@ -22,7 +22,12 @@ class PassengersController extends AppController {
 			)
 		);
 
-		$this->set('states', array('authorized' => 'authorized', 'unauthorized' => 'unauthorized'));
+		$this->set('states',
+			array(
+				'authorized' => __('authorized', true),
+				'unauthorized' => __('unauthorized', true)
+			)
+		);
 
 		if (!empty($this->data)) {
 
@@ -117,6 +122,7 @@ class PassengersController extends AppController {
 			if (!empty($view_id)) {
 				$redirect = array('controller' => 'passengers', 'action' => 'view', $view_id);
 			} else {
+	
 				$redirect = array('controller' => 'passengers', 'action' => 'index');
 			}
 		} else {
@@ -214,12 +220,12 @@ class PassengersController extends AppController {
 		$this->set('users', $users);
 
 		$charters = $this->Passenger->Charter->find('list',
-			array('fields' => array('Charter.id', 'Charter.formated_date', 'Charter.description'))
+			array('fields' => array('Charter.id', 'Charter.date', 'Charter.description'))
 		);
 		$this->set('charters', $charters);
 
 		$this->set('id', $id);
-		$this->Filter->process();
+
 		$this->__index($id, true);
 	}
 
@@ -232,7 +238,6 @@ class PassengersController extends AppController {
 			$this->paginate['conditions']['Passenger.user_id'] = $userId;
 		}
 		$this->paginate['order'] = array('Charter.date' => 'asc');
-		
 		$this->set('data', $this->paginate());
 		if (!empty($userId) && !$admin) {
 			$this->render('index');

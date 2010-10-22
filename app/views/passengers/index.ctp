@@ -65,7 +65,7 @@ foreach ($data as $record) {
 	$td[] = $this->MyHtml->tag('td', $record['Charter']['description'] . ' ' . date('d-m-Y', strtotime($record['Charter']['date'])));
 	$td[] = $this->MyHtml->tag('td', $record['Passenger']['first_name']);
 	$td[] = $this->MyHtml->tag('td', $record['Passenger']['last_name']);
-	$td[] = $this->MyHtml->tag('td', $record['Passenger']['type']);
+	$td[] = $this->MyHtml->tag('td', __($record['Passenger']['type'], true));
 	$td[] = $this->MyHtml->tag('td', $this->MyHtml->image($record['Passenger']['state'] . '.png', array('title' => __($record['Passenger']['state'], true))));
 	
 	

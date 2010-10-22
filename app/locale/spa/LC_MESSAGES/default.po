@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lozada\n"
-"POT-Creation-Date: 2010-10-22 13:40+0000\n"
+"POT-Creation-Date: 2010-10-22 20:11+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: mradosta <martinradosta@gmail.com>\n"
 "Language-Team: \n"
@@ -26,11 +26,11 @@ msgstr "El charter ha sido grabado"
 msgid "The charter could not be saved. Please, check errors and try again."
 msgstr ""
 
-#: /controllers/charters_controller.php:73
+#: /controllers/charters_controller.php:70
 msgid "Charter deleted"
 msgstr "Charter borrado"
 
-#: /controllers/charters_controller.php:77
+#: /controllers/charters_controller.php:74
 msgid "Charter was not deleted"
 msgstr "El charter no fue borrado"
 
@@ -62,40 +62,48 @@ msgstr "Quincenal"
 msgid "reserved"
 msgstr "Reservado"
 
-#: /controllers/passengers_controller.php:67
+#: /controllers/passengers_controller.php:27
+msgid "authorized"
+msgstr "Autorizado"
+
+#: /controllers/passengers_controller.php:28
+msgid "unauthorized"
+msgstr "No autorizado"
+
+#: /controllers/passengers_controller.php:72
 #: /views/passengers/add_passengers.ctp:14
 msgid "Passenger"
 msgstr "Pasajero"
 
-#: /controllers/passengers_controller.php:72
+#: /controllers/passengers_controller.php:77
 msgid "Passenger added"
 msgstr "Pasajero agregado"
 
-#: /controllers/passengers_controller.php:92
+#: /controllers/passengers_controller.php:97
 msgid "Passengers could not be saved, because the selected charter has gone."
 msgstr ""
 
-#: /controllers/passengers_controller.php:99
+#: /controllers/passengers_controller.php:104
 msgid "Passengers could not be saved, because no availables charters."
 msgstr "No hay charters disponibles en las fechas / destinos seleccionados"
 
-#: /controllers/passengers_controller.php:102
+#: /controllers/passengers_controller.php:107
 msgid "Passengers could not be saved, because you must enter the number of passengers."
 msgstr "Debe ingresar la cantidad de pasajeros"
 
-#: /controllers/passengers_controller.php:137;179
+#: /controllers/passengers_controller.php:142;184
 msgid "The passengers has been saved."
 msgstr "El pasajero ha sido grabado"
 
-#: /controllers/passengers_controller.php:143;185
+#: /controllers/passengers_controller.php:148;190
 msgid "The passengers could not be saved. Please, check errors and try again."
 msgstr "Los pasajeros no pudieron grabarse. Por favor revise los datos requeridos e intente nuevamente."
 
-#: /controllers/passengers_controller.php:262
+#: /controllers/passengers_controller.php:267
 msgid "Passenger deleted"
 msgstr "Pasajero borrado"
 
-#: /controllers/passengers_controller.php:266
+#: /controllers/passengers_controller.php:271
 msgid "Passenger was not deleted"
 msgstr "El pasajero no fue borrado"
 
@@ -115,59 +123,59 @@ msgstr "Por favor, ingrese la nueva clave."
 msgid "The password was changed succesfully."
 msgstr "La clave ha sido cambiada"
 
-#: /controllers/users_controller.php:99
+#: /controllers/users_controller.php:102
 msgid "There was a problem updating the password."
 msgstr ""
 
-#: /controllers/users_controller.php:106
+#: /controllers/users_controller.php:109
 msgid "The new password and the retyped are not equals."
 msgstr "Las claves no coinciden"
 
-#: /controllers/users_controller.php:146;184
+#: /controllers/users_controller.php:153;191
 msgid "The user has been saved."
 msgstr "El usuario ha sido grabado"
 
-#: /controllers/users_controller.php:149;187
+#: /controllers/users_controller.php:156;194
 msgid "The user could not be saved. Please, check errors and try again."
 msgstr ""
 
-#: /controllers/users_controller.php:206
+#: /controllers/users_controller.php:213
 msgid "User deleted"
 msgstr "Usuario borrado"
 
-#: /controllers/users_controller.php:211
+#: /controllers/users_controller.php:218
 msgid "User was not deleted"
 msgstr ""
 
-#: /controllers/users_controller.php:232
+#: /controllers/users_controller.php:239
 msgid "User"
 msgstr "Usuario"
 
-#: /controllers/users_controller.php:237
+#: /controllers/users_controller.php:244
 msgid "User was not"
 msgstr ""
 
-#: /models/charter.php:32
+#: /models/charter.php:18
 msgid "Date can't be empty"
 msgstr "La fecha no puede quedar vacia"
 
-#: /models/charter.php:39
+#: /models/charter.php:25
 msgid "Time can't be empty"
 msgstr "La hora no puede quedar vacia"
 
-#: /models/charter.php:46
+#: /models/charter.php:32
 msgid "Description can't be empty"
-msgstr "La descripcion no puede quedar vacia"
+msgstr "La descripción no puede quedar vacia"
 
-#: /models/charter.php:53
+#: /models/charter.php:39
 msgid "Weekly capacity can't be empty"
 msgstr "La capacidad semanal no puede quedar vacia"
 
-#: /models/charter.php:60
+#: /models/charter.php:46
 msgid "Fortnightly capacity can't be empty"
-msgstr "La capacidad quincenalno puede quedar vacia"
+msgstr "La capacidad quincenal no puede quedar vacia"
 
-#: /models/charter.php:67
+#: /models/charter.php:53
 msgid "Reserved capacity can't be empty"
 msgstr "La capacidad de reservas no puede quedar vacia"
 
@@ -187,23 +195,23 @@ msgstr "Ingrese la fecha"
 msgid "Message can't be empty"
 msgstr "El mensaje no puede quedar vacio"
 
-#: /models/passenger.php:17
+#: /models/passenger.php:18
 msgid "First Name can't be empty"
 msgstr "El nombre no puede queda vacio"
 
-#: /models/passenger.php:24
+#: /models/passenger.php:25
 msgid "Last Name can't be empty"
 msgstr "El apellido no puede quedar vacio"
 
-#: /models/passenger.php:31
+#: /models/passenger.php:32
 msgid "Birthday can't be empty"
 msgstr "La fecha de nacimiento no puede quedar vacia"
 
-#: /models/passenger.php:38
+#: /models/passenger.php:39
 msgid "Invalid email"
 msgstr "Email inválido"
 
-#: /models/passenger.php:45
+#: /models/passenger.php:46
 msgid "Dni can't be empty"
 msgstr "El DNI no puede quedar vacio"
 
@@ -241,64 +249,61 @@ msgstr "Reservas"
 msgid "Charters"
 msgstr "Charters"
 
-#: /views/charters/admin_index.ctp:10
+#: /views/charters/admin_index.ctp:15
 msgid "Add Charter"
 msgstr "Agregar charter"
 
-#: /views/charters/admin_index.ctp:15
+#: /views/charters/admin_index.ctp:20
 msgid "Add charter"
 msgstr "Agregar Charter"
 
-#: /views/charters/admin_index.ctp:22
+#: /views/charters/admin_index.ctp:26
 #: /views/destinations/admin_index.ctp:21
 msgid "Action"
 msgstr "Acción"
 
-#: /views/charters/admin_index.ctp:23
+#: /views/charters/admin_index.ctp:27
 msgid "Date / Time"
 msgstr "Fecha / Hora"
 
-#: /views/charters/admin_index.ctp:24
-#: /views/charters/admin_view.ctp:31
-#: /views/destinations/admin_view.ctp:27
+#: /views/charters/admin_index.ctp:28
+#: /views/charters/admin_view.ctp:28
+#: /views/destinations/admin_view.ctp:26
 msgid "Destination"
 msgstr "Destino"
 
-#: /views/charters/admin_index.ctp:25
-#: /views/charters/admin_view.ctp:56
+#: /views/charters/admin_index.ctp:29
+#: /views/charters/admin_view.ctp:34
 msgid "Weekly capacity"
-msgstr "Cap. Semanal"
+msgstr "Cap. semanal"
 
-#: /views/charters/admin_index.ctp:26
-#: /views/charters/admin_view.ctp:65
+#: /views/charters/admin_index.ctp:30
+#: /views/charters/admin_view.ctp:36
 msgid "Fortnightly capacity"
 msgstr "Cap. quincenal"
 
-#: /views/charters/admin_index.ctp:27
-#: /views/charters/admin_view.ctp:74
+#: /views/charters/admin_index.ctp:31
+#: /views/charters/admin_view.ctp:38
 msgid "Reserved capacity"
-msgstr "Cap. Reservas"
+msgstr "Cap. reservas"
 
-#: /views/charters/admin_index.ctp:28
-#: /views/charters/admin_view.ctp:92
+#: /views/charters/admin_index.ctp:32
 msgid "Occupied"
 msgstr "Ocupado"
 
-#: /views/charters/admin_index.ctp:41
-#: /views/charters/admin_view.ctp:129
+#: /views/charters/admin_index.ctp:45
 #: /views/destinations/admin_index.ctp:34
+#: /views/elements/list_passengers.ctp:33
 #: /views/ocupations/admin_index.ctp:38
-#: /views/passengers/admin_index.ctp:54
 #: /views/passengers/index.ctp:43
-#: /views/users/admin_index.ctp:45
+#: /views/users/admin_index.ctp:39
 msgid "View"
 msgstr "Ver"
 
-#: /views/charters/admin_index.ctp:53
-#: /views/charters/admin_view.ctp:141
+#: /views/charters/admin_index.ctp:57
 #: /views/destinations/admin_index.ctp:46
+#: /views/elements/list_passengers.ctp:45
 #: /views/ocupations/admin_index.ctp:50
-#: /views/passengers/admin_index.ctp:66
 #: /views/passengers/index.ctp:55
 #: /views/users/admin_view.ctp:8
 msgid "Edit"
@@ -321,60 +326,21 @@ msgstr "Borrar charter"
 msgid "Are your sure to delete the Charter?"
 msgstr "Esta seguro que desea borrar el charter?"
 
-#: /views/charters/admin_view.ctp:39
+#: /views/charters/admin_view.ctp:30
 msgid "Date"
 msgstr "Fecha"
 
-#: /views/charters/admin_view.ctp:48
+#: /views/charters/admin_view.ctp:32
 msgid "Description"
 msgstr "Descripción"
 
-#: /views/charters/admin_view.ctp:83
+#: /views/charters/admin_view.ctp:40
 msgid "Total capacity"
 msgstr "Cap. total"
 
-#: /views/charters/admin_view.ctp:111
-#: /views/ocupations/admin_index.ctp:22
-#: /views/passengers/admin_index.ctp:35
-#: /views/passengers/index.ctp:24
-#: /views/users/admin_view.ctp:45
-msgid "Actions"
-msgstr "Acciones"
-
-#: /views/charters/admin_view.ctp:112
-#: /views/passengers/__view.ctp:67
-#: /views/passengers/admin_index.ctp:37
-#: /views/passengers/index.ctp:26
-msgid "First Name"
-msgstr "Nombre"
-
-#: /views/charters/admin_view.ctp:113
-#: /views/passengers/__view.ctp:76
-#: /views/passengers/admin_index.ctp:38
-#: /views/passengers/index.ctp:27
-msgid "Last Name"
-msgstr "Apellido"
-
-#: /views/charters/admin_view.ctp:114
-#: /views/passengers/__view.ctp:58
-#: /views/passengers/admin_index.ctp:39
-#: /views/passengers/index.ctp:28
-#: /views/users/admin_add.ctp:58
-#: /views/users/admin_index.ctp:30
-msgid "Type"
-msgstr "Tipo"
-
-#: /views/charters/admin_view.ctp:115
-#: /views/passengers/__view.ctp:117
-#: /views/passengers/admin_index.ctp:40
-#: /views/passengers/index.ctp:29
-msgid "State"
-msgstr "Estado"
-
-#: /views/charters/admin_view.ctp:116
-#: /views/passengers/admin_index.ctp:22;41
-msgid "Agency"
-msgstr "Agencia"
+#: /views/charters/admin_view.ctp:42
+msgid "Ocupied"
+msgstr "Ocupado"
 
 #: /views/destinations/admin_index.ctp:4
 #: /views/layouts/admin.ctp:27
@@ -402,9 +368,22 @@ msgstr "Borrar destino"
 msgid "Are your sure to delete the Destination?"
 msgstr "Esta seguro que desea borrar el destino?"
 
+#: /views/elements/filters.ctp:6
+#: /views/helpers/my_form.php:132
+msgid "Search"
+msgstr "Buscar"
+
+#: /views/elements/filters.ctp:15
+msgid "Clear"
+msgstr "Limpiar"
+
 #: /views/elements/footer.ctp:6
 msgid "Save"
 msgstr "Grabar"
+
+#: /views/elements/footer.ctp:7
+msgid "Cancel"
+msgstr "Cancelar"
 
 #: /views/elements/header.ctp:14
 msgid "Last Login"
@@ -418,9 +397,60 @@ msgstr "Salir"
 msgid "Are you sure you want to leave the App?"
 msgstr "Esta seguro que desea salir de la aplicación?"
 
-#: /views/helpers/my_form.php:132
-msgid "Search"
-msgstr "Buscar"
+#: /views/elements/list_passengers.ctp:3
+#: /views/layouts/admin.ctp:28
+#: /views/layouts/default.ctp:59
+#: /views/passengers/add.ctp:9
+#: /views/passengers/index.ctp:4
+msgid "Passengers"
+msgstr "Pasajeros"
+
+#: /views/elements/list_passengers.ctp:13
+#: /views/ocupations/admin_index.ctp:22
+#: /views/passengers/index.ctp:24
+#: /views/users/admin_index.ctp:26
+#: /views/users/admin_view.ctp:45
+msgid "Actions"
+msgstr "Acciones"
+
+#: /views/elements/list_passengers.ctp:14
+#: /views/passengers/__view.ctp:47
+msgid "Charter"
+msgstr "Charter"
+
+#: /views/elements/list_passengers.ctp:15
+#: /views/passengers/__view.ctp:51
+#: /views/passengers/index.ctp:26
+msgid "First Name"
+msgstr "Nombre"
+
+#: /views/elements/list_passengers.ctp:16
+#: /views/passengers/__view.ctp:53
+#: /views/passengers/index.ctp:27
+msgid "Last Name"
+msgstr "Apellido"
+
+#: /views/elements/list_passengers.ctp:17
+#: /views/passengers/__view.ctp:49
+#: /views/passengers/index.ctp:28
+#: /views/users/admin_add.ctp:59
+#: /views/users/admin_index.ctp:29
+msgid "Type"
+msgstr "Tipo"
+
+#: /views/elements/list_passengers.ctp:18
+#: /views/passengers/__view.ctp:63
+#: /views/passengers/index.ctp:29
+msgid "State"
+msgstr "Estado"
+
+#: /views/elements/list_passengers.ctp:19
+msgid "Agency"
+msgstr "Agencia"
+
+#: /views/elements/list_passengers.ctp:77
+msgid "Change state"
+msgstr "Cambiar estado"
 
 #: /views/helpers/my_paginator.php:37
 msgid "Showing"
@@ -442,16 +472,9 @@ msgstr "anterior"
 msgid "next"
 msgstr "siguiente"
 
-#: /views/layouts/admin.ctp:28
-#: /views/layouts/default.ctp:59
-#: /views/passengers/admin_index.ctp:4
-#: /views/passengers/index.ctp:4
-msgid "Passengers"
-msgstr "Pasajeros"
-
 #: /views/layouts/admin.ctp:29
 #: /views/layouts/default.ctp:53
-#: /views/users/admin_index.ctp:4
+#: /views/users/admin_index.ctp:5
 msgid "Users"
 msgstr "Usuarios"
 
@@ -461,7 +484,7 @@ msgid "Logout"
 msgstr "Salir"
 
 #: /views/layouts/default.ctp:61
-#: /views/users/admin_add.ctp:26;33
+#: /views/users/admin_add.ctp:26;34
 msgid "Change password"
 msgstr "Cambiar clave"
 
@@ -515,32 +538,23 @@ msgstr "Borrar pasajero"
 msgid "Are your sure to delete the Passenger?"
 msgstr "Esta seguro que desea borrar el pasajero?"
 
-#: /views/passengers/__view.ctp:49
-#: /views/passengers/admin_index.ctp:11;36
-msgid "Charter"
-msgstr "Charter"
-
-#: /views/passengers/__view.ctp:85
+#: /views/passengers/__view.ctp:55
 msgid "Birthday"
 msgstr "Nacimiento"
 
-#: /views/passengers/__view.ctp:93
+#: /views/passengers/__view.ctp:57
 msgid "DNI"
 msgstr "DNI"
 
-#: /views/passengers/__view.ctp:101
-#: /views/users/admin_add.ctp:51
+#: /views/passengers/__view.ctp:59
+#: /views/users/admin_add.ctp:52
 #: /views/users/admin_view.ctp:53
 msgid "Email"
 msgstr "Email"
 
-#: /views/passengers/__view.ctp:109
+#: /views/passengers/__view.ctp:61
 msgid "Phone"
 msgstr "Telefono"
-
-#: /views/passengers/admin_index.ctp:84
-msgid "Change state"
-msgstr "Cambiar estado"
 
 #: /views/passengers/index.ctp:10
 msgid "Add Passenger"
@@ -550,31 +564,34 @@ msgstr "Agregar Pasajero"
 msgid "Add passenger"
 msgstr "Agregar pasajero"
 
-#: /views/users/admin_add.ctp:46
-#: /views/users/admin_index.ctp:28
+#: /views/users/admin_add.ctp:47
+#: /views/users/admin_index.ctp:27
 msgid "User Name"
 msgstr "Nombre de Usuario"
 
-#: /views/users/admin_add.ctp:50
-#: /views/users/admin_index.ctp:29
+#: /views/users/admin_add.ctp:51
+#: /views/users/admin_index.ctp:28
 #: /views/users/admin_view.ctp:50
 msgid "Full Name"
 msgstr "Nombre completo"
 
-#: /views/users/admin_add.ctp:53
+#: /views/users/admin_add.ctp:54
 #: /views/users/login.ctp:9
 msgid "Password"
 msgstr "Clave"
 
-#: /views/users/admin_add.ctp:55
+#: /views/users/admin_add.ctp:56
 msgid "Retype Password"
 msgstr "Reingrese la clave"
 
-#: /views/users/admin_index.ctp:10
-msgid "Add user"
+#: /views/users/admin_index.ctp:12
+msgid "Add User"
 msgstr "Agregar usuario"
 
 #: /views/users/admin_index.ctp:17
+msgid "Add user"
+msgstr "Agregar usuario"
+
 #: /views/users/admin_view.ctp:16
 msgid "Add new user"
 msgstr ""
@@ -602,6 +619,18 @@ msgstr ""
 #: /views/users/admin_view.ctp:62
 msgid "Web app access"
 msgstr ""
+
+#: /views/users/change_password.ctp:6
+msgid "Current"
+msgstr "Actual"
+
+#: /views/users/change_password.ctp:17
+msgid "New password"
+msgstr "Nueva clave"
+
+#: /views/users/change_password.ctp:21
+msgid "Retype password"
+msgstr "Reingrese la clave"
 
 #: /views/users/login.ctp:8
 msgid "Username"

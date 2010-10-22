@@ -28,7 +28,7 @@ $header[] = __('Date / Time', true);
 $header[] = __('Destination', true);
 $header[] = __('Weekly capacity', true);
 $header[] = __('Fortnightly capacity', true);
-$header[] = __('Reserved capacity', true);
+$header[] = __('Reserved', true);
 $header[] = __('Occupied', true);
 
 $head = $this->MyHtml->tag('thead', $this->MyHtml->tableHeaders($header));

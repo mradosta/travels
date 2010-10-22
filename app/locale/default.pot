@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2010-10-22 13:40+0000\n"
+"POT-Creation-Date: 2010-10-22 20:11+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -30,11 +30,11 @@ msgstr ""
 msgid "The charter could not be saved. Please, check errors and try again."
 msgstr ""
 
-#: /controllers/charters_controller.php:73
+#: /controllers/charters_controller.php:70
 msgid "Charter deleted"
 msgstr ""
 
-#: /controllers/charters_controller.php:77
+#: /controllers/charters_controller.php:74
 msgid "Charter was not deleted"
 msgstr ""
 
@@ -66,40 +66,48 @@ msgstr ""
 msgid "reserved"
 msgstr ""
 
-#: /controllers/passengers_controller.php:67
+#: /controllers/passengers_controller.php:27
+msgid "authorized"
+msgstr ""
+
+#: /controllers/passengers_controller.php:28
+msgid "unauthorized"
+msgstr ""
+
+#: /controllers/passengers_controller.php:72
 #: /views/passengers/add_passengers.ctp:14
 msgid "Passenger"
 msgstr ""
 
-#: /controllers/passengers_controller.php:72
+#: /controllers/passengers_controller.php:77
 msgid "Passenger added"
 msgstr ""
 
-#: /controllers/passengers_controller.php:92
+#: /controllers/passengers_controller.php:97
 msgid "Passengers could not be saved, because the selected charter has gone."
 msgstr ""
 
-#: /controllers/passengers_controller.php:99
+#: /controllers/passengers_controller.php:104
 msgid "Passengers could not be saved, because no availables charters."
 msgstr ""
 
-#: /controllers/passengers_controller.php:102
+#: /controllers/passengers_controller.php:107
 msgid "Passengers could not be saved, because you must enter the number of passengers."
 msgstr ""
 
-#: /controllers/passengers_controller.php:137;179
+#: /controllers/passengers_controller.php:142;184
 msgid "The passengers has been saved."
 msgstr ""
 
-#: /controllers/passengers_controller.php:143;185
+#: /controllers/passengers_controller.php:148;190
 msgid "The passengers could not be saved. Please, check errors and try again."
 msgstr ""
 
-#: /controllers/passengers_controller.php:262
+#: /controllers/passengers_controller.php:267
 msgid "Passenger deleted"
 msgstr ""
 
-#: /controllers/passengers_controller.php:266
+#: /controllers/passengers_controller.php:271
 msgid "Passenger was not deleted"
 msgstr ""
 
@@ -119,59 +127,59 @@ msgstr ""
 msgid "The password was changed succesfully."
 msgstr ""
 
-#: /controllers/users_controller.php:99
+#: /controllers/users_controller.php:102
 msgid "There was a problem updating the password."
 msgstr ""
 
-#: /controllers/users_controller.php:106
+#: /controllers/users_controller.php:109
 msgid "The new password and the retyped are not equals."
 msgstr ""
 
-#: /controllers/users_controller.php:146;184
+#: /controllers/users_controller.php:153;191
 msgid "The user has been saved."
 msgstr ""
 
-#: /controllers/users_controller.php:149;187
+#: /controllers/users_controller.php:156;194
 msgid "The user could not be saved. Please, check errors and try again."
 msgstr ""
 
-#: /controllers/users_controller.php:206
+#: /controllers/users_controller.php:213
 msgid "User deleted"
 msgstr ""
 
-#: /controllers/users_controller.php:211
+#: /controllers/users_controller.php:218
 msgid "User was not deleted"
 msgstr ""
 
-#: /controllers/users_controller.php:232
+#: /controllers/users_controller.php:239
 msgid "User"
 msgstr ""
 
-#: /controllers/users_controller.php:237
+#: /controllers/users_controller.php:244
 msgid "User was not"
 msgstr ""
 
-#: /models/charter.php:32
+#: /models/charter.php:18
 msgid "Date can't be empty"
 msgstr ""
 
-#: /models/charter.php:39
+#: /models/charter.php:25
 msgid "Time can't be empty"
 msgstr ""
 
-#: /models/charter.php:46
+#: /models/charter.php:32
 msgid "Description can't be empty"
 msgstr ""
 
-#: /models/charter.php:53
+#: /models/charter.php:39
 msgid "Weekly capacity can't be empty"
 msgstr ""
 
-#: /models/charter.php:60
+#: /models/charter.php:46
 msgid "Fortnightly capacity can't be empty"
 msgstr ""
 
-#: /models/charter.php:67
+#: /models/charter.php:53
 msgid "Reserved capacity can't be empty"
 msgstr ""
 
@@ -191,23 +199,23 @@ msgstr ""
 msgid "Message can't be empty"
 msgstr ""
 
-#: /models/passenger.php:17
+#: /models/passenger.php:18
 msgid "First Name can't be empty"
 msgstr ""
 
-#: /models/passenger.php:24
+#: /models/passenger.php:25
 msgid "Last Name can't be empty"
 msgstr ""
 
-#: /models/passenger.php:31
+#: /models/passenger.php:32
 msgid "Birthday can't be empty"
 msgstr ""
 
-#: /models/passenger.php:38
+#: /models/passenger.php:39
 msgid "Invalid email"
 msgstr ""
 
-#: /models/passenger.php:45
+#: /models/passenger.php:46
 msgid "Dni can't be empty"
 msgstr ""
 
@@ -245,64 +253,61 @@ msgstr ""
 msgid "Charters"
 msgstr ""
 
-#: /views/charters/admin_index.ctp:10
+#: /views/charters/admin_index.ctp:15
 msgid "Add Charter"
 msgstr ""
 
-#: /views/charters/admin_index.ctp:15
+#: /views/charters/admin_index.ctp:20
 msgid "Add charter"
 msgstr ""
 
-#: /views/charters/admin_index.ctp:22
+#: /views/charters/admin_index.ctp:26
 #: /views/destinations/admin_index.ctp:21
 msgid "Action"
 msgstr ""
 
-#: /views/charters/admin_index.ctp:23
+#: /views/charters/admin_index.ctp:27
 msgid "Date / Time"
 msgstr ""
 
-#: /views/charters/admin_index.ctp:24
-#: /views/charters/admin_view.ctp:31
-#: /views/destinations/admin_view.ctp:27
+#: /views/charters/admin_index.ctp:28
+#: /views/charters/admin_view.ctp:28
+#: /views/destinations/admin_view.ctp:26
 msgid "Destination"
 msgstr ""
 
-#: /views/charters/admin_index.ctp:25
-#: /views/charters/admin_view.ctp:56
+#: /views/charters/admin_index.ctp:29
+#: /views/charters/admin_view.ctp:34
 msgid "Weekly capacity"
 msgstr ""
 
-#: /views/charters/admin_index.ctp:26
-#: /views/charters/admin_view.ctp:65
+#: /views/charters/admin_index.ctp:30
+#: /views/charters/admin_view.ctp:36
 msgid "Fortnightly capacity"
 msgstr ""
 
-#: /views/charters/admin_index.ctp:27
-#: /views/charters/admin_view.ctp:74
+#: /views/charters/admin_index.ctp:31
+#: /views/charters/admin_view.ctp:38
 msgid "Reserved capacity"
 msgstr ""
 
-#: /views/charters/admin_index.ctp:28
-#: /views/charters/admin_view.ctp:92
+#: /views/charters/admin_index.ctp:32
 msgid "Occupied"
 msgstr ""
 
-#: /views/charters/admin_index.ctp:41
-#: /views/charters/admin_view.ctp:129
+#: /views/charters/admin_index.ctp:45
 #: /views/destinations/admin_index.ctp:34
+#: /views/elements/list_passengers.ctp:33
 #: /views/ocupations/admin_index.ctp:38
-#: /views/passengers/admin_index.ctp:54
 #: /views/passengers/index.ctp:43
-#: /views/users/admin_index.ctp:45
+#: /views/users/admin_index.ctp:39
 msgid "View"
 msgstr ""
 
-#: /views/charters/admin_index.ctp:53
-#: /views/charters/admin_view.ctp:141
+#: /views/charters/admin_index.ctp:57
 #: /views/destinations/admin_index.ctp:46
+#: /views/elements/list_passengers.ctp:45
 #: /views/ocupations/admin_index.ctp:50
-#: /views/passengers/admin_index.ctp:66
 #: /views/passengers/index.ctp:55
 #: /views/users/admin_view.ctp:8
 msgid "Edit"
@@ -325,59 +330,20 @@ msgstr ""
 msgid "Are your sure to delete the Charter?"
 msgstr ""
 
-#: /views/charters/admin_view.ctp:39
+#: /views/charters/admin_view.ctp:30
 msgid "Date"
 msgstr ""
 
-#: /views/charters/admin_view.ctp:48
+#: /views/charters/admin_view.ctp:32
 msgid "Description"
 msgstr ""
 
-#: /views/charters/admin_view.ctp:83
+#: /views/charters/admin_view.ctp:40
 msgid "Total capacity"
 msgstr ""
 
-#: /views/charters/admin_view.ctp:111
-#: /views/ocupations/admin_index.ctp:22
-#: /views/passengers/admin_index.ctp:35
-#: /views/passengers/index.ctp:24
-#: /views/users/admin_view.ctp:45
-msgid "Actions"
-msgstr ""
-
-#: /views/charters/admin_view.ctp:112
-#: /views/passengers/__view.ctp:67
-#: /views/passengers/admin_index.ctp:37
-#: /views/passengers/index.ctp:26
-msgid "First Name"
-msgstr ""
-
-#: /views/charters/admin_view.ctp:113
-#: /views/passengers/__view.ctp:76
-#: /views/passengers/admin_index.ctp:38
-#: /views/passengers/index.ctp:27
-msgid "Last Name"
-msgstr ""
-
-#: /views/charters/admin_view.ctp:114
-#: /views/passengers/__view.ctp:58
-#: /views/passengers/admin_index.ctp:39
-#: /views/passengers/index.ctp:28
-#: /views/users/admin_add.ctp:58
-#: /views/users/admin_index.ctp:30
-msgid "Type"
-msgstr ""
-
-#: /views/charters/admin_view.ctp:115
-#: /views/passengers/__view.ctp:117
-#: /views/passengers/admin_index.ctp:40
-#: /views/passengers/index.ctp:29
-msgid "State"
-msgstr ""
-
-#: /views/charters/admin_view.ctp:116
-#: /views/passengers/admin_index.ctp:22;41
-msgid "Agency"
+#: /views/charters/admin_view.ctp:42
+msgid "Ocupied"
 msgstr ""
 
 #: /views/destinations/admin_index.ctp:4
@@ -406,8 +372,21 @@ msgstr ""
 msgid "Are your sure to delete the Destination?"
 msgstr ""
 
+#: /views/elements/filters.ctp:6
+#: /views/helpers/my_form.php:132
+msgid "Search"
+msgstr ""
+
+#: /views/elements/filters.ctp:15
+msgid "Clear"
+msgstr ""
+
 #: /views/elements/footer.ctp:6
 msgid "Save"
+msgstr ""
+
+#: /views/elements/footer.ctp:7
+msgid "Cancel"
 msgstr ""
 
 #: /views/elements/header.ctp:14
@@ -422,8 +401,59 @@ msgstr ""
 msgid "Are you sure you want to leave the App?"
 msgstr ""
 
-#: /views/helpers/my_form.php:132
-msgid "Search"
+#: /views/elements/list_passengers.ctp:3
+#: /views/layouts/admin.ctp:28
+#: /views/layouts/default.ctp:59
+#: /views/passengers/add.ctp:9
+#: /views/passengers/index.ctp:4
+msgid "Passengers"
+msgstr ""
+
+#: /views/elements/list_passengers.ctp:13
+#: /views/ocupations/admin_index.ctp:22
+#: /views/passengers/index.ctp:24
+#: /views/users/admin_index.ctp:26
+#: /views/users/admin_view.ctp:45
+msgid "Actions"
+msgstr ""
+
+#: /views/elements/list_passengers.ctp:14
+#: /views/passengers/__view.ctp:47
+msgid "Charter"
+msgstr ""
+
+#: /views/elements/list_passengers.ctp:15
+#: /views/passengers/__view.ctp:51
+#: /views/passengers/index.ctp:26
+msgid "First Name"
+msgstr ""
+
+#: /views/elements/list_passengers.ctp:16
+#: /views/passengers/__view.ctp:53
+#: /views/passengers/index.ctp:27
+msgid "Last Name"
+msgstr ""
+
+#: /views/elements/list_passengers.ctp:17
+#: /views/passengers/__view.ctp:49
+#: /views/passengers/index.ctp:28
+#: /views/users/admin_add.ctp:59
+#: /views/users/admin_index.ctp:29
+msgid "Type"
+msgstr ""
+
+#: /views/elements/list_passengers.ctp:18
+#: /views/passengers/__view.ctp:63
+#: /views/passengers/index.ctp:29
+msgid "State"
+msgstr ""
+
+#: /views/elements/list_passengers.ctp:19
+msgid "Agency"
+msgstr ""
+
+#: /views/elements/list_passengers.ctp:77
+msgid "Change state"
 msgstr ""
 
 #: /views/helpers/my_paginator.php:37
@@ -446,16 +476,9 @@ msgstr ""
 msgid "next"
 msgstr ""
 
-#: /views/layouts/admin.ctp:28
-#: /views/layouts/default.ctp:59
-#: /views/passengers/admin_index.ctp:4
-#: /views/passengers/index.ctp:4
-msgid "Passengers"
-msgstr ""
-
 #: /views/layouts/admin.ctp:29
 #: /views/layouts/default.ctp:53
-#: /views/users/admin_index.ctp:4
+#: /views/users/admin_index.ctp:5
 msgid "Users"
 msgstr ""
 
@@ -465,7 +488,7 @@ msgid "Logout"
 msgstr ""
 
 #: /views/layouts/default.ctp:61
-#: /views/users/admin_add.ctp:26;33
+#: /views/users/admin_add.ctp:26;34
 msgid "Change password"
 msgstr ""
 
@@ -519,31 +542,22 @@ msgstr ""
 msgid "Are your sure to delete the Passenger?"
 msgstr ""
 
-#: /views/passengers/__view.ctp:49
-#: /views/passengers/admin_index.ctp:11;36
-msgid "Charter"
-msgstr ""
-
-#: /views/passengers/__view.ctp:85
+#: /views/passengers/__view.ctp:55
 msgid "Birthday"
 msgstr ""
 
-#: /views/passengers/__view.ctp:93
+#: /views/passengers/__view.ctp:57
 msgid "DNI"
 msgstr ""
 
-#: /views/passengers/__view.ctp:101
-#: /views/users/admin_add.ctp:51
+#: /views/passengers/__view.ctp:59
+#: /views/users/admin_add.ctp:52
 #: /views/users/admin_view.ctp:53
 msgid "Email"
 msgstr ""
 
-#: /views/passengers/__view.ctp:109
+#: /views/passengers/__view.ctp:61
 msgid "Phone"
-msgstr ""
-
-#: /views/passengers/admin_index.ctp:84
-msgid "Change state"
 msgstr ""
 
 #: /views/passengers/index.ctp:10
@@ -554,31 +568,34 @@ msgstr ""
 msgid "Add passenger"
 msgstr ""
 
-#: /views/users/admin_add.ctp:46
-#: /views/users/admin_index.ctp:28
+#: /views/users/admin_add.ctp:47
+#: /views/users/admin_index.ctp:27
 msgid "User Name"
 msgstr ""
 
-#: /views/users/admin_add.ctp:50
-#: /views/users/admin_index.ctp:29
+#: /views/users/admin_add.ctp:51
+#: /views/users/admin_index.ctp:28
 #: /views/users/admin_view.ctp:50
 msgid "Full Name"
 msgstr ""
 
-#: /views/users/admin_add.ctp:53
+#: /views/users/admin_add.ctp:54
 #: /views/users/login.ctp:9
 msgid "Password"
 msgstr ""
 
-#: /views/users/admin_add.ctp:55
+#: /views/users/admin_add.ctp:56
 msgid "Retype Password"
 msgstr ""
 
-#: /views/users/admin_index.ctp:10
-msgid "Add user"
+#: /views/users/admin_index.ctp:12
+msgid "Add User"
 msgstr ""
 
 #: /views/users/admin_index.ctp:17
+msgid "Add user"
+msgstr ""
+
 #: /views/users/admin_view.ctp:16
 msgid "Add new user"
 msgstr ""
@@ -605,6 +622,18 @@ msgstr ""
 
 #: /views/users/admin_view.ctp:62
 msgid "Web app access"
+msgstr ""
+
+#: /views/users/change_password.ctp:6
+msgid "Current"
+msgstr ""
+
+#: /views/users/change_password.ctp:17
+msgid "New password"
+msgstr ""
+
+#: /views/users/change_password.ctp:21
+msgid "Retype password"
 msgstr ""
 
 #: /views/users/login.ctp:8
