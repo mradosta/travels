@@ -5,28 +5,31 @@ $out[] = $this->MyHtml->tag('h2',
 	array('id' => 'tasks_title', 'class' => 'passengers')
 );
 
-$out[] = $this->MyForm->input(
-	'user_id',
-	array(
-		'label' 	=> __('Charter', true),
-		'type' 		=> 'select',
-		'options' 	=> $charters,
-		'default' 	=> $id,
-		'empty' 	=> true,
-		'div' => array('class' => 'filter')
-	)
-);
-$out[] = $this->MyForm->input(
-	'user_id',
-	array(
-		'label' 	=> __('Agency', true),
-		'type' 		=> 'select',
-		'options' 	=> $users,
-		'default' 	=> $id,
-		'empty' 	=> true,
-		'div' => array('class' => 'filter')
-	)
-);
+//$out[] = $this->MyForm->input(
+//	'user_id',
+//	array(
+//		'label' 	=> __('Charter', true),
+//		'type' 		=> 'select',
+//		'options' 	=> $charters,
+//		'default' 	=> $id,
+//		'empty' 	=> true,
+//		'div' => array('class' => 'filter')
+//	)
+//);
+//$out[] = $this->MyForm->input(
+//	'user_id',
+//	array(
+//		'label' 	=> __('Agency', true),
+//		'type' 		=> 'select',
+//		'options' 	=> $users,
+//		'default' 	=> $id,
+//		'empty' 	=> true,
+//		'div' => array('class' => 'filter')
+//	)
+//);
+
+/** Filters */
+$out[] = $this->element('filters', array('fields' => array('user_id', 'charter_id')));
 
 
 

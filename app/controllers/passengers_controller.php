@@ -220,7 +220,7 @@ class PassengersController extends AppController {
 		$this->set('charters', $charters);
 
 		$this->set('id', $id);
-
+		$this->Filter->process();
 		$this->__index($id, true);
 	}
 

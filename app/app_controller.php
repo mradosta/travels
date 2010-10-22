@@ -6,7 +6,7 @@ class AppController extends Controller {
 
 	var $paginate = array('limit' => 15);
 	var $helpers = array('MyHtml', 'MyPaginator', 'MyForm', 'MyText', 'Session');
-	var $components = array('Session', 'Email');
+	var $components = array('Session', 'Email', 'Filter');
 
 
 	function delete($id) {
