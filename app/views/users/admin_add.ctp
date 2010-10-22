@@ -25,6 +25,7 @@ if (!empty($this->data['User']['id'])) {
 	$links[] = $this->MyHtml->link(
 		__('Change password', true),
 		array(
+			'admin'			=> false,
 			'controller' 	=> 'users',
 			'action' 		=> 'change_password',
 			$this->data['User']['id']

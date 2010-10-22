@@ -48,9 +48,9 @@ class UsersController extends AppController {
 /**
 	TODO: Validar longitud del password y caracteres obligatorios.
 */
-	private function change_password() {
+	function change_password($id = null) {
 
-		$id = User::get('/User/id');
+		//$id = User::get('/User/id');
 
 		if (!empty($this->data)) {
 
@@ -93,6 +93,9 @@ class UsersController extends AppController {
 							__('The password was changed succesfully.', true),
 							'flash_success'
 						);
+						if (!empty($this->data['User']['id'])) {
+							$this->redirect(array('admin' => true, 'controller' => 'users', 'action' => 'index'));
+						}
 						
 					} else {
 						$this->Session->setFlash(
@@ -110,9 +113,13 @@ class UsersController extends AppController {
 				}
 			}
 
-
+			if (!empty($this->data['User']['id'])) {
+				$this->set('id', $this->data['User']['id']);
+			}
 		} else {
-			$this->set('id', $id);
+			if (!empty($id)) {
+				$this->set('id', $id);
+			}
 		}
 	}
 
