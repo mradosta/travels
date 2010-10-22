@@ -41,24 +41,24 @@
 
 						echo $this->MyHtml->link(
 							__('Charters', true),
-							array('controller' => 'charters', 'action' => 'index')
+							array('admin' => true, 'controller' => 'charters', 'action' => 'index')
 						);
 
 						echo $this->MyHtml->link(
 							__('Destinations', true),
-							array('controller' => 'destinations', 'action' => 'index')
+							array('admin' => true, 'controller' => 'destinations', 'action' => 'index')
 						);
 
 						echo $this->MyHtml->link(
 							__('Users', true),
-							array('controller' => 'users', 'action' => 'index')
+							array('admin' => true, 'controller' => 'users', 'action' => 'index')
 						);
 
 					}
 
 					echo $this->MyHtml->link(__('Passengers', true), array('controller' => 'passengers', 'action' => 'index'));
 
-					echo $this->MyHtml->link(__('Change password', true), array('controller' => 'users', 'action' => 'change_password'));
+					echo $this->MyHtml->link(__('Change password', true), array('admin' => false, 'controller' => 'users', 'action' => 'change_password'));
 
 					echo $this->MyHtml->link(__('Logout', true), array('controller' => 'users', 'action' => 'logout', 'admin' => false));
 				}

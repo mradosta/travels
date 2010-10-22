@@ -74,10 +74,18 @@
 		__('Reserved capacity', true)
 	);
 
+
+	$xx[__('Reserved capacity', true)] = $data['Charter']['reserved'];
+	$xx[__('Reserved capacity', true)] = $data['Charter']['reserved'];
+	$xx[__('Reserved capacity', true)] = $data['Charter']['reserved'];
+	$xx[__('Reserved capacity', true)] = $data['Charter']['reserved'];
+	$xx[__('Reserved capacity', true)] = $data['Charter']['reserved'];
+
+
+
 	$charter[] = $this->MyHtml->tag('dd',
 		 $data['Charter']['reserved']
 	);
-
 
 	$charter[] = $this->MyHtml->tag('dt',
 		__('Total capacity', true)
@@ -86,7 +94,6 @@
 	$charter[] = $this->MyHtml->tag('dd',
 		 $total_capacity
 	);
-
 
 	$charter[] = $this->MyHtml->tag('dt',
 		__('Occupied', true)
@@ -107,80 +114,20 @@
 		array('class' => 'aircraft')
 	);
 
-	$header	= null;
-	$header[] = __('Actions', true);
-	$header[] = __('First Name', true);
-	$header[] = __('Last Name', true);
-	$header[] = __('Type', true);
-	$header[] = __('State', true);
-	$header[] = __('Agency', true);
-
-
-	$head = $this->MyHtml->tag('thead', $this->MyHtml->tableHeaders($header));
-
-	$body = array();
-	foreach ($data['Passenger'] as $record) {
-		$td = null;
-		$actions = null;
-		$actions[] = $this->MyHtml->image(
-			'view.png',
-			array(
-				'class' => 'open_modal',
-				'title' => __('View', true) . ' ' . $record['first_name'] . ' ' . $record['last_name'],
-				'url' => array(
-					'controller' 	=> 'passengers',
-					'action' 		=> 'view',
-					$record['id']
-				),
-			)
+	
+	// Normalize data array as a cakephp findall array
+	$dataForElement = array();
+	foreach ($data['Passenger'] as $passenger) {
+		$passenger['Charter'] = $data['Charter'];
+		$dataForElement[] = array(
+			'Passenger' => $passenger
 		);
-		$actions[] = $this->MyHtml->image(
-			'edit.png',
-			array(
-				'class' => 'open_modal',
-				'title' => __('Edit', true) . ' ' . $record['first_name'] . ' ' . $record['last_name'],
-				'url' => array(
-					'controller' 	=> 'passengers',
-					'action' 		=> 'edit',
-					$record['id']
-				),
-			)
-		);
-
-		$invertCurrentState = (($record['state'] == 'authorized') ? 'unauthorized' : 'authorized');
-		$state = $this->MyHtml->link(
-			$invertCurrentState,
-			array(
-				'controller'	=> 'passengers',
-				'action'		=> 'update_state',
-				$invertCurrentState,
-				$record['id'],
-				'charters',
-				$data['Charter']['id']
-			)
-		);
-
-		$td[] = $this->MyHtml->tag('td', $actions);
-		$td[] = $this->MyHtml->tag('td', $record['first_name']);
-		$td[] = $this->MyHtml->tag('td', $record['last_name']);
-		$td[] = $this->MyHtml->tag('td', $record['type']);
-		$td[] = $this->MyHtml->tag('td', $state);
-		$td[] = $this->MyHtml->tag('td', '');
-
-		$body[] = $this->MyHtml->tag('tr', $td);
-
 	}
-
-	if ($body != null) {
-		$body = implode("\n", $body);
-	} else {
-		$body = '';
-	}
-
 	$out[] = $this->MyHtml->tag('div',
-		$this->MyHtml->tag('table', $head . $body),
-		array('id' => 'grid')
+		$this->element('list_passengers', array('data' => $dataForElement)),
+		array('id' => 'list_passengers')
 	);
+	
 	
 
 

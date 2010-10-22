@@ -8,20 +8,6 @@ class Charter extends AppModel {
 		'formated_date' => 'DATE_FORMAT(date, "%d/%m/%Y")'
 	);
 
-	function afterFind($results) {
-
-		foreach ($results as $key => $val) {
-			
-			if (!empty($val['Charter']['date'])) {
-				$val['Charter']['date'] = date('d-m-Y', strtotime($val['Charter']['date']));
-				$results[$key] = $val;
-			}
-			
-		}
-		return $results;
-	}
-
-
 	protected function _initialitation() {
 
 

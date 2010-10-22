@@ -2,8 +2,13 @@
 
 $out[] = $this->MyHtml->tag('h2',
 	__('Charters', true),
-	array('id' => 'tasks_title')
+	array('id' => 'tasks_title', 'class' => 'charters')
 );
+
+
+/** Filters */
+$out[] = $this->element('filters', array('fields' => array('destination_id')));
+
 
 $links = null;
 $links[] = $this->MyHtml->link(
@@ -14,8 +19,7 @@ $links[] = $this->MyHtml->link(
 	),
 	array('class' => 'cancel', 'title' => __('Add charter', true))
 );
-echo $this->element('actions', array('links' => $links));
-
+$out[] = $this->MyHtml->tag('div', $this->element('actions', array('links' => $links)), array('class' => 'clear-both'));
 
 /** The grid */
 $header	= null;

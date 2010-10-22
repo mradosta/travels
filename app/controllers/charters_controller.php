@@ -38,6 +38,8 @@ class ChartersController extends AppController {
 
 
 	function admin_index() {
+		$this->set('destinations', $this->Charter->Destination->find('list'));
+		$this->Filter->process();
 		$this->paginate['order'] = array('Charter.date' => 'asc');
 		$this->paginate['limit'] = 15;
 		$this->set('data', $this->paginate());
@@ -45,24 +47,19 @@ class ChartersController extends AppController {
 
 	
 	function admin_view($id) {
-		$charter = $this->Charter->find(
-			'first',
-			array(
-				'conditions' => array(
-					'Charter.id'	=> $id
-				),
-			)
-		);
-		$this->set(
-			'data',
-			$charter
-		);
-		$total = $charter['Charter']['weekly'] + $charter['Charter']['fortnightly'] + $charter['Charter']['reserved'];
-		$occupied = sizeof($charter['Passenger']);
+
+		$this->Charter->contain(array('Passenger.User', 'Destination'));
+		$data = $this->Charter->findById($id);
+		
+		$total = $data['Charter']['weekly'] + $data['Charter']['fortnightly'] + $data['Charter']['reserved'];
+		$occupied = sizeof($data['Passenger']);
 		$percent = ($occupied * 100) / $total;
 		$this->set('percent', ceil($percent));
 		$this->set('occupied', $occupied);
 		$this->set('total_capacity', $total);
+
+
+		$this->set('data', $data);
 	}
 
 
