@@ -8,7 +8,7 @@ class PassengersController extends AppController {
 			$this->Passenger->Charter->find(
 				'list',
 				array(
-					'fields' => array('Charter.id', 'Charter.date', 'Charter.description')
+					'fields' => array('Charter.id', 'Charter.formated_date', 'Charter.description')
 				)
 			)
 		);

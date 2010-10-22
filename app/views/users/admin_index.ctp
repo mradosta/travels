@@ -1,24 +1,22 @@
 <?php 
 
 	/** Title */
-	$this->set('title_for_layout',  __('Users', true));
-
-
-	/** Actions */
-	$links =  null;
-	$links[] = $this->MyHtml->link(
-		__('Add user', true),
-		array(
-			'controller' 	=> 'users', 
-			'action' 		=> 'add'
-		), 
-		array(
-			'class' => 'cancel',
-			'title' => __('Add new user', true)
-		)
+	$out[] = $this->MyHtml->tag('h2',
+		__('Users', true),
+		array('id' => 'tasks_title')
 	);
 
-	$out[] = $this->element('actions', array('links' => $links));
+	/** Actions */
+	$links = null;
+$links[] = $this->MyHtml->link(
+	__('Add User', true),
+	array(
+		'controller'	=> 'users',
+		'action'		=> 'add',
+	),
+	array('class' => 'cancel', 'title' => __('Add user', true))
+);
+echo $this->element('actions', array('links' => $links));
 
 
 	

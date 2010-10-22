@@ -73,5 +73,4 @@ class Charter extends AppModel {
 
     }
 
-
 }
