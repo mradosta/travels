@@ -1,9 +1,8 @@
-La agencia "<?php echo strtoupper($passenger['User']['full_name']);?>" a dado de alta un nuevo pasajero
-<br />
+<p>La agencia "<?php echo strtoupper($passengers[0]['User']['full_name']);?>" a dado de alta un grupo de pasajeros</p>
 
-Nuevo pasajero:
-<br />
 
+<br />
+<?php foreach ($passengers as $passenger) { ?>
 Nombre: <?php echo $passenger['Passenger']['first_name'];?>
 <br />
 Apellido:  <?php echo $passenger['Passenger']['last_name'];?>
@@ -15,15 +14,18 @@ Dni:  <?php echo $passenger['Passenger']['dni'];?>
 Telefono:  <?php echo $passenger['Passenger']['phone'];?>
 <br />
 Email:  <?php echo $passenger['Passenger']['email'];?>
+<hr>
 <br />
+
+<?php } //end foreach ?>
 
 <p>Información del charter</p>
 <br />
-Destino: <?php echo $passenger['Charter']['description'];?>
+Destino: <?php echo $passengers[0]['Charter']['description'];?>
 <br />
-Fecha: <?php echo date('d-m-Y', strtotime($passenger['Charter']['date']));?>
+Fecha: <?php echo date('d-m-Y', strtotime($passengers[0]['Charter']['date']));?>
 <br />
-Tipo: <?php echo $passenger['Passenger']['type'];?>
+Tipo: <?php echo $passengers[0]['Passenger']['type'];?>
 <br />
 
-Ver pasajero <a href="<?php echo Router::url('/', true) . 'passengers/view/' . $passenger['Passenger']['group']; ?>"><?php echo Router::url('/', true) . 'passengers/view/' . $passenger['Passenger']['group']; ?></a>
+Ver pasajero <a href="<?php echo Router::url('/', true) . 'passengers/view/' . $passengers[0]['Passenger']['group']; ?>"><?php echo Router::url('/', true) . 'passengers/view/' . $passengers[0]['Passenger']['group']; ?></a>

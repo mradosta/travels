@@ -70,14 +70,14 @@ class PassengersController extends AppController {
 
 	}
 
-	function __sendEmail($idPassenger, $toAgency = false) {
+	function __sendEmail($group_id, $toAgency = false) {
 
-		$passenger = $this->Passenger->findById($idPassenger);
-		$this->set('passenger', $passenger);
+		$passengers = $this->Passenger->findAllByGroup($group_id);
+		$this->set('passengers', $passengers);
 		if ($toAgency) {
 			
-			$this->Email->to = $passenger['User']['email'];
-			$this->Email->subject = __('Passenger', true) . ' ' . $passenger['Passenger']['state'];
+			$this->Email->to = $passengers[0]['User']['email'];
+			$this->Email->subject = __('Passenger', true) . ' ' . $passengers[0]['Passenger']['state'];
 			$this->Email->template = 'email/state';
 
 		} else {
@@ -138,8 +138,8 @@ class PassengersController extends AppController {
 				)
 			);
 			$save = $this->Passenger->save($passengerSave);
-			$this->__sendEmail($passenger['Passenger']['id'], true);
 		}
+		$this->__sendEmail($passengers[0]['Passenger']['group'], true);
 
 		if ($controller == 'passengers') {
 			if (!empty($view_id)) {
@@ -203,11 +203,9 @@ class PassengersController extends AppController {
 				foreach ($this->data['Passenger'] as $passenger) {
 
 					$this->Passenger->create();
-					if ($this->Passenger->save($passenger)) {
-						$this->__sendEmail($this->Passenger->id);
-					}
+					$this->Passenger->save($passenger);
 				}
-
+				$this->__sendEmail($uuid);
 				$this->Session->setFlash(
 					__('The passengers has been saved.', true), 'flash_success'
 				);
