@@ -16,6 +16,7 @@ for ($i = 0; $i < $charter_data['amount']; $i++) {
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.charter_id', array('type' => 'hidden', 'value' => $charter_data['charter_id']));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.hotel_id', array('type' => 'hidden', 'value' => $charter_data['hotel_id']));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.meal_packages', array('type' => 'hidden', 'value' => $charter_data['meal_packages']));
+	$content[] = $this->MyForm->input('Passenger.' . $i . '.base', array('type' => 'hidden', 'value' => $charter_data['base']));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.user_id', array('type' => 'hidden', 'value' => User::get('/User/id')));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.type', array('type' => 'hidden', 'value' => $charter_data['type']));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.last_name', array('type' => 'text'));

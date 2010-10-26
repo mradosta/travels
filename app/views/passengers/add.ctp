@@ -11,6 +11,10 @@ $content[] = $this->MyForm->input(
 $content[] = $this->MyForm->input('meal_packages',
 	array('options' => $meal_packages, 'label' => __('Meal Packages', true))
 );
+$content[] = $this->MyForm->input('base',
+	array('options' => $base, 'label' => __('Base', true))
+);
+
 $content[] = $this->MyForm->input('type');
 $content[] = $this->MyForm->input('amount', array('label' => __('Passengers', true), 'default' => '2'));
 
@@ -21,3 +25,24 @@ $out[] = $this->element('footer', array('controller' => 'passengers'));
 $out[] = $this->MyForm->end();
 
 echo implode("\n", $out);
+
+?>
+<script>
+
+$(document).ready(function() {
+	$('#PassengerCharterId').live('change', function() {
+		if($(this).val().length != 0) {
+			$.getJSON('<?php echo Router::url(array('controller' => 'hotels', 'action' => 'get')); ?>/' + $(this).val(),
+				function(data) {
+					var options = '';
+					$.each(data, function(index, hotel) {
+						options += '<option value="' + hotel.Hotel.id + '">' + hotel.Hotel.name + '</option>';
+					});
+					$('#PassengerHotelId').html(options);
+				}
+			);
+		}
+	});
+});
+
+</script>

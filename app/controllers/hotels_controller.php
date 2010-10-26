@@ -2,6 +2,13 @@
 class HotelsController extends AppController {
 
 
+	function get($detinationId) {
+		$this->Hotel->recursive = -1;
+		$data = $this->Hotel->findAllByDestinationId($detinationId);
+		$this->set('data', json_encode($data));
+		$this->render('../elements/only_text', 'ajax');
+	}
+
 	function admin_add($id = null) {
 
         $this->set(

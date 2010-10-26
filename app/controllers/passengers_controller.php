@@ -41,6 +41,15 @@ class PassengersController extends AppController {
 			)
 		);
 
+		$this->set(
+			'base',
+			array(
+				'single' 		=> __('single', true),
+				'double' 		=> __('double', true),
+				'family plan' 	=> __('family plan', true)
+			)
+		);
+
 		$this->set('states',
 			array(
 				'authorized' => __('authorized', true),
@@ -228,6 +237,7 @@ class PassengersController extends AppController {
 					'charterId' 	=> $this->params['named']['charter_id'],
 					'charterType' 	=> $this->params['named']['charter_type'],
 					'mealPackages' 	=> $this->params['named']['meal_packages'],
+					'base' 			=> $this->params['named']['base'],
 					'amount' 		=> $this->params['named']['amount']
 				)
 			);
