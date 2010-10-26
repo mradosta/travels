@@ -57,6 +57,7 @@
 	$dataForElement = array();
 	foreach ($data['Passenger'] as $passenger) {
 		$passenger['Charter'] = $data['Charter'];
+		$passenger['accompanying'] = 1;
 		$dataForElement[] = array(
 			'Passenger' => $passenger
 		);

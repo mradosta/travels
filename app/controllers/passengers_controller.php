@@ -116,7 +116,7 @@ class PassengersController extends AppController {
 		}
 	}
 
-	function admin_update_state($state, $id, $controller = 'passengers', $view_id = null) {
+	function admin_update_state($group_id, $controller = 'passengers', $view_id = null) {
 		if(User::get('/User/type') != 'admin') {
 			$this->Session->setFlash(
 				__(
@@ -127,15 +127,19 @@ class PassengersController extends AppController {
 			);
 			$this->redirect(array('admin' => false, 'controller' => 'users', 'action' => 'login'));
 		}
-		
-		$passenger = array(
-			'Passenger' => array(
-				'state'	=> $state,
-				'id'	=> $id
-			)
-		);
-		$this->Passenger->save($passenger);
-		$this->__sendEmail($this->Passenger->id, true);
+
+		$passengers = $this->Passenger->findAllByGroup($group_id);
+		$state = (($passengers[0]['Passenger']['state'] == 'authorized') ? 'unauthorized' : 'authorized');
+		foreach ($passengers as $passenger) {
+			$passengerSave = array(
+				'Passenger' => array(
+					'state'	=> $state,
+					'id'	=> $passenger['Passenger']['id']
+				)
+			);
+			$save = $this->Passenger->save($passengerSave);
+			$this->__sendEmail($passenger['Passenger']['id'], true);
+		}
 
 		if ($controller == 'passengers') {
 			if (!empty($view_id)) {
@@ -151,7 +155,7 @@ class PassengersController extends AppController {
 		$this->redirect($redirect);
 	}
 
-	private function __edit($id) {
+	private function __edit($group_id = null) {
 		$this->set('states', array('authorized' => 'authorized', 'unauthorized' => 'unauthorized'));
 		if (!empty($this->data)) {
 			$saved = $this->Passenger->saveAll($this->data['Passenger'], array('validate' => 'first'));
@@ -171,18 +175,18 @@ class PassengersController extends AppController {
 					'flash_error'
 				);
 			}
+			
 		} else {
-			$this->data = $this->Passenger->read(null, $id);
-			$this->set('id', $id);
+			$this->set('data', $this->Passenger->findAllByGroup($group_id));
 			$this->render('__edit');
 		}
 	}
 
-	function edit($id) {
-		$this->__edit($id);
+	function edit($group_id = null) {
+		$this->__edit($group_id);
 	}
-	function admin_edit($id) {
-		$this->__edit($id);
+	function admin_edit($group_id = null) {
+		$this->__edit($group_id);
 	}
 
 	function add_passengers() {
@@ -311,13 +315,14 @@ class PassengersController extends AppController {
 	}
 
 
-	function admin_delete($id) {
-		$passengerData = $this->Passenger->findById($id);
-		if ($passengerData['Passenger']['state'] == 'authorized') {
+	function admin_delete($group_id) {
+		$passengers = $this->Passenger->findAllByGroup($group_id);
+		$prefix = false;
+		if ($passengers[0]['Passenger']['state'] == 'authorized') {
 
 			$this->Session->setFlash(
 				__(
-					"Passenger can't be deleted because it's already authorized.",
+					"Passengers can't be deleted because it's already authorized.",
 					true
 				),
 				'flash_error'
@@ -330,17 +335,18 @@ class PassengersController extends AppController {
 			$this->redirect(array('admin' => $prefix, 'controller' => 'passengers', 'action' => 'index'));
 		} else {
 
-			if ($this->Passenger->delete($id)) {
-				$this->Session->setFlash(
-				__('Passenger deleted', true),
-				'flash_success');
-			} else {
-				$this->Session->setFlash(
-				__('Passenger was not deleted', true),
-				'flash_error');
+			foreach ($passengers as $passenger) {
+				$this->Passenger->delete($passenger['Passenger']['id']);
 			}
-
-			$this->redirect(array('action'=>'index'));
+			
+			$this->Session->setFlash(
+				__('Passengers deleted', true),
+				'flash_success'
+			);
+			
+			$this->redirect(
+				array('admin' => $prefix, 'controller' => 'passengers', 'action' => 'index')
+			);
 		}
 	}
 

@@ -35,7 +35,7 @@
 				'url' => array(
 					'controller' 	=> 'passengers',
 					'action' 		=> 'view',
-					$record['Passenger']['id']
+					$record['Passenger']['group']
 				),
 			)
 		);
@@ -47,7 +47,7 @@
 				'url' => array(
 					'controller' 	=> 'passengers',
 					'action' 		=> 'edit',
-					$record['Passenger']['id']
+					$record['Passenger']['group']
 				),
 			)
 		);
@@ -58,15 +58,13 @@
 			$link = array(
 				'controller'	=> 'passengers',
 				'action'		=> 'update_state',
-				$invertCurrentState,
-				$record['Passenger']['id']
+				$record['Passenger']['group']
 			);
 		} else {
 			$link = array(
 				'controller'	=> 'passengers',
 				'action'		=> 'update_state',
-				$invertCurrentState,
-				$record['Passenger']['id'],
+				$record['Passenger']['group'],
 				'charters',
 				$record['Passenger']['Charter']['id']
 			);
@@ -84,7 +82,7 @@
 		$td[] = $this->MyHtml->tag('td', $record['Passenger']['last_name']);
 		$td[] = $this->MyHtml->tag('td', __($record['Passenger']['type'], true));
 		$td[] = $this->MyHtml->tag('td', $state);
-		$td[] = $this->MyHtml->tag('td', $record['Passenger']['accompanying']);
+		$td[] = $this->MyHtml->tag('td', $record['Passenger']['accompanying'] - 1);
 		$td[] = $this->MyHtml->tag('td', $record['Passenger']['User']['full_name']);
 
 		$body[] = $this->MyHtml->tag('tr', $td);

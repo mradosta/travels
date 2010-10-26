@@ -7,9 +7,10 @@
 	$links[] = $this->MyHtml->link(
 		__('Delete', true),
 		array(
+			'admin'			=> true,
 			'controller' 	=> 'passengers',
 			'action' 		=> 'delete',
-			$data['Passenger']['id']
+			$data[0]['Passenger']['group']
 		),
 		array(
 			'title' => __('Delete passenger', true),
@@ -25,16 +26,15 @@
 
 	if (User::get('/User/type') == 'admin') {
 		$links =  null;
-		$invertCurrentState = (($data['Passenger']['state'] == 'authorized') ? 'unauthorize' : 'authorize');
+		$invertCurrentState = (($data[0]['Passenger']['state'] == 'authorized') ? 'unauthorize' : 'authorize');
 		$links[] = $this->MyHtml->link(
 			__($invertCurrentState, true),
 			array(
 				'controller'	=> 'passengers',
 				'action'		=> 'update_state',
-				$invertCurrentState,
-				$data['Passenger']['id'],
+				$data[0]['Passenger']['group'],
 				'passengers',
-				$data['Passenger']['id']
+				$data[0]['Passenger']['group']
 			),
 			array('class' => 'cancel')
 		);
@@ -45,12 +45,11 @@
 	}
 
 
-	foreach ($data as $record) {
-
-		$fields[__('Charter', true)] = $record['Charter']['Destination']['name'] . ' ' . date('d/m/Y', strtotime($record['Charter']['date']));
-
-		$fields[__('Type', true)] = __($record['Passenger']['type'], true);
-
+	foreach ($data as $key => $record) {
+		if ($key == 0) {
+			$fields[__('Charter', true)] = $record['Charter']['Destination']['name'] . ' ' . $record['Charter']['formated_date'];
+			$fields[__('Type', true)] = __($record['Passenger']['type'], true);
+		}
 		$fields[__('First Name', true)] = $record['Passenger']['first_name'];
 
 		$fields[__('Last Name', true)] = $record['Passenger']['last_name'];
@@ -64,13 +63,20 @@
 		$fields[__('Phone', true)] = $record['Passenger']['phone'];
 
 		$fields[__('State', true)] = __($record['Passenger']['state'], true);
+
+		$passenger = $this->element('view', array('data' => $fields));
+		$out[] = $this->MyHtml->tag('div', $passenger, array('class' => ''));
+		if ($key == 0 && !empty($data[1])) {
+			$out[] = $this->MyHtml->tag('div', $this->MyHtml->tag('div', $this->MyHtml->tag('h4', __('Accompanying', true)), array('class' => 'view')), array('class' => ''));
+		}
+		$fields = null;
 	}
 
-	$passenger = $this->element('view', array('data' => $fields));
+	
 
 
 	//$header[] = __('Accompanying', true);
 	
-	$out[] = $this->MyHtml->tag('div', $passenger, array('class' => ''));
+	
 
 	echo $this->MyHtml->tag('div', $out);
