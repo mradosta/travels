@@ -44,26 +44,32 @@
 		);
 	}
 
-	$fields[__('Charter', true)] = $data['Charter']['Destination']['name'] . ' ' . $data['Charter']['formated_date'];
 
-	$fields[__('Type', true)] = __($data['Passenger']['type'], true);
+	foreach ($data as $record) {
 
-	$fields[__('First Name', true)] = $data['Passenger']['first_name'];
+		$fields[__('Charter', true)] = $record['Charter']['Destination']['name'] . ' ' . date('d/m/Y', strtotime($record['Charter']['date']));
 
-	$fields[__('Last Name', true)] = $data['Passenger']['last_name'];
+		$fields[__('Type', true)] = __($record['Passenger']['type'], true);
 
-	$fields[__('Birthday', true)] = $data['Passenger']['formated_birthday'];
+		$fields[__('First Name', true)] = $record['Passenger']['first_name'];
 
-	$fields[__('DNI', true)] = $data['Passenger']['dni'];
+		$fields[__('Last Name', true)] = $record['Passenger']['last_name'];
 
-	$fields[__('Email', true)] = $data['Passenger']['email'];
+		$fields[__('Birthday', true)] = $record['Passenger']['formated_birthday'];
 
-	$fields[__('Phone', true)] = $data['Passenger']['phone'];
+		$fields[__('DNI', true)] = $record['Passenger']['dni'];
 
-	$fields[__('State', true)] = __($data['Passenger']['state'], true);
+		$fields[__('Email', true)] = $record['Passenger']['email'];
 
+		$fields[__('Phone', true)] = $record['Passenger']['phone'];
+
+		$fields[__('State', true)] = __($record['Passenger']['state'], true);
+	}
 
 	$passenger = $this->element('view', array('data' => $fields));
+
+
+	//$header[] = __('Accompanying', true);
 	
 	$out[] = $this->MyHtml->tag('div', $passenger, array('class' => ''));
 

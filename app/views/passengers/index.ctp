@@ -44,7 +44,7 @@ foreach ($data as $record) {
 			'url' => array(
 				'controller' 	=> 'passengers',
 				'action' 		=> 'view',
-				$record['Passenger']['id']
+				$record['Passenger']['group']
 			),
 		)
 	);
@@ -56,7 +56,7 @@ foreach ($data as $record) {
 			'url' => array(
 				'controller' 	=> 'passengers',
 				'action' 		=> 'edit',
-				$record['Passenger']['id']
+				$record['Passenger']['group']
 			),
 		)
 	);

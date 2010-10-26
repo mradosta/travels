@@ -280,7 +280,8 @@ class PassengersController extends AppController {
 			'Passenger.last_name',
 			'Passenger.full_name',
 			'Passenger.type',
-			'Passenger.state'
+			'Passenger.state',
+			'Passenger.group'
 		);
 		$this->set('data', $this->paginate());
 
@@ -299,8 +300,13 @@ class PassengersController extends AppController {
 	}
 	private function __view($id) {
 
-		$this->Passenger->contain(array('Charter.Destination'));
-		$this->set('data', $this->Passenger->read(null, $id));
+		$this->set('data', $this->Passenger->find('all',
+			array(
+				'contain'		=> array('Charter.Destination'),
+				'order'			=> array('Passenger.id' => 'ASC'),
+				'conditions' 	=> array('Passenger.group' => $id)
+			)
+		));
 		$this->render('__view');
 	}
 
