@@ -15,7 +15,7 @@
 			'title' => __('Delete ocupation', true),
 			'class' => 'cancel'
 		),
-		__('Are your sure to delete the Ocupation?', true)
+		__('Are you sure to delete the Ocupation?', true)
 	);
 
 	$out[] = $this->element('actions',

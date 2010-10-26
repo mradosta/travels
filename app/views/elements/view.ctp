@@ -14,5 +14,3 @@
 	}
 
 	echo $this->MyHtml->tag('div', $this->MyHtml->tag('dl', $fields), array('class' => 'view'));
-
-?>

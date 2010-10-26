@@ -7,15 +7,15 @@
 	$links[] = $this->MyHtml->link(
 		__('Delete', true),
 		array(
-			'controller' 	=> 'destinations',
+			'controller' 	=> 'hotels',
 			'action' 		=> 'delete',
-			$data['Destination']['id']
+			$data['Hotel']['id']
 		),
 		array(
-			'title' => __('Delete destination', true),
+			'title' => __('Delete hotel', true),
 			'class' => 'cancel'
 		),
-		__('Are you sure to delete the Destination?', true)
+		__('Are you sure to delete the hotel?', true)
 	);
 
 	$out[] = $this->element('actions',
@@ -23,7 +23,11 @@
 	);
 
 
+
+
 	$fields[__('Destination', true)] = $data['Destination']['name'];
+	
+	$fields[__('Name', true)] = $data['Hotel']['name'];
 
 	echo $this->element('view', array('data' => $fields));
 

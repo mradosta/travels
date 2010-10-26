@@ -13,12 +13,31 @@ class PassengersController extends AppController {
 			)
 		);
 
+        $this->set(
+			'hotels',
+			$this->Passenger->Hotel->find(
+				'list',
+				array(
+					'fields' => array('Hotel.id', 'Hotel.name')
+				)
+			)
+		);
+
 		$this->set(
 			'types',
 			array(
-				'weekly' => __('weekly', true),
-				'fortnightly' => __('fortnightly', true),
-				'reserved' => __('reserved', true)
+				'weekly' 		=> __('weekly', true),
+				'fortnightly' 	=> __('fortnightly', true),
+				'reserved' 		=> __('reserved', true)
+			)
+		);
+
+		$this->set(
+			'meal_packages',
+			array(
+				'full board' 	=> __('full board', true),
+				'half board' 	=> __('half board', true),
+				'breakfast' 	=> __('breakfast', true)
 			)
 		);
 
@@ -33,18 +52,6 @@ class PassengersController extends AppController {
 
 			$r = $this->checkAvailability($this->data);
 			if ($r === true) {
-
-				/*
-				$this->redirect(
-					array(
-						'admin'			=> false,
-						'action'		=> 'add_passengers',
-						'charter_id'	=> $this->data['Passenger']['charter_id'],
-						'charter_type'	=> $this->data['Passenger']['type'],
-						'amount'		=> $this->data['Passenger']['amount']
-					)
-				);
-				*/
 				$this->set('charter_data', $this->data['Passenger']);
 				$this->render('add_passengers');
 			} else {
@@ -169,7 +176,12 @@ class PassengersController extends AppController {
 	function add_passengers() {
 
 		if (!empty($this->data)) {
-			
+
+			$uuid = uniqid();
+			foreach ($this->data['Passenger'] as $v) {
+				$this->data['Passenger']['group'] = $uuid;
+			}
+
 			if ($this->Passenger->saveAll($this->data['Passenger'], array('validate' => 'only'))) {
 
 				foreach ($this->data['Passenger'] as $passenger) {
@@ -197,17 +209,20 @@ class PassengersController extends AppController {
 					array(
 						'amount' 		=> $this->data['Extra']['amount'],
 						'type'			=> $this->data['Passenger'][0]['type'],
-						'charter_id'	=> $this->data['Passenger'][0]['charter_id']
+						'charter_id'	=> $this->data['Passenger'][0]['charter_id'],
+						'meal_packages'	=> $this->data['Passenger'][0]['meal_packages']
 					)
 				);
 				$this->set('amount', $this->data['Extra']['amount']);
 				$this->set('charterId', $this->data['Passenger'][0]['charter_id']);
 				$this->set('charterType', $this->data['Passenger'][0]['type']);
+				$this->set('mealPackages', $this->data['Passenger'][0]['meal_packages']);
 			}
 		} else {
 			
 			$this->set('charterId', $this->params['named']['charter_id']);
 			$this->set('charterType', $this->params['named']['charter_type']);
+			$this->set('mealPackages', $this->params['named']['meal_packages']);
 			$this->set('amount', $this->params['named']['amount']);
 		}
 	}

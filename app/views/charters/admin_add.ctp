@@ -1,6 +1,6 @@
 <?php 
 	
-$out[] = $this->MyForm->create('Charter', array('class' => 'ajax_formx'));
+$out[] = $this->MyForm->create('Charter');
 
 $content[] = $this->MyForm->input(
 	'destination_id', array('options' => $destinations)

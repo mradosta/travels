@@ -45,6 +45,11 @@
 						);
 
 						echo $this->MyHtml->link(
+							__('Hotels', true),
+							array('admin' => true, 'controller' => 'hotels', 'action' => 'index')
+						);
+
+						echo $this->MyHtml->link(
 							__('Destinations', true),
 							array('admin' => true, 'controller' => 'destinations', 'action' => 'index')
 						);

@@ -27,7 +27,7 @@
 		$links =  null;
 		$invertCurrentState = (($data['Passenger']['state'] == 'authorized') ? 'unauthorize' : 'authorize');
 		$links[] = $this->MyHtml->link(
-			$invertCurrentState,
+			__($invertCurrentState, true),
 			array(
 				'controller'	=> 'passengers',
 				'action'		=> 'update_state',
