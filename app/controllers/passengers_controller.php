@@ -52,6 +52,7 @@ class PassengersController extends AppController {
 
 			$r = $this->checkAvailability($this->data);
 			if ($r === true) {
+
 				$this->set('charter_data', $this->data['Passenger']);
 				$this->render('add_passengers');
 			} else {
@@ -116,6 +117,17 @@ class PassengersController extends AppController {
 	}
 
 	function admin_update_state($state, $id, $controller = 'passengers', $view_id = null) {
+		if(User::get('/User/type') != 'admin') {
+			$this->Session->setFlash(
+				__(
+					"Your user don't have access.",
+					true
+				),
+				'flash_error'
+			);
+			$this->redirect(array('admin' => false, 'controller' => 'users', 'action' => 'login'));
+		}
+		
 		$passenger = array(
 			'Passenger' => array(
 				'state'	=> $state,
@@ -276,18 +288,36 @@ class PassengersController extends AppController {
 
 
 	function admin_delete($id) {
+		$passengerData = $this->Passenger->findById($id);
+		if ($passengerData['Passenger']['state'] == 'authorized') {
 
-		if ($this->Passenger->delete($id)) {
 			$this->Session->setFlash(
-			__('Passenger deleted', true),
-			'flash_success');
+				__(
+					"Passenger can't be deleted because it's already authorized.",
+					true
+				),
+				'flash_error'
+			);
+
+			if (User::get('/User/type') == 'admin') {
+				$prefix = true;
+			}
+
+			$this->redirect(array('admin' => $prefix, 'controller' => 'passengers', 'action' => 'index'));
 		} else {
-			$this->Session->setFlash(
-			__('Passenger was not deleted', true),
-			'flash_error');
-		}
 
-		$this->redirect(array('action'=>'index'));
+			if ($this->Passenger->delete($id)) {
+				$this->Session->setFlash(
+				__('Passenger deleted', true),
+				'flash_success');
+			} else {
+				$this->Session->setFlash(
+				__('Passenger was not deleted', true),
+				'flash_error');
+			}
+
+			$this->redirect(array('action'=>'index'));
+		}
 	}
 
 }
