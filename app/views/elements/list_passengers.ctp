@@ -16,6 +16,7 @@
 	$header[] = __('Last Name', true);
 	$header[] = __('Type', true);
 	$header[] = __('State', true);
+	$header[] = __('Accompanying', true);
 	$header[] = __('Agency', true);
 
 
@@ -83,6 +84,7 @@
 		$td[] = $this->MyHtml->tag('td', $record['Passenger']['last_name']);
 		$td[] = $this->MyHtml->tag('td', __($record['Passenger']['type'], true));
 		$td[] = $this->MyHtml->tag('td', $state);
+		$td[] = $this->MyHtml->tag('td', $record['Passenger']['accompanying']);
 		$td[] = $this->MyHtml->tag('td', $record['Passenger']['User']['full_name']);
 
 		$body[] = $this->MyHtml->tag('tr', $td);

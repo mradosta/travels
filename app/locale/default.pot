@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2010-10-22 20:11+0000\n"
+"POT-Creation-Date: 2010-10-26 13:36+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -54,60 +54,96 @@ msgstr ""
 msgid "Destination was not deleted"
 msgstr ""
 
-#: /controllers/passengers_controller.php:19
+#: /controllers/hotels_controller.php:21
+msgid "The hotel has been saved."
+msgstr ""
+
+#: /controllers/hotels_controller.php:24
+msgid "The hotel could not be saved. Please, check errors and try again."
+msgstr ""
+
+#: /controllers/hotels_controller.php:57
+msgid "Hotel deleted"
+msgstr ""
+
+#: /controllers/hotels_controller.php:61
+msgid "Hotel was not deleted"
+msgstr ""
+
+#: /controllers/passengers_controller.php:29
 msgid "weekly"
 msgstr ""
 
-#: /controllers/passengers_controller.php:20
+#: /controllers/passengers_controller.php:30
 msgid "fortnightly"
 msgstr ""
 
-#: /controllers/passengers_controller.php:21
+#: /controllers/passengers_controller.php:31
 msgid "reserved"
 msgstr ""
 
-#: /controllers/passengers_controller.php:27
+#: /controllers/passengers_controller.php:38
+msgid "full board"
+msgstr ""
+
+#: /controllers/passengers_controller.php:39
+msgid "half board"
+msgstr ""
+
+#: /controllers/passengers_controller.php:40
+msgid "breakfast"
+msgstr ""
+
+#: /controllers/passengers_controller.php:46
 msgid "authorized"
 msgstr ""
 
-#: /controllers/passengers_controller.php:28
+#: /controllers/passengers_controller.php:47
 msgid "unauthorized"
 msgstr ""
 
-#: /controllers/passengers_controller.php:72
+#: /controllers/passengers_controller.php:80
 #: /views/passengers/add_passengers.ctp:14
 msgid "Passenger"
 msgstr ""
 
-#: /controllers/passengers_controller.php:77
+#: /controllers/passengers_controller.php:85
 msgid "Passenger added"
 msgstr ""
 
-#: /controllers/passengers_controller.php:97
+#: /controllers/passengers_controller.php:105
 msgid "Passengers could not be saved, because the selected charter has gone."
 msgstr ""
 
-#: /controllers/passengers_controller.php:104
+#: /controllers/passengers_controller.php:112
 msgid "Passengers could not be saved, because no availables charters."
 msgstr ""
 
-#: /controllers/passengers_controller.php:107
+#: /controllers/passengers_controller.php:115
 msgid "Passengers could not be saved, because you must enter the number of passengers."
 msgstr ""
 
-#: /controllers/passengers_controller.php:142;184
+#: /controllers/passengers_controller.php:122
+msgid "Your user don't have access."
+msgstr ""
+
+#: /controllers/passengers_controller.php:161;208
 msgid "The passengers has been saved."
 msgstr ""
 
-#: /controllers/passengers_controller.php:148;190
+#: /controllers/passengers_controller.php:167;214
 msgid "The passengers could not be saved. Please, check errors and try again."
 msgstr ""
 
-#: /controllers/passengers_controller.php:267
+#: /controllers/passengers_controller.php:313
+msgid "Passenger can't be deleted because it's already authorized."
+msgstr ""
+
+#: /controllers/passengers_controller.php:329
 msgid "Passenger deleted"
 msgstr ""
 
-#: /controllers/passengers_controller.php:271
+#: /controllers/passengers_controller.php:333
 msgid "Passenger was not deleted"
 msgstr ""
 
@@ -187,18 +223,6 @@ msgstr ""
 msgid "Name can't be empty"
 msgstr ""
 
-#: /models/event.php:163
-msgid "Enter a valid date"
-msgstr ""
-
-#: /models/event.php:169
-msgid "Enter date"
-msgstr ""
-
-#: /models/event.php:176
-msgid "Message can't be empty"
-msgstr ""
-
 #: /models/passenger.php:18
 msgid "First Name can't be empty"
 msgstr ""
@@ -244,6 +268,7 @@ msgid "User not set."
 msgstr ""
 
 #: /views/charters/admin_add.ctp:14
+#: /views/charters/admin_index.ctp:31
 msgid "Reserved"
 msgstr ""
 
@@ -258,11 +283,13 @@ msgid "Add Charter"
 msgstr ""
 
 #: /views/charters/admin_index.ctp:20
+#: /views/hotels/admin_index.ctp:16
 msgid "Add charter"
 msgstr ""
 
 #: /views/charters/admin_index.ctp:26
 #: /views/destinations/admin_index.ctp:21
+#: /views/hotels/admin_index.ctp:22
 msgid "Action"
 msgstr ""
 
@@ -273,6 +300,7 @@ msgstr ""
 #: /views/charters/admin_index.ctp:28
 #: /views/charters/admin_view.ctp:28
 #: /views/destinations/admin_view.ctp:26
+#: /views/hotels/admin_view.ctp:28
 msgid "Destination"
 msgstr ""
 
@@ -286,18 +314,15 @@ msgstr ""
 msgid "Fortnightly capacity"
 msgstr ""
 
-#: /views/charters/admin_index.ctp:31
-#: /views/charters/admin_view.ctp:38
-msgid "Reserved capacity"
-msgstr ""
-
 #: /views/charters/admin_index.ctp:32
+#: /views/charters/admin_view.ctp:42
 msgid "Occupied"
 msgstr ""
 
 #: /views/charters/admin_index.ctp:45
 #: /views/destinations/admin_index.ctp:34
-#: /views/elements/list_passengers.ctp:33
+#: /views/elements/list_passengers.ctp:34
+#: /views/hotels/admin_index.ctp:36
 #: /views/ocupations/admin_index.ctp:38
 #: /views/passengers/index.ctp:43
 #: /views/users/admin_index.ctp:39
@@ -306,7 +331,8 @@ msgstr ""
 
 #: /views/charters/admin_index.ctp:57
 #: /views/destinations/admin_index.ctp:46
-#: /views/elements/list_passengers.ctp:45
+#: /views/elements/list_passengers.ctp:46
+#: /views/hotels/admin_index.ctp:48
 #: /views/ocupations/admin_index.ctp:50
 #: /views/passengers/index.ctp:55
 #: /views/users/admin_view.ctp:8
@@ -315,6 +341,7 @@ msgstr ""
 
 #: /views/charters/admin_view.ctp:8
 #: /views/destinations/admin_view.ctp:8
+#: /views/hotels/admin_view.ctp:8
 #: /views/ocupations/admin_view.ctp:8
 #: /views/passengers/__view.ctp:8
 #: /views/users/admin_add.ctp:7
@@ -327,7 +354,7 @@ msgid "Delete charter"
 msgstr ""
 
 #: /views/charters/admin_view.ctp:18
-msgid "Are your sure to delete the Charter?"
+msgid "Are you sure to delete the Charter?"
 msgstr ""
 
 #: /views/charters/admin_view.ctp:30
@@ -338,17 +365,17 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
+#: /views/charters/admin_view.ctp:38
+msgid "Reserved capacity"
+msgstr ""
+
 #: /views/charters/admin_view.ctp:40
 msgid "Total capacity"
 msgstr ""
 
-#: /views/charters/admin_view.ctp:42
-msgid "Ocupied"
-msgstr ""
-
 #: /views/destinations/admin_index.ctp:4
 #: /views/layouts/admin.ctp:27
-#: /views/layouts/default.ctp:48
+#: /views/layouts/default.ctp:53
 msgid "Destinations"
 msgstr ""
 
@@ -361,6 +388,8 @@ msgid "Add destination"
 msgstr ""
 
 #: /views/destinations/admin_index.ctp:22
+#: /views/hotels/admin_index.ctp:23
+#: /views/hotels/admin_view.ctp:30
 msgid "Name"
 msgstr ""
 
@@ -369,7 +398,7 @@ msgid "Delete destination"
 msgstr ""
 
 #: /views/destinations/admin_view.ctp:18
-msgid "Are your sure to delete the Destination?"
+msgid "Are you sure to delete the Destination?"
 msgstr ""
 
 #: /views/elements/filters.ctp:6
@@ -403,8 +432,8 @@ msgstr ""
 
 #: /views/elements/list_passengers.ctp:3
 #: /views/layouts/admin.ctp:28
-#: /views/layouts/default.ctp:59
-#: /views/passengers/add.ctp:9
+#: /views/layouts/default.ctp:64
+#: /views/passengers/add.ctp:15
 #: /views/passengers/index.ctp:4
 msgid "Passengers"
 msgstr ""
@@ -449,10 +478,15 @@ msgid "State"
 msgstr ""
 
 #: /views/elements/list_passengers.ctp:19
+#: /views/passengers/index.ctp:30
+msgid "Accompanying"
+msgstr ""
+
+#: /views/elements/list_passengers.ctp:20
 msgid "Agency"
 msgstr ""
 
-#: /views/elements/list_passengers.ctp:77
+#: /views/elements/list_passengers.ctp:78
 msgid "Change state"
 msgstr ""
 
@@ -476,18 +510,35 @@ msgstr ""
 msgid "next"
 msgstr ""
 
+#: /views/hotels/admin_index.ctp:4
+#: /views/layouts/default.ctp:48
+msgid "Hotels"
+msgstr ""
+
+#: /views/hotels/admin_index.ctp:11
+msgid "Add Hotel"
+msgstr ""
+
+#: /views/hotels/admin_view.ctp:15
+msgid "Delete hotel"
+msgstr ""
+
+#: /views/hotels/admin_view.ctp:18
+msgid "Are you sure to delete the hotel?"
+msgstr ""
+
 #: /views/layouts/admin.ctp:29
-#: /views/layouts/default.ctp:53
+#: /views/layouts/default.ctp:58
 #: /views/users/admin_index.ctp:5
 msgid "Users"
 msgstr ""
 
 #: /views/layouts/admin.ctp:30
-#: /views/layouts/default.ctp:63
+#: /views/layouts/default.ctp:68
 msgid "Logout"
 msgstr ""
 
-#: /views/layouts/default.ctp:61
+#: /views/layouts/default.ctp:66
 #: /views/users/admin_add.ctp:26;34
 msgid "Change password"
 msgstr ""
@@ -529,7 +580,7 @@ msgid "Delete ocupation"
 msgstr ""
 
 #: /views/ocupations/admin_view.ctp:18
-msgid "Are your sure to delete the Ocupation?"
+msgid "Are you sure to delete the Ocupation?"
 msgstr ""
 
 #: /views/passengers/__view.ctp:15
@@ -558,6 +609,10 @@ msgstr ""
 
 #: /views/passengers/__view.ctp:61
 msgid "Phone"
+msgstr ""
+
+#: /views/passengers/add.ctp:12
+msgid "Meal Packages"
 msgstr ""
 
 #: /views/passengers/index.ctp:10

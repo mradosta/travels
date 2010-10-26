@@ -98,7 +98,7 @@ class PassengersController extends AppController {
 			$charterType = $data['Passenger']['type'];
 			$amount = $data['Passenger']['amount'];
 
-			// CHeck charter departure date
+			// Check charter departure date
 			$this->Passenger->Charter->recursive = -1;
 			$charter = $this->Passenger->Charter->findById($charterId);
 			if (date('Y-m-d') > $charter['Charter']['date']) {
@@ -190,8 +190,8 @@ class PassengersController extends AppController {
 		if (!empty($this->data)) {
 
 			$uuid = uniqid();
-			foreach ($this->data['Passenger'] as $v) {
-				$this->data['Passenger']['group'] = $uuid;
+			foreach ($this->data['Passenger'] as $k => $v) {
+				$this->data['Passenger'][$k]['group'] = $uuid;
 			}
 
 			if ($this->Passenger->saveAll($this->data['Passenger'], array('validate' => 'only'))) {
@@ -217,32 +217,29 @@ class PassengersController extends AppController {
 					),
 					'flash_error'
 				);
-				$this->set('charter_data',
-					array(
-						'amount' 		=> $this->data['Extra']['amount'],
-						'type'			=> $this->data['Passenger'][0]['type'],
-						'charter_id'	=> $this->data['Passenger'][0]['charter_id'],
-						'meal_packages'	=> $this->data['Passenger'][0]['meal_packages']
-					)
-				);
-				$this->set('amount', $this->data['Extra']['amount']);
-				$this->set('charterId', $this->data['Passenger'][0]['charter_id']);
-				$this->set('charterType', $this->data['Passenger'][0]['type']);
-				$this->set('mealPackages', $this->data['Passenger'][0]['meal_packages']);
+				$this->set('charter_data', unserialize($this->data['Extra']['charter_data']));
 			}
 		} else {
-			
-			$this->set('charterId', $this->params['named']['charter_id']);
-			$this->set('charterType', $this->params['named']['charter_type']);
-			$this->set('mealPackages', $this->params['named']['meal_packages']);
-			$this->set('amount', $this->params['named']['amount']);
+
+			$this->set('charter_data',
+				array(
+					'charterId' 	=> $this->params['named']['charter_id'],
+					'charterType' 	=> $this->params['named']['charter_type'],
+					'mealPackages' 	=> $this->params['named']['meal_packages'],
+					'amount' 		=> $this->params['named']['amount']
+				)
+			);
 		}
 	}
 
 
 	function admin_index($id = null) {
+
 		$users = $this->Passenger->User->find('list',
-			array('fields' => array('User.id', 'User.full_name'), 'conditions' => array('User.type !=' => 'admin'))
+			array(
+				'fields' 		=> array('User.id', 'User.full_name'),
+				'conditions' 	=> array('User.type !=' => 'admin')
+			)
 		);
 		$this->set('users', $users);
 
@@ -261,11 +258,32 @@ class PassengersController extends AppController {
 	}
 
 	private function __index($userId = null, $admin = false) {
+
 		if (!empty($userId)) {
 			$this->paginate['conditions']['Passenger.user_id'] = $userId;
 		}
-		$this->paginate['order'] = array('Charter.date' => 'asc');
+		$this->paginate['order'] = array('Charter.date' => 'ASC', 'Passenger.id' => 'ASC');
+		$this->paginate['group'] = array('Passenger.group');
+		$this->paginate['contain'] = array(
+			'Charter'	=> array('fields' =>
+				array(
+					'Charter.date',
+					'Charter.description'
+				)
+			),
+			'User' 		=> array('fields' => array('User.username', 'User.full_name'))
+		);
+		$this->paginate['fields'] = array(
+			'count(1) as accompanying',
+			'Passenger.id',
+			'Passenger.first_name',
+			'Passenger.last_name',
+			'Passenger.full_name',
+			'Passenger.type',
+			'Passenger.state'
+		);
 		$this->set('data', $this->paginate());
+
 		if (!empty($userId) && !$admin) {
 			$this->render('index');
 		} else {

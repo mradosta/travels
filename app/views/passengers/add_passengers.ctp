@@ -3,10 +3,10 @@
 $out[] = $this->MyForm->create('Passenger', array('class' => 'ajax_formx', 'action' => 'add_passengers'));
 $passangers = null;
 
-$content[] = $this->MyForm->input('Extra.amount',
+$content[] = $this->MyForm->input('Extra.charter_data',
 	array(
 		'type' 	=> 'hidden',
-		'value' => $charter_data['amount']
+		'value' => serialize($charter_data)
 	)
 );
 
@@ -14,6 +14,7 @@ for ($i = 0; $i < $charter_data['amount']; $i++) {
 	$content[] = $this->MyHtml->tag('h3', __('Passenger', true) . ' ' . ($i + 1));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.first_name', array('type' => 'text'));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.charter_id', array('type' => 'hidden', 'value' => $charter_data['charter_id']));
+	$content[] = $this->MyForm->input('Passenger.' . $i . '.hotel_id', array('type' => 'hidden', 'value' => $charter_data['hotel_id']));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.meal_packages', array('type' => 'hidden', 'value' => $charter_data['meal_packages']));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.user_id', array('type' => 'hidden', 'value' => User::get('/User/id')));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.type', array('type' => 'hidden', 'value' => $charter_data['type']));
