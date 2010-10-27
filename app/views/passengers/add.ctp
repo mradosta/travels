@@ -3,7 +3,7 @@
 $out[] = $this->MyForm->create('Passenger');
 
 $content[] = $this->MyForm->input(
-	'charter_id'
+	'charter_id', array('empty' => true)
 );
 $content[] = $this->MyForm->input(
 	'hotel_id'

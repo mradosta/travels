@@ -13,16 +13,6 @@ class PassengersController extends AppController {
 			)
 		);
 
-        $this->set(
-			'hotels',
-			$this->Passenger->Hotel->find(
-				'list',
-				array(
-					'fields' => array('Hotel.id', 'Hotel.name')
-				)
-			)
-		);
-
 		$this->set(
 			'types',
 			array(
