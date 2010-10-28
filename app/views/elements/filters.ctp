@@ -9,7 +9,7 @@ $actions[] = $this->MyForm->submit(__('Search', true),
 		'class' 	=> 'button',
 		'div' 		=> false,
 		'label' 	=> false,
-		'style'		=> 'float:left;margin-right:15px'
+		'id'		=> 'search'
 	)
 );
 $actions[] = $this->MyForm->submit(__('Clear', true),
@@ -18,7 +18,6 @@ $actions[] = $this->MyForm->submit(__('Clear', true),
 		'class' 	=> 'button clear cancel',
 		'div' 		=> false,
 		'label' 	=> false,
-		'style'		=> 'margin-right:0;'
 	)
 );
 $filters[] = $this->MyHtml->tag('div', $actions, 'action');
