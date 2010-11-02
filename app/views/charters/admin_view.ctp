@@ -54,10 +54,11 @@
 
 	
 	// Normalize data array as a cakephp findall array
-	$dataForElement = array();
+	$dataForElement = array(); 
 	foreach ($data['Passenger'] as $passenger) {
 		$passenger['Charter'] = $data['Charter'];
 		$passenger['accompanying'] = 1;
+		$passenger['infoas'] = 0;
 		$dataForElement[] = array(
 			'Passenger' => $passenger
 		);

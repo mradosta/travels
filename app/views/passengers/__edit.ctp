@@ -9,8 +9,16 @@ for ($i = 0; $i < sizeof($data); $i++) {
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.last_name', array('type' => 'text', 'value' => $data[$i]['Passenger']['last_name']));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.birthday', array('type' => 'text', 'class' => 'datepicker', 'value' => $data[$i]['Passenger']['birthday']));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.dni', array('type' => 'text', 'value' => $data[$i]['Passenger']['dni']));
-	$content[] = $this->MyForm->input('Passenger.' . $i . '.email', array('type' => 'text', 'value' => $data[$i]['Passenger']['email']));
+	$content[] = $this->MyForm->input('Passenger.' . $i . '.notes', array('type' => 'textarea', 'value' => $data[$i]['Passenger']['notes']));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.phone', array('type' => 'text', 'value' => $data[$i]['Passenger']['phone']));
+	$content[] = $this->MyForm->input(
+		'Passenger.' . $i . '.infoa',
+		array(
+			'type' 		=> 'select',
+			'options'	=> array(0 => __('No', true), 1 => __('Yes', true)),
+			'default'	=> $data[$i]['Passenger']['infoa']
+		)
+	);
 	$passengers[] = $this->MyHtml->tag('div', $content, array('class' => 'passanger'));
 	$content = null;
 }

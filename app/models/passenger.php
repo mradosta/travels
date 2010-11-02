@@ -2,7 +2,7 @@
 class Passenger extends AppModel {
 
 	
-	var $belongsTo = array('Charter', 'User', 'Hotel');
+	var $belongsTo = array('Charter', 'User', 'Hotel', 'Ejecutive');
 	var $virtualFields = array(
 		'formated_birthday' => 'DATE_FORMAT(birthday, "%d/%m/%Y")',
 		'full_name' => 'CONCAT(first_name, " ", last_name)'
@@ -33,10 +33,10 @@ class Passenger extends AppModel {
 					'last' => true, // Stop validation after this rule
 				),
 			),
-			'email' => array(
+			'phone' => array(
 				'notempty' => array(
-					'rule' => array('email'),
-					'message' => __("Invalid email", true),
+					'rule' => array('notempty'),
+					'message' => __("Telephone can't be empty", true),
 					'last' => true, // Stop validation after this rule
 				),
 			),

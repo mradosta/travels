@@ -17,6 +17,7 @@
 	$header[] = __('Type', true);
 	$header[] = __('State', true);
 	$header[] = __('Accompanying', true);
+	$header[] = __('Infoas', true);
 	$header[] = __('Agency', true);
 
 
@@ -52,29 +53,10 @@
 			)
 		);
 
-		$invertCurrentState = (($record['Passenger']['state'] == 'authorized') ? 'authorized' : 'unauthorized');
-		
-		if (!empty($paginate)) {
-			$link = array(
-				'controller'	=> 'passengers',
-				'action'		=> 'update_state',
-				$record['Passenger']['group']
-			);
-		} else {
-			$link = array(
-				'controller'	=> 'passengers',
-				'action'		=> 'update_state',
-				$record['Passenger']['group'],
-				'charters',
-				$record['Passenger']['Charter']['id']
-			);
-		}
+		$currentState = (($record['Passenger']['state'] == 'authorized') ? 'authorized' : 'unauthorized');
+		$currentState = (($record['Passenger']['state'] == 'pending') ? 'pending' : $currentState);
+		$state = $this->MyHtml->image($currentState . '.png');
 
-		$state = $this->MyHtml->link(
-			$this->MyHtml->image($invertCurrentState . '.png'),
-			$link,
-			array('escape' => false, 'title' => __('Change state', true), 'class' => 'change_state')
-		);
 		
 		$td[] = $this->MyHtml->tag('td', $actions);
 		$td[] = $this->MyHtml->tag('td', $record['Passenger']['Charter']['description'] . ' ' . $record['Passenger']['Charter']['formated_date']);
@@ -82,9 +64,9 @@
 		$td[] = $this->MyHtml->tag('td', $record['Passenger']['last_name']);
 		$td[] = $this->MyHtml->tag('td', __($record['Passenger']['type'], true));
 		$td[] = $this->MyHtml->tag('td', $state);
-		$td[] = $this->MyHtml->tag('td', $record['Passenger']['accompanying'] - 1);
+		$td[] = $this->MyHtml->tag('td', $record['Passenger']['accompanying'] - 1 - $record['Passenger']['infoas']);
+		$td[] = $this->MyHtml->tag('td', $record['Passenger']['infoas']);
 		$td[] = $this->MyHtml->tag('td', $record['Passenger']['User']['full_name']);
-
 		$body[] = $this->MyHtml->tag('tr', $td);
 
 	}

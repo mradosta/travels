@@ -42,7 +42,7 @@ $(document).ready(function($) {
 		changeMonth: true,
 		changeYear: true
 
-	});
+	}).attr('readonly', 'readonly');
 
 
 	/** Menu actions */

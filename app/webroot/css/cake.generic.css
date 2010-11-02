@@ -15,7 +15,10 @@
  * @since         CakePHP(tm)
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-
+.after_container {
+	margin:0px;
+	padding:0px;
+}
 .passengers{
 	display:inline;
 	float:left;

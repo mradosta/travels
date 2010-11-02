@@ -47,6 +47,10 @@ class PassengersController extends AppController {
 			)
 		);
 
+		$this->set('ejecutives',
+			$this->Passenger->Ejecutive->find('list', array('fields' => array('Ejecutive.id', 'Ejecutive.full_name')))
+		);
+
 		if (!empty($this->data)) {
 
 			$r = $this->checkAvailability($this->data);
@@ -128,7 +132,8 @@ class PassengersController extends AppController {
 		}
 
 		$passengers = $this->Passenger->findAllByGroup($group_id);
-		$state = (($passengers[0]['Passenger']['state'] == 'authorized') ? 'unauthorized' : 'authorized');
+		$state = (($passengers[0]['Passenger']['state'] == 'pending') ? 'authorized' : 'unauthorized');
+		$state = ((!empty($this->params['named']['pending'])) ? 'pending' : $state);
 		foreach ($passengers as $passenger) {
 			$passengerSave = array(
 				'Passenger' => array(
@@ -277,6 +282,7 @@ class PassengersController extends AppController {
 		);
 		$this->paginate['fields'] = array(
 			'count(1) as accompanying',
+			'SUM(Passenger.infoa) as infoas',
 			'Passenger.id',
 			'Passenger.first_name',
 			'Passenger.last_name',

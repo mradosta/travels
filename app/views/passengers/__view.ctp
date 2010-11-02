@@ -42,6 +42,24 @@
 		$out[] = $this->element('actions',
 			array('links' => $links)
 		);
+
+		$links =  null;
+		$links[] = $this->MyHtml->link(
+			__('pending', true),
+			array(
+				'controller'	=> 'passengers',
+				'action'		=> 'update_state',
+				$data[0]['Passenger']['group'],
+				'passengers',
+				$data[0]['Passenger']['group'],
+				'pending'		=> 'Yes'
+			),
+			array('class' => 'cancel')
+		);
+
+		$out[] = $this->element('actions',
+			array('links' => $links)
+		);
 	}
 
 
@@ -58,9 +76,11 @@
 
 		$fields[__('DNI', true)] = $record['Passenger']['dni'];
 
-		$fields[__('Email', true)] = $record['Passenger']['email'];
+		$fields[__('Notes', true)] = $record['Passenger']['notes'];
 
 		$fields[__('Phone', true)] = $record['Passenger']['phone'];
+
+		$fields[__('Infoa', true)] = (($record['Passenger']['infoa'] == 1) ? __('Yes', true) : __('No', true));
 
 		$fields[__('State', true)] = __($record['Passenger']['state'], true);
 

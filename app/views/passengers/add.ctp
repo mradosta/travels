@@ -17,6 +17,7 @@ $content[] = $this->MyForm->input('base',
 
 $content[] = $this->MyForm->input('type');
 $content[] = $this->MyForm->input('amount', array('label' => __('Passengers', true), 'default' => '2'));
+$content[] = $this->MyForm->input('ejecutive_id', array('label' => __('Ejecutive', true)));
 
 $out[] = $this->MyHtml->tag('div', $content, array('id' => 'container', 'class' => 'passenger_data'));
 
