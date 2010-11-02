@@ -2,7 +2,7 @@
 
 $out[] = $this->MyHtml->tag('h2',
 	__('Hotels', true),
-	array('id' => 'tasks_title', 'class' => 'hotels')
+	array('id' => 'tasks_title', 'class' => '')
 );
 
 
@@ -15,7 +15,7 @@ $links[] = $this->MyHtml->link(
 	),
 	array('class' => 'cancel', 'title' => __('Add charter', true))
 );
-$out[] = $this->MyHtml->tag('div', $this->element('actions', array('links' => $links)), array('class' => 'clear-both'));
+echo $this->element('actions', array('links' => $links));
 
 /** The grid */
 $header	= null;

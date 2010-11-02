@@ -310,7 +310,7 @@ class PassengersController extends AppController {
 
 		$this->set('data', $this->Passenger->find('all',
 			array(
-				'contain'		=> array('Charter.Destination'),
+				'contain'		=> array('Charter.Destination', 'Hotel'),
 				'order'			=> array('Passenger.id' => 'ASC'),
 				'conditions' 	=> array('Passenger.group' => $id)
 			)

@@ -667,8 +667,17 @@ div.code-coverage-results span.result-good {
 }
 
 div#paginator span.disabled {
-	width:70px;
+	width:75px;
 	float:left;
 	display:block;
 	1border:1px solid red;
+}
+
+.action .cancel{
+	margin-right: 0px;
+	padding-top:3px !important;
+}
+.action #search{
+	margin-right: 15px;
+	float: left;
 }
