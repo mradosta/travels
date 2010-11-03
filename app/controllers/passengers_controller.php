@@ -251,7 +251,7 @@ class PassengersController extends AppController {
 		$this->set('users', $users);
 
 		$charters = $this->Passenger->Charter->find('list',
-			array('fields' => array('Charter.id', 'Charter.date', 'Charter.description'))
+			array('fields' => array('Charter.id', 'Charter.formated_date', 'Charter.description'))
 		);
 		$this->set('charters', $charters);
 
