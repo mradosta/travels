@@ -26,7 +26,7 @@
 
 	if (User::get('/User/type') == 'admin') {
 		$links =  null;
-		$invertCurrentState = (($data[0]['Passenger']['state'] == 'authorized') ? 'unauthorize' : 'authorize');
+		$invertCurrentState = (($data[0]['Passenger']['state'] == 'authorized') ? __('Quitar Autorización', true) : __('Autorizar', true));
 		$links[] = $this->MyHtml->link(
 			__($invertCurrentState, true),
 			array(
@@ -77,9 +77,7 @@
 
 		$fields[__('Birthday', true)] = $record['Passenger']['formated_birthday'];
 
-		$fields[__('DNI', true)] = $record['Passenger']['dni'];
-
-		$fields[__('Notes', true)] = $record['Passenger']['notes'];
+		$fields[__('Dni / Passport', true)] = $record['Passenger']['dni'];
 
 		$fields[__('Phone', true)] = $record['Passenger']['phone'];
 

@@ -55,7 +55,7 @@
 
 		$currentState = (($record['Passenger']['state'] == 'authorized') ? 'authorized' : 'unauthorized');
 		$currentState = (($record['Passenger']['state'] == 'pending') ? 'pending' : $currentState);
-		$state = $this->MyHtml->image($currentState . '.png');
+		$state = $this->MyHtml->image($currentState . '.png', array('title' => __($record['Passenger']['state'], true)));
 
 		
 		$td[] = $this->MyHtml->tag('td', $actions);
