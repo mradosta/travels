@@ -3,8 +3,16 @@ class HotelsController extends AppController {
 
 
 	function get($detinationId) {
+
+		$charter = ClassRegistry::init('Charter')->find('first',
+			array(
+				'recursive'		=> -1,
+				'conditions'	=> array('Charter.id' => $detinationId)
+			)
+		);
+
 		$this->Hotel->recursive = -1;
-		$data = $this->Hotel->findAllByDestinationId($detinationId);
+		$data = $this->Hotel->findAllByDestinationId($charter['Charter']['destination_id']);
 		$this->set('data', json_encode($data));
 		$this->render('../elements/only_text', 'ajax');
 	}

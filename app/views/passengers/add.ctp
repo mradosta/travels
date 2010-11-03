@@ -2,6 +2,7 @@
 	
 $out[] = $this->MyForm->create('Passenger');
 
+//d($charters);
 $content[] = $this->MyForm->input(
 	'charter_id', array('empty' => true)
 );

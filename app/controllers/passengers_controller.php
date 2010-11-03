@@ -3,13 +3,17 @@ class PassengersController extends AppController {
 
 	function add($id = null) {
 
+
         $this->set(
 			'charters',
-			$this->Passenger->Charter->find(
-				'list',
-				array(
-					'fields' => array('Charter.id', 'Charter.formated_date', 'Charter.description')
-				)
+			Set::combine(
+				$this->Passenger->Charter->find('all',
+					array(
+						'contain'	=> array('Destination'),
+						'fields' 	=> array('Charter.id', 'Charter.formated_date', 'Destination.name')
+					)
+				),
+				'{n}.Charter.id', '{n}.Charter.formated_date', '{n}.Destination.name'
 			)
 		);
 
