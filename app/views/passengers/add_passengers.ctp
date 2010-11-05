@@ -22,7 +22,7 @@ for ($i = 0; $i < $charter_data['amount']; $i++) {
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.last_name', array('type' => 'text'));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.birthday', array('type' => 'text', 'class' => 'datepicker'));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.dni', array('type' => 'text', 'label' => __('Dni / Passport', true), 'after' => __('Viajes al caribe, solo pasaporte', true)));
-	$content[] = $this->MyForm->input('Passenger.' . $i . '.notes', array('type' => 'textarea'));
+	$content[] = $this->MyForm->input('Passenger.' . $i . '.notes', array('label' => 'Observaciones', 'type' => 'textarea'));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.phone', array('type' => 'text', 'class' => 'phone'));
 	$content[] = $this->MyForm->input(
 		'Passenger.' . $i . '.infoa',

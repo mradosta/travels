@@ -41,6 +41,8 @@ class PassengersController extends AppController {
 			array(
 				'single' 		=> __('single', true),
 				'double' 		=> __('double', true),
+				'triple' 		=> __('triple', true),
+ 				'quadruple' 	=> __('quadruple', true),
 				'family plan' 	=> __('family plan', true)
 			)
 		);
@@ -78,9 +80,9 @@ class PassengersController extends AppController {
 
 	}
 
-	function __sendEmail($group_id, $toAgency = false) {
+	function __sendEmail($groupId, $toAgency = false) {
 
-		$passengers = $this->Passenger->findAllByGroup($group_id);
+		$passengers = $this->Passenger->findAllByGroup($groupId);
 		$this->set('passengers', $passengers);
 		if ($toAgency) {
 			
@@ -95,7 +97,7 @@ class PassengersController extends AppController {
 				'luciana@triadtours.com',
 				'sonia@triadtours.com',
 			);
-			$this->Email->subject = __('Passenger added', true);
+			$this->Email->subject = __('Passenger added', true) . ' ' . $passengers[0]['Passenger']['first_name'] . ' ' . $passengers[0]['Passenger']['last_name'] . ' - (' . User::get('/User/full_name') . ')' ;
 			$this->Email->template = 'email/added';
 		}
 
@@ -130,7 +132,8 @@ class PassengersController extends AppController {
 	}
 
 	function admin_update_state($group_id, $controller = 'passengers', $view_id = null) {
-		if(User::get('/User/type') != 'admin') {
+
+		if (User::get('/User/type') != 'admin') {
 			$this->Session->setFlash(
 				__(
 					"Your user don't have access.",
@@ -142,8 +145,16 @@ class PassengersController extends AppController {
 		}
 
 		$passengers = $this->Passenger->findAllByGroup($group_id);
-		$state = (($passengers[0]['Passenger']['state'] == 'pending') ? 'authorized' : 'unauthorized');
-		$state = ((!empty($this->params['named']['pending'])) ? 'pending' : $state);
+
+		if (!empty($this->params['named']['pending'])) {
+			$state = 'pending';
+		} elseif ($passengers[0]['Passenger']['state'] == 'pending') {
+			$state = 'authorized';
+		} elseif ($passengers[0]['Passenger']['state'] == 'authorized') {
+			$state = 'unauthorized';
+		} elseif ($passengers[0]['Passenger']['state'] == 'unauthorized') {
+			$state = 'authorized';
+		}
 		foreach ($passengers as $passenger) {
 			$passengerSave = array(
 				'Passenger' => array(

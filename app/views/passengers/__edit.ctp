@@ -9,7 +9,7 @@ for ($i = 0; $i < sizeof($data); $i++) {
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.last_name', array('type' => 'text', 'value' => $data[$i]['Passenger']['last_name']));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.birthday', array('type' => 'text', 'class' => 'datepicker', 'value' => $data[$i]['Passenger']['birthday']));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.dni', array('type' => 'text', 'value' => $data[$i]['Passenger']['dni']));
-	$content[] = $this->MyForm->input('Passenger.' . $i . '.notes', array('type' => 'textarea', 'value' => $data[$i]['Passenger']['notes']));
+	$content[] = $this->MyForm->input('Passenger.' . $i . '.notes', array('label' => 'Observaciones', 'type' => 'textarea', 'value' => $data[$i]['Passenger']['notes']));
 	$content[] = $this->MyForm->input('Passenger.' . $i . '.phone', array('type' => 'text', 'value' => $data[$i]['Passenger']['phone']));
 	$content[] = $this->MyForm->input(
 		'Passenger.' . $i . '.infoa',

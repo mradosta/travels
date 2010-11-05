@@ -4,8 +4,9 @@ class Passenger extends AppModel {
 	
 	var $belongsTo = array('Charter', 'User', 'Hotel', 'Ejecutive');
 	var $virtualFields = array(
-		'formated_birthday' => 'DATE_FORMAT(birthday, "%d/%m/%Y")',
-		'full_name' => 'CONCAT(first_name, " ", last_name)'
+		'formated_birthday' => 'DATE_FORMAT(Passenger.birthday, "%d/%m/%Y")',
+		'formated_created' => 'DATE_FORMAT(Passenger.created, "%d/%m/%Y")',
+		'full_name' => 'CONCAT(Passenger.first_name, " ", Passenger.last_name)'
 	);
 
 	protected function _initialitation() {

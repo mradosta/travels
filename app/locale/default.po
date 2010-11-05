@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lozada\n"
-"POT-Creation-Date: 2010-11-05 15:31+0000\n"
+"POT-Creation-Date: 2010-11-05 19:11+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: mradosta <martinradosta@gmail.com>\n"
 "Language-Team: \n"
@@ -103,58 +103,64 @@ msgid "double"
 msgstr "Doble"
 
 #: /controllers/passengers_controller.php:44
+msgid "triple"
+msgstr "Triple"
+
+#: /controllers/passengers_controller.php:45
+msgid "quadruple"
+msgstr "Cuadruple"
+
+#: /controllers/passengers_controller.php:46
 msgid "family plan"
 msgstr "Plan Familiar"
 
-#: /controllers/passengers_controller.php:50
+#: /controllers/passengers_controller.php:52
 msgid "authorized"
 msgstr "Autorizado"
 
-#: /controllers/passengers_controller.php:51
+#: /controllers/passengers_controller.php:53
 msgid "unauthorized"
 msgstr "No autorizado"
 
-#: /controllers/passengers_controller.php:88
+#: /controllers/passengers_controller.php:90
 #: /views/passengers/__edit.ctp:6
 #: /views/passengers/add_passengers.ctp:14
 msgid "Passenger"
 msgstr "Pasajero"
 
-#: /controllers/passengers_controller.php:98
+#: /controllers/passengers_controller.php:100
 msgid "Passenger added"
 msgstr "Pasajero agregado"
 
-#: /controllers/passengers_controller.php:118
+#: /controllers/passengers_controller.php:120
 msgid "Passengers could not be saved, because the selected charter has gone."
 msgstr "Los pasajeros no pueden guardarse porque el Charter seleccionado ya ha partido."
 
-#: /controllers/passengers_controller.php:125
+#: /controllers/passengers_controller.php:127
 msgid "Passengers could not be saved, because no availables charters."
 msgstr "No hay charters disponibles en las fechas / destinos seleccionados"
 
-#: /controllers/passengers_controller.php:128
+#: /controllers/passengers_controller.php:130
 msgid "Passengers could not be saved, because you must enter the number of passengers."
 msgstr "Debe ingresar la cantidad de pasajeros"
 
-#: /controllers/passengers_controller.php:135
+#: /controllers/passengers_controller.php:138
 msgid "Your user don't have access."
 msgstr ""
 
-#: /controllers/passengers_controller.php:179;224
+#: /controllers/passengers_controller.php:190;235
 msgid "The passengers has been saved."
 msgstr "El pasajero ha sido grabado"
 
-#: /controllers/passengers_controller.php:185;230
+#: /controllers/passengers_controller.php:196;241
 msgid "The passengers could not be saved. Please, check errors and try again."
 msgstr "Los pasajeros no pudieron grabarse. Por favor revise los datos requeridos e intente nuevamente."
 
-#: /controllers/passengers_controller.php:338
-#, fuzzy
+#: /controllers/passengers_controller.php:349
 msgid "Passengers can't be deleted because it's already authorized."
 msgstr "Los pasajeros no pueden borrarse porque ya han sido autorizados."
 
-#: /controllers/passengers_controller.php:357
-#, fuzzy
+#: /controllers/passengers_controller.php:368
 msgid "Passengers deleted"
 msgstr "Pasajero borrado"
 
@@ -234,23 +240,23 @@ msgstr "La capacidad de reservas no puede quedar vacia"
 msgid "Name can't be empty"
 msgstr "El nombre no puede quedar vacio"
 
-#: /models/passenger.php:18
+#: /models/passenger.php:19
 msgid "First Name can't be empty"
 msgstr "El nombre no puede queda vacio"
 
-#: /models/passenger.php:25
+#: /models/passenger.php:26
 msgid "Last Name can't be empty"
 msgstr "El apellido no puede quedar vacio"
 
-#: /models/passenger.php:32
+#: /models/passenger.php:33
 msgid "Birthday can't be empty"
 msgstr "La fecha de nacimiento no puede quedar vacia"
 
-#: /models/passenger.php:39
+#: /models/passenger.php:40
 msgid "Telephone can't be empty"
 msgstr "El teléfono no puede quedar vacio"
 
-#: /models/passenger.php:46
+#: /models/passenger.php:47
 msgid "Dni can't be empty"
 msgstr "El DNI no puede quedar vacio"
 
@@ -463,13 +469,13 @@ msgid "Charter"
 msgstr "Charter"
 
 #: /views/elements/list_passengers.ctp:15
-#: /views/passengers/__view.ctp:74
+#: /views/passengers/__view.ctp:75
 #: /views/passengers/index.ctp:26
 msgid "First Name"
 msgstr "Nombre"
 
 #: /views/elements/list_passengers.ctp:16
-#: /views/passengers/__view.ctp:76
+#: /views/passengers/__view.ctp:77
 #: /views/passengers/index.ctp:27
 msgid "Last Name"
 msgstr "Apellido"
@@ -483,13 +489,13 @@ msgid "Type"
 msgstr "Tipo"
 
 #: /views/elements/list_passengers.ctp:18
-#: /views/passengers/__view.ctp:86
+#: /views/passengers/__view.ctp:87
 #: /views/passengers/index.ctp:29
 msgid "State"
 msgstr "Estado"
 
 #: /views/elements/list_passengers.ctp:19
-#: /views/passengers/__view.ctp:91
+#: /views/passengers/__view.ctp:92
 #: /views/passengers/index.ctp:30
 msgid "Accompanying"
 msgstr "Acompañantes"
@@ -597,13 +603,13 @@ msgid "Are you sure to delete the Ocupation?"
 msgstr "Esta seguro que desea borrar la ocupación?"
 
 #: /views/passengers/__edit.ctp:18
-#: /views/passengers/__view.ctp:84
+#: /views/passengers/__view.ctp:85
 #: /views/passengers/add_passengers.ctp:31
 msgid "No"
 msgstr "No"
 
 #: /views/passengers/__edit.ctp:18
-#: /views/passengers/__view.ctp:84
+#: /views/passengers/__view.ctp:85
 #: /views/passengers/add_passengers.ctp:31
 msgid "Yes"
 msgstr "Si"
@@ -623,9 +629,8 @@ msgid "Quitar Autorización"
 msgstr ""
 
 #: /views/passengers/__view.ctp:29
-#, fuzzy
 msgid "Autorizar"
-msgstr "Autorizado"
+msgstr "Autorizar"
 
 #: /views/passengers/__view.ctp:48
 msgid "pending"
@@ -636,7 +641,6 @@ msgid "Hotel"
 msgstr "Hotel"
 
 #: /views/passengers/__view.ctp:71
-#, fuzzy
 msgid "Meal packages"
 msgstr "Régimen"
 
@@ -645,20 +649,24 @@ msgstr "Régimen"
 msgid "Base"
 msgstr ""
 
-#: /views/passengers/__view.ctp:78
+#: /views/passengers/__view.ctp:73
+msgid "Reservation date"
+msgstr "Fecha de Reserva"
+
+#: /views/passengers/__view.ctp:79
 msgid "Birthday"
 msgstr "Nacimiento"
 
-#: /views/passengers/__view.ctp:80
+#: /views/passengers/__view.ctp:81
 #: /views/passengers/add_passengers.ctp:24
 msgid "Dni / Passport"
 msgstr "Dni / Pasaporte"
 
-#: /views/passengers/__view.ctp:82
+#: /views/passengers/__view.ctp:83
 msgid "Phone"
 msgstr "Telefono"
 
-#: /views/passengers/__view.ctp:84
+#: /views/passengers/__view.ctp:85
 msgid "Infoa"
 msgstr ""
 

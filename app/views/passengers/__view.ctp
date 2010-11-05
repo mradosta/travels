@@ -70,6 +70,7 @@
 			$fields[__('Hotel', true)] = __($record['Hotel']['name'], true);
 			$fields[__('Meal packages', true)] = __($record['Passenger']['meal_packages'], true);
 			$fields[__('Base', true)] = __($record['Passenger']['base'], true);
+			$fields[__('Reservation date', true)] = __($record['Passenger']['formated_created'], true);
 		}
 		$fields[__('First Name', true)] = $record['Passenger']['first_name'];
 

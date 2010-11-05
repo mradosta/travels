@@ -10,8 +10,8 @@ class EmailComponent
   /**
    * Send email using SMTP Auth by default.
    */
-    var $from         = 'ngiovagnoli@pragmatia.com.ar';
-    var $fromName     = "test";
+    var $from         = 'reservas@triadtours.com';
+    var $fromName     = 'Triad Tours';
     var $smtpUserName = 'ngiovagnoli@pragmatia.com.ar';  // SMTP username
     var $smtpPassword = 'ngiovagnoli'; // SMTP password
     var $smtpHostNames= 'smtp.pragmatia.com.ar';  // specify main and backup server

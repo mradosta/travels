@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2010-11-05 15:31+0000\n"
+"POT-Creation-Date: 2010-11-05 19:11+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -107,56 +107,64 @@ msgid "double"
 msgstr ""
 
 #: /controllers/passengers_controller.php:44
+msgid "triple"
+msgstr ""
+
+#: /controllers/passengers_controller.php:45
+msgid "quadruple"
+msgstr ""
+
+#: /controllers/passengers_controller.php:46
 msgid "family plan"
 msgstr ""
 
-#: /controllers/passengers_controller.php:50
+#: /controllers/passengers_controller.php:52
 msgid "authorized"
 msgstr ""
 
-#: /controllers/passengers_controller.php:51
+#: /controllers/passengers_controller.php:53
 msgid "unauthorized"
 msgstr ""
 
-#: /controllers/passengers_controller.php:88
+#: /controllers/passengers_controller.php:90
 #: /views/passengers/__edit.ctp:6
 #: /views/passengers/add_passengers.ctp:14
 msgid "Passenger"
 msgstr ""
 
-#: /controllers/passengers_controller.php:98
+#: /controllers/passengers_controller.php:100
 msgid "Passenger added"
 msgstr ""
 
-#: /controllers/passengers_controller.php:118
+#: /controllers/passengers_controller.php:120
 msgid "Passengers could not be saved, because the selected charter has gone."
 msgstr ""
 
-#: /controllers/passengers_controller.php:125
+#: /controllers/passengers_controller.php:127
 msgid "Passengers could not be saved, because no availables charters."
 msgstr ""
 
-#: /controllers/passengers_controller.php:128
+#: /controllers/passengers_controller.php:130
 msgid "Passengers could not be saved, because you must enter the number of passengers."
 msgstr ""
 
-#: /controllers/passengers_controller.php:135
+#: /controllers/passengers_controller.php:138
 msgid "Your user don't have access."
 msgstr ""
 
-#: /controllers/passengers_controller.php:179;224
+#: /controllers/passengers_controller.php:190;235
 msgid "The passengers has been saved."
 msgstr ""
 
-#: /controllers/passengers_controller.php:185;230
+#: /controllers/passengers_controller.php:196;241
 msgid "The passengers could not be saved. Please, check errors and try again."
 msgstr ""
 
-#: /controllers/passengers_controller.php:338
+#: /controllers/passengers_controller.php:349
 msgid "Passengers can't be deleted because it's already authorized."
 msgstr ""
 
-#: /controllers/passengers_controller.php:357
+#: /controllers/passengers_controller.php:368
 msgid "Passengers deleted"
 msgstr ""
 
@@ -236,23 +244,23 @@ msgstr ""
 msgid "Name can't be empty"
 msgstr ""
 
-#: /models/passenger.php:18
+#: /models/passenger.php:19
 msgid "First Name can't be empty"
 msgstr ""
 
-#: /models/passenger.php:25
+#: /models/passenger.php:26
 msgid "Last Name can't be empty"
 msgstr ""
 
-#: /models/passenger.php:32
+#: /models/passenger.php:33
 msgid "Birthday can't be empty"
 msgstr ""
 
-#: /models/passenger.php:39
+#: /models/passenger.php:40
 msgid "Telephone can't be empty"
 msgstr ""
 
-#: /models/passenger.php:46
+#: /models/passenger.php:47
 msgid "Dni can't be empty"
 msgstr ""
 
@@ -465,13 +473,13 @@ msgid "Charter"
 msgstr ""
 
 #: /views/elements/list_passengers.ctp:15
-#: /views/passengers/__view.ctp:74
+#: /views/passengers/__view.ctp:75
 #: /views/passengers/index.ctp:26
 msgid "First Name"
 msgstr ""
 
 #: /views/elements/list_passengers.ctp:16
-#: /views/passengers/__view.ctp:76
+#: /views/passengers/__view.ctp:77
 #: /views/passengers/index.ctp:27
 msgid "Last Name"
 msgstr ""
@@ -485,13 +493,13 @@ msgid "Type"
 msgstr ""
 
 #: /views/elements/list_passengers.ctp:18
-#: /views/passengers/__view.ctp:86
+#: /views/passengers/__view.ctp:87
 #: /views/passengers/index.ctp:29
 msgid "State"
 msgstr ""
 
 #: /views/elements/list_passengers.ctp:19
-#: /views/passengers/__view.ctp:91
+#: /views/passengers/__view.ctp:92
 #: /views/passengers/index.ctp:30
 msgid "Accompanying"
 msgstr ""
@@ -599,13 +607,13 @@ msgid "Are you sure to delete the Ocupation?"
 msgstr ""
 
 #: /views/passengers/__edit.ctp:18
-#: /views/passengers/__view.ctp:84
+#: /views/passengers/__view.ctp:85
 #: /views/passengers/add_passengers.ctp:31
 msgid "No"
 msgstr ""
 
 #: /views/passengers/__edit.ctp:18
-#: /views/passengers/__view.ctp:84
+#: /views/passengers/__view.ctp:85
 #: /views/passengers/add_passengers.ctp:31
 msgid "Yes"
 msgstr ""
@@ -645,20 +653,24 @@ msgstr ""
 msgid "Base"
 msgstr ""
 
-#: /views/passengers/__view.ctp:78
+#: /views/passengers/__view.ctp:73
+msgid "Reservation date"
+msgstr ""
+
+#: /views/passengers/__view.ctp:79
 msgid "Birthday"
 msgstr ""
 
-#: /views/passengers/__view.ctp:80
+#: /views/passengers/__view.ctp:81
 #: /views/passengers/add_passengers.ctp:24
 msgid "Dni / Passport"
 msgstr ""
 
-#: /views/passengers/__view.ctp:82
+#: /views/passengers/__view.ctp:83
 msgid "Phone"
 msgstr ""
 
-#: /views/passengers/__view.ctp:84
+#: /views/passengers/__view.ctp:85
 msgid "Infoa"
 msgstr ""
 
