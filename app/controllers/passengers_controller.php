@@ -142,8 +142,20 @@ class PassengersController extends AppController {
 		}
 
 		$passengers = $this->Passenger->findAllByGroup($group_id);
-		$state = (($passengers[0]['Passenger']['state'] == 'pending') ? 'authorized' : 'unauthorized');
-		$state = ((!empty($this->params['named']['pending'])) ? 'pending' : $state);
+
+		if (!empty($this->params['named']['pending'])) {
+			$state = 'pending';
+		} else {
+			if ($passengers[0]['Passenger']['state'] == 'unauthorized') {
+				$state = 'authorized';
+			} else if ($passengers[0]['Passenger']['state'] == 'authorized') {
+				$state = 'unauthorized';
+			} else if ($passengers[0]['Passenger']['state'] == 'pending') {
+				$state = 'authorized';
+			}
+		}
+
+
 		foreach ($passengers as $passenger) {
 			$passengerSave = array(
 				'Passenger' => array(
