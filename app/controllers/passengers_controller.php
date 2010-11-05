@@ -29,6 +29,7 @@ class PassengersController extends AppController {
 		$this->set(
 			'meal_packages',
 			array(
+				'all inclusive' => __('all inclusive', true),
 				'full board' 	=> __('full board', true),
 				'half board' 	=> __('half board', true),
 				'breakfast' 	=> __('breakfast', true)

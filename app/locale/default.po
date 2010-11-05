@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lozada\n"
-"POT-Creation-Date: 2010-11-03 19:07+0000\n"
+"POT-Creation-Date: 2010-11-05 15:31+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: mradosta <martinradosta@gmail.com>\n"
 "Language-Team: \n"
@@ -79,77 +79,81 @@ msgid "reserved"
 msgstr "Reservado"
 
 #: /controllers/passengers_controller.php:32
+msgid "all inclusive"
+msgstr "All Inclusive"
+
+#: /controllers/passengers_controller.php:33
 msgid "full board"
 msgstr "Pensión completa"
 
-#: /controllers/passengers_controller.php:33
+#: /controllers/passengers_controller.php:34
 msgid "half board"
 msgstr "Media pensión"
 
-#: /controllers/passengers_controller.php:34
+#: /controllers/passengers_controller.php:35
 msgid "breakfast"
 msgstr "desayuno"
 
-#: /controllers/passengers_controller.php:41
+#: /controllers/passengers_controller.php:42
 msgid "single"
 msgstr "Simple"
 
-#: /controllers/passengers_controller.php:42
+#: /controllers/passengers_controller.php:43
 msgid "double"
 msgstr "Doble"
 
-#: /controllers/passengers_controller.php:43
+#: /controllers/passengers_controller.php:44
 msgid "family plan"
 msgstr "Plan Familiar"
 
-#: /controllers/passengers_controller.php:49
+#: /controllers/passengers_controller.php:50
 msgid "authorized"
 msgstr "Autorizado"
 
-#: /controllers/passengers_controller.php:50
+#: /controllers/passengers_controller.php:51
 msgid "unauthorized"
 msgstr "No autorizado"
 
-#: /controllers/passengers_controller.php:87
+#: /controllers/passengers_controller.php:88
 #: /views/passengers/__edit.ctp:6
 #: /views/passengers/add_passengers.ctp:14
 msgid "Passenger"
 msgstr "Pasajero"
 
-#: /controllers/passengers_controller.php:92
+#: /controllers/passengers_controller.php:98
 msgid "Passenger added"
 msgstr "Pasajero agregado"
 
-#: /controllers/passengers_controller.php:112
+#: /controllers/passengers_controller.php:118
 msgid "Passengers could not be saved, because the selected charter has gone."
 msgstr "Los pasajeros no pueden guardarse porque el Charter seleccionado ya ha partido."
 
-#: /controllers/passengers_controller.php:119
+#: /controllers/passengers_controller.php:125
 msgid "Passengers could not be saved, because no availables charters."
 msgstr "No hay charters disponibles en las fechas / destinos seleccionados"
 
-#: /controllers/passengers_controller.php:122
+#: /controllers/passengers_controller.php:128
 msgid "Passengers could not be saved, because you must enter the number of passengers."
 msgstr "Debe ingresar la cantidad de pasajeros"
 
-#: /controllers/passengers_controller.php:129
+#: /controllers/passengers_controller.php:135
 msgid "Your user don't have access."
 msgstr ""
 
-#: /controllers/passengers_controller.php:173;218
+#: /controllers/passengers_controller.php:179;224
 msgid "The passengers has been saved."
 msgstr "El pasajero ha sido grabado"
 
-#: /controllers/passengers_controller.php:179;224
+#: /controllers/passengers_controller.php:185;230
 msgid "The passengers could not be saved. Please, check errors and try again."
 msgstr "Los pasajeros no pudieron grabarse. Por favor revise los datos requeridos e intente nuevamente."
 
-#: /controllers/passengers_controller.php:332
+#: /controllers/passengers_controller.php:338
 #, fuzzy
 msgid "Passengers can't be deleted because it's already authorized."
 msgstr "Los pasajeros no pueden borrarse porque ya han sido autorizados."
 
-#: /controllers/passengers_controller.php:351
+#: /controllers/passengers_controller.php:357
 #, fuzzy
 msgid "Passengers deleted"
 msgstr "Pasajero borrado"
@@ -614,6 +618,15 @@ msgstr "Borrar pasajero"
 msgid "Are your sure to delete the Passenger?"
 msgstr "Esta seguro que desea borrar el pasajero?"
 
+#: /views/passengers/__view.ctp:29
+msgid "Quitar Autorización"
+msgstr ""
+
+#: /views/passengers/__view.ctp:29
+#, fuzzy
+msgid "Autorizar"
+msgstr "Autorizado"
+
 #: /views/passengers/__view.ctp:48
 msgid "pending"
 msgstr "Pendiente"
@@ -637,8 +650,9 @@ msgid "Birthday"
 msgstr "Nacimiento"
 
 #: /views/passengers/__view.ctp:80
-msgid "DNI / Passport"
-msgstr "DNI / Pasaporte"
+#: /views/passengers/add_passengers.ctp:24
+msgid "Dni / Passport"
+msgstr "Dni / Pasaporte"
 
 #: /views/passengers/__view.ctp:82
 msgid "Phone"
@@ -655,10 +669,6 @@ msgstr "Régimen"
 #: /views/passengers/add.ctp:21
 msgid "Ejecutive"
 msgstr "Ejecutivo"
-
-#: /views/passengers/add_passengers.ctp:24
-msgid "Dni / Passport"
-msgstr "Dni / Pasaporte"
 
 #: /views/passengers/add_passengers.ctp:24
 msgid "Viajes al caribe, solo pasaporte"
@@ -757,6 +767,8 @@ msgstr "Enviar"
 msgid "Debug setting does not allow access to this url."
 msgstr ""
 
+#~ msgid "DNI / Passport"
+#~ msgstr "DNI / Pasaporte"
 #~ msgid "Passenger was not deleted"
 #~ msgstr "El pasajero no fue borrado"
 #~ msgid "Invalid email"
