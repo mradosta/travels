@@ -50,11 +50,6 @@
  */
 
 
-/** Define access constants */
-//define('EMAIL', 'cecilia.giordano@triadtours.com');
-define('EMAIL', 'ngiovagnoli@pragmatia.com.ar');
-
-
 /**
  * Easy debug and die method.
  *

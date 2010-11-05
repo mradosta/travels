@@ -80,28 +80,27 @@ class EmailComponent
     }
 
 
-    function send()
-    {
+    function send() {
 	App::import('Vendor', 'phpmailer', true, array(APP . 'vendors' . DS . 'phpmailer'), 'class.phpmailer.php');
-
-    //App::Import('Vendor', 'phpmailer', 'class.phpmailer.php');
-	//App::Import('Vendor', 'phpmailer' . DS . 'class.phpmailer');
 
     $mail = new PHPMailer();
 
     $mail->IsSMTP();            // set mailer to use SMTP
     $mail->SMTPAuth = true;     // turn on SMTP authentication
-    $mail->Host   = $this->smtpHostNames;
+    $mail->Host   	= $this->smtpHostNames;
     $mail->Username = $this->smtpUserName;
     $mail->Password = $this->smtpPassword;
 
     $mail->From     = $this->from;
     $mail->FromName = $this->fromName;
-    $mail->AddAddress($this->to, $this->toName );
-    $mail->AddReplyTo(EMAIL, 'Cecilia Giordano');
+	if (is_array($this->to)) {
+		foreach ($this->to as $k => $v) {
+			$mail->AddAddress($v);
+		}
+	}
 
     $mail->CharSet  = 'UTF-8';
-    $mail->WordWrap = 50;  // set word wrap to 50 characters
+    $mail->WordWrap = 80;  // set word wrap to 50 characters
 
     if (!empty($this->attachments)) {
       foreach ($this->attachments as $attachment) {

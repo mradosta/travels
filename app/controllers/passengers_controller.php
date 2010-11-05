@@ -88,7 +88,12 @@ class PassengersController extends AppController {
 			$this->Email->template = 'email/state';
 
 		} else {
-			$this->Email->to = EMAIL;
+			$this->Email->to = array(
+				'cecilia.giordano@triadtours.com',
+				'karina@triadtours.com',
+				'luciana@triadtours.com',
+				'sonia@triadtours.com',
+			);
 			$this->Email->subject = __('Passenger added', true);
 			$this->Email->template = 'email/added';
 		}
