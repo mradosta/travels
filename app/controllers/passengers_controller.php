@@ -311,7 +311,8 @@ class PassengersController extends AppController {
 			'Passenger.full_name',
 			'Passenger.type',
 			'Passenger.state',
-			'Passenger.group'
+			'Passenger.group',
+			'Passenger.formated_created'
 		);
 		$this->set('data', $this->paginate());
 

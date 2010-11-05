@@ -15,7 +15,7 @@
 	$header[] = __('First Name', true);
 	$header[] = __('Last Name', true);
 	$header[] = __('Type', true);
-	$header[] = __('State', true);
+	$header[] = __('Reserva', true);
 	$header[] = __('Accompanying', true);
 	$header[] = __('Infoas', true);
 	$header[] = __('Agency', true);
@@ -62,7 +62,7 @@
 		$td[] = $this->MyHtml->tag('td', $record['Passenger']['Charter']['description'] . ' ' . $record['Passenger']['Charter']['formated_date']);
 		$td[] = $this->MyHtml->tag('td', $record['Passenger']['first_name']);
 		$td[] = $this->MyHtml->tag('td', $record['Passenger']['last_name']);
-		$td[] = $this->MyHtml->tag('td', __($record['Passenger']['type'], true));
+		$td[] = $this->MyHtml->tag('td', $record['Passenger']['formated_created']);
 		$td[] = $this->MyHtml->tag('td', $state);
 		$td[] = $this->MyHtml->tag('td', $record['Passenger']['accompanying'] - 1 - $record['Passenger']['infoas']);
 		$td[] = $this->MyHtml->tag('td', $record['Passenger']['infoas']);
