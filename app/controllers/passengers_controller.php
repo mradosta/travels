@@ -155,6 +155,7 @@ class PassengersController extends AppController {
 		} elseif ($passengers[0]['Passenger']['state'] == 'unauthorized') {
 			$state = 'authorized';
 		}
+
 		foreach ($passengers as $passenger) {
 			$passengerSave = array(
 				'Passenger' => array(
