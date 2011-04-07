@@ -9,6 +9,9 @@ $content[] = $this->MyForm->input(
 $content[] = $this->MyForm->input('date', array('type' => 'text', 'class' => 'datepicker'));
 $content[] = $this->MyForm->input('time', array('type' => 'text'));
 $content[] = $this->MyForm->input('description', array('type' => 'text'));
+$content[] = $this->MyForm->input('airline', array('type' => 'text'));
+$content[] = $this->MyForm->input('flight_number', array('type' => 'text'));
+$content[] = $this->MyForm->input('route', array('type' => 'text'));
 $content[] = $this->MyForm->input('weekly', array('type' => 'text'));
 $content[] = $this->MyForm->input('fortnightly', array('type' => 'text'));
 $content[] = $this->MyForm->input('reserved', array('type' => 'text', 'label' => __('Reserved', true)));

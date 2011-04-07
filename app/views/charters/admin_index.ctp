@@ -26,10 +26,14 @@ $header	= null;
 $header[] = __('Action', true);
 $header[] = __('Date / Time', true);
 $header[] = __('Destination', true);
+$header[] = __('Compañia Aerea', true);
+$header[] = __('Numero de Vuelo', true);
+$header[] = __('Ruta', true);
 $header[] = __('Weekly capacity', true);
 $header[] = __('Fortnightly capacity', true);
 $header[] = __('Reserved', true);
 $header[] = __('Occupied', true);
+
 
 $head = $this->MyHtml->tag('thead', $this->MyHtml->tableHeaders($header));
 
@@ -66,6 +70,9 @@ foreach ($data as $record) {
 	$td[] = $this->MyHtml->tag('td', $actions);
 	$td[] = $this->MyHtml->tag('td', $record['Charter']['formated_date'] . ' ' . $record['Charter']['time']);
 	$td[] = $this->MyHtml->tag('td', $record['Destination']['name']);
+	$td[] = $this->MyHtml->tag('td', $record['Charter']['airline']);
+	$td[] = $this->MyHtml->tag('td', $record['Charter']['flight_number']);
+	$td[] = $this->MyHtml->tag('td', $record['Charter']['route']);
 	$td[] = $this->MyHtml->tag('td', $record['Charter']['weekly']);
 	$td[] = $this->MyHtml->tag('td', $record['Charter']['fortnightly']);
 	$td[] = $this->MyHtml->tag('td', $record['Charter']['reserved']);

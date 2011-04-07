@@ -30,6 +30,12 @@
 	$fields[__('Date', true)] = $data['Charter']['formated_date'] . ' ' . $data['Charter']['time'];
 
 	$fields[__('Description', true)] = $data['Charter']['description'];
+
+	$fields[__('Compañia Aerea', true)] = $data['Charter']['airline'];
+
+	$fields[__('Numero de Vuelo', true)] = $data['Charter']['flight_number'];
+
+	$fields[__('Ruta', true)] = $data['Charter']['route'];
 	
 	$fields[__('Weekly capacity', true)] = $data['Charter']['weekly'];
 

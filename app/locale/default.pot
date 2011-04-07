@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2010-11-05 19:11+0000\n"
+"POT-Creation-Date: 2010-11-09 15:01+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -152,19 +152,19 @@ msgstr ""
 msgid "Your user don't have access."
 msgstr ""
 
-#: /controllers/passengers_controller.php:190;235
+#: /controllers/passengers_controller.php:191;236
 msgid "The passengers has been saved."
 msgstr ""
 
-#: /controllers/passengers_controller.php:196;241
+#: /controllers/passengers_controller.php:197;242
 msgid "The passengers could not be saved. Please, check errors and try again."
 msgstr ""
 
-#: /controllers/passengers_controller.php:349
+#: /controllers/passengers_controller.php:351
 msgid "Passengers can't be deleted because it's already authorized."
 msgstr ""
 
-#: /controllers/passengers_controller.php:368
+#: /controllers/passengers_controller.php:370
 msgid "Passengers deleted"
 msgstr ""
 
@@ -486,16 +486,14 @@ msgstr ""
 
 #: /views/elements/list_passengers.ctp:17
 #: /views/passengers/__view.ctp:69
-#: /views/passengers/index.ctp:28
 #: /views/users/admin_add.ctp:59
 #: /views/users/admin_index.ctp:29
 msgid "Type"
 msgstr ""
 
 #: /views/elements/list_passengers.ctp:18
-#: /views/passengers/__view.ctp:87
-#: /views/passengers/index.ctp:29
-msgid "State"
+#: /views/passengers/index.ctp:28
+msgid "Reserva"
 msgstr ""
 
 #: /views/elements/list_passengers.ctp:19
@@ -672,6 +670,11 @@ msgstr ""
 
 #: /views/passengers/__view.ctp:85
 msgid "Infoa"
+msgstr ""
+
+#: /views/passengers/__view.ctp:87
+#: /views/passengers/index.ctp:29
+msgid "State"
 msgstr ""
 
 #: /views/passengers/add.ctp:13
