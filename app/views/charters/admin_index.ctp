@@ -24,7 +24,8 @@ $out[] = $this->MyHtml->tag('div', $this->element('actions', array('links' => $l
 /** The grid */
 $header	= null;
 $header[] = __('Action', true);
-$header[] = __('Date / Time', true);
+$header[] = __('Fecha', true);
+$header[] = __('Hora', true);
 $header[] = __('Destination', true);
 $header[] = __('Compañia Aerea', true);
 $header[] = __('Numero de Vuelo', true);
@@ -68,7 +69,8 @@ foreach ($data as $record) {
 	);
 
 	$td[] = $this->MyHtml->tag('td', $actions);
-	$td[] = $this->MyHtml->tag('td', $record['Charter']['formated_date'] . ' ' . $record['Charter']['time']);
+	$td[] = $this->MyHtml->tag('td', $record['Charter']['formated_date']);
+	$td[] = $this->MyHtml->tag('td', $record['Charter']['time']);
 	$td[] = $this->MyHtml->tag('td', $record['Destination']['name']);
 	$td[] = $this->MyHtml->tag('td', $record['Charter']['airline']);
 	$td[] = $this->MyHtml->tag('td', $record['Charter']['flight_number']);
